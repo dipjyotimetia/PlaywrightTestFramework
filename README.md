@@ -22,7 +22,7 @@ $ mkdir MG-Test-UI-Framework
 $ cd MG-Test-UI-Framework
 
 # 2: Clone the repo
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/dskinnerMg/Test-UI-Puppeteer.git
 
 # 3: Install dependencies
 $ npm install
