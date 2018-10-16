@@ -9,12 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.1.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
     "faker": "^4.1.0",
-    "jest": "^22.1.4",
-    "lodash": "^4.17.5",
-    "puppeteer": "^1.0.0"
+    "jest": "^23.6.0",
+    "lodash": "^4.17.11",
+    "mocha": "5.2.0",
+    "chai": "4.2.0",
+    "yaml": "1.0.0",
+    "puppeteer": "^1.9.0"
   }
 }
