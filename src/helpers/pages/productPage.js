@@ -4,7 +4,7 @@ import * as _ from 'lodash';
 
 class ProductPage extends BasePage {
 
-    constructor(page){
+    constructor(page) {
         super(page);
         this.selectors = {
             "addToBag": "#addToBasketButton",

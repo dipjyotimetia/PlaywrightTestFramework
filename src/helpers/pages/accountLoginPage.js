@@ -4,7 +4,7 @@ import faker from 'faker';
 
 class AccountLoginPage extends BasePage {
 
-    constructor(page){
+    constructor(page) {
         super(page);
         this.selectors = {
             "registerTab": "#register-tab",
@@ -71,4 +71,5 @@ class AccountLoginPage extends BasePage {
     }
 
 }
+
 export default AccountLoginPage;
