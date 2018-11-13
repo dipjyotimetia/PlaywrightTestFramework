@@ -1,8 +1,8 @@
 import puppeteer from "puppeteer";
 
 const desktopResolution = {
-    width: 768,
-    height: 1080
+    width: 1280,
+    height: 960
 };
 
 const mobileResolution = {
@@ -13,7 +13,7 @@ const mobileResolution = {
 export const BrowserFactory = {
     setupDesktopBrowser: async () => {
         const browser = await puppeteer.launch({
-            // headless: true,
+            headless: false,
             args: [`--window-size=${desktopResolution.width},${desktopResolution.height}`]
         });
         return browser;
@@ -21,7 +21,7 @@ export const BrowserFactory = {
 
     setupMobileBrowser: async () => {
         const browser = await puppeteer.launch({
-            // headless: true,
+            headless: false,
             args: [`--window-size=${mobileResolution.width},${mobileResolution.height}`]
         });
         return browser;

@@ -6,7 +6,7 @@ import AccountLoginPage from "../helpers/pages/accountLoginPage";
 let page;
 let browser;
 
-jest.setTimeout(25000);
+jest.setTimeout(60000);
 
 afterAll(() => {
     browser.close();
@@ -21,41 +21,18 @@ describe("Registration", () => {
         it(
             "Should navigate to the login page and register a user",
             async () => {
-                let login = new AccountLoginPage(page);
-                await login.gotoPage();
-                await login.selectRegister();
-                await login.enterUserDetails();
-                await login.enterPasswords({
-                    password: "ValidPw123",
-                    confirmation: "ValidPw123"
-                });
-                await login.submitForm();
-            },
-            16000
-        );
-        it("should close the browser", () => {
-            browser.close();
-        });
-    });
-    describe("Mobile Browser", () => {
-        it("should load a mobile browser", async () => {
-            browser = await BrowserFactory.setupMobileBrowser();
-            page = await BrowserFactory.newMobilePage(browser);
-        });
-        it(
-            "Should navigate to the login page and register a user",
-            async () => {
-                let login = new AccountLoginPage(page);
-                await login.gotoPage();
-                await login.selectRegister();
-                await login.enterUserDetails();
-                await login.enterPasswords({
-                    password: "ValidPw123",
-                    confirmation: "ValidPw123"
-                });
-                await login.submitForm();
-            },
-            16000
+                    reporter
+                        .description("Homepage test suite")
+                        .story("JIRA001");
+                    let login = new AccountLoginPage(page);
+                    await login.gotoPage();
+                    await login.selectLogin();
+                    await login.enterUserDetails();
+                    const screen = await page.screenshot();
+                    reporter.addAttachment("ScreenShot", screen, "image/png");
+                    reporter.endStep();
+                },
+                16000
         );
         it("should close the browser", () => {
             browser.close();

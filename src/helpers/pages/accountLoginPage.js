@@ -7,52 +7,41 @@ class AccountLoginPage extends BasePage {
     constructor(page) {
         super(page);
         this.selectors = {
-            "registerTab": "#register-tab",
-            "firstname": "#firstname",
-            "lastname": "#lastname",
-            "email": "#email",
-            "dob": "#birth_date",
-            "password": "#password",
-            "confirmation": "#confirmation",
-            "registerButton": "#register"
+            "login": "div.login-flyout-button--login",
+            "joinNowBtn": "div.login-flyout-button--join-now",
+            "loginForm": ".login-form",
+            "userName": "input[name='username']",
+            "password": "input[name='password']",
+            "loginBtn": ".login-form button[type='submit']",
+            "loggedinIdentifier": ".account-btn-text"
         };
         this.defaultUserData = {
-            firstName: "test",
-            lastName: "user",
-            email: faker.internet.email(),
-            dob: "01011990",
-        };
-        this.defaultPasswordData = {
-            password: "Tester01",
-            confirmation: "Tester01"
+            userName: "betcentuser7",
+            password: "Password1"
         };
     }
 
     get pageUrl() {
-        return this.url + "/customer/account/login/";
+        return this.url;
     }
 
     async gotoPage() {
         await this.page.goto(this.pageUrl);
-        await this.page.waitForSelector(this.selectors.registerTab);
     }
 
-    async selectRegister() {
-        await this.page.focus(this.selectors.registerTab);
-        this.page.click(this.selectors.registerTab);
+    async selectLogin() {
+        await this.page.waitForSelector(this.selectors.login);
+        await this.page.click(this.selectors.login);
     }
 
     async enterUserDetails(userData) {
         userData = _.merge(this.defaultUserData, userData);
-        await this.page.focus(this.selectors.firstname);
-        await this.page.click(this.selectors.firstname);
-        await this.page.type(this.selectors.firstname, userData.firstName);
-        await this.page.click(this.selectors.lastname);
-        await this.page.type(this.selectors.lastname, userData.lastName);
-        await this.page.click(this.selectors.email);
-        await this.page.type(this.selectors.email, userData.email);
-        await this.page.click(this.selectors.dob);
-        await this.page.type(this.selectors.dob, userData.dob);
+        await this.page.focus(this.selectors.loginForm);
+        await this.page.click(this.selectors.userName);
+        await this.page.type(this.selectors.userName, userData.userName);
+        await this.page.click(this.selectors.password);
+        await this.page.type(this.selectors.password, userData.password);
+        await this.page.click(this.selectors.loginBtn);
         return userData;
     }
 
