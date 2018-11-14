@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runInBand",
+    "CI": "jest --maxWorkers=2",
+    "reporting": "allure generate"
   },
   "author": "",
   "license": "ISC",
@@ -27,8 +29,12 @@
     "jest-html-reporter": "^2.4.2",
     "rimraf": "^2.6.2",
     "jest-allure": "0.1.1",
-    "jest-allure-reporter": "^1.2.1",
+    "allure-commandline": "2.8.1",
     "prettier": "^1.9.2",
     "chalk": "^2.3.0"
+  },
+  "devDependencies": {
+    "puppeteer-har": "^1.0.5",
+    "puppeteer-to-istanbul": "^1.2.2"
   }
 }

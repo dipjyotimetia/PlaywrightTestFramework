@@ -2,6 +2,7 @@ import BasePage from './BasePage';
 import * as _ from 'lodash';
 import faker from 'faker';
 
+
 class AccountLoginPage extends BasePage {
 
     constructor(page) {
@@ -16,7 +17,7 @@ class AccountLoginPage extends BasePage {
             "loggedinIdentifier": ".account-btn-text"
         };
         this.defaultUserData = {
-            userName: "betcentuser7",
+            userName: "testuser",
             password: "Password1"
         };
     }
@@ -26,7 +27,9 @@ class AccountLoginPage extends BasePage {
     }
 
     async gotoPage() {
-        await this.page.goto(this.pageUrl);
+        await this.page.goto(this.pageUrl, {
+            waitUntil: 'networkidle2'
+        });
     }
 
     async selectLogin() {
@@ -43,20 +46,6 @@ class AccountLoginPage extends BasePage {
         await this.page.type(this.selectors.password, userData.password);
         await this.page.click(this.selectors.loginBtn);
         return userData;
-    }
-
-    async enterPasswords(passwordData) {
-        passwordData = _.merge(this.defaultPasswordData, passwordData);
-        await this.page.click(this.selectors.password);
-        await this.page.type(this.selectors.password, passwordData.password);
-        await this.page.click(this.selectors.confirmation);
-        await this.page.type(this.selectors.confirmation, passwordData.confirmation);
-        return passwordData;
-    }
-
-    async submitForm() {
-        await this.page.focus(this.selectors.registerButton);
-        await this.page.click(this.selectors.registerButton);
     }
 
 }
