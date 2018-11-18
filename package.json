@@ -1,6 +1,6 @@
 {
-  "name": "mg-test-ui-framework",
-  "version": "1.0.0",
+  "name": "Puppeteer-ui-framework",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "CI": "jest --maxWorkers=2",
     "reporting": "allure generate"
   },
-  "author": "",
+  "author": "Dipjyoti Metia",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.26.3",

@@ -4,8 +4,8 @@
 
 ```
 NVM:    v0.33.8       
-Node:   8.9.4        
-NPM:    1.2.1         
+Node:   10.13.0        
+NPM:    6.4.0         
 ```
 
 __Todo:__ Frontend Developers to review, teak and assess viability
@@ -18,11 +18,9 @@ __Note:__ No local evironment has been set up, so manual installation is nessasa
 # Pre: Ensure dependancies are installed
 
 # 1: Create new folder in desired location and move into it
-$ mkdir MG-Test-UI-Framework
-$ cd MG-Test-UI-Framework
 
 # 2: Clone the repo
-$ git clone https://github.com/dskinnerMg/Test-UI-Puppeteer.git
+$ git clone
 
 # 3: Install dependencies
 $ npm install
