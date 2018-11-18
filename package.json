@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --runInBand",
+    "posttest": "allure generate",
     "CI": "jest --maxWorkers=2",
-    "reporting": "allure generate"
+    "pretest": "npm install"
   },
   "author": "Dipjyoti Metia",
   "license": "ISC",

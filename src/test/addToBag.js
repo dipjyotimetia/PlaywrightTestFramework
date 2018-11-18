@@ -1,7 +1,7 @@
 import faker from "faker";
 import puppeteer from "puppeteer";
 import BrowserFactory from "../helpers/browserFactory";
-import ProductPage from "../helpers/pages/productPage";
+import ProductPage from "../pages/productPage";
 
 let page;
 let browser;

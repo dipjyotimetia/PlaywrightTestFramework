@@ -1,5 +1,5 @@
 import BasePage from './BasePage';
-import RequestHelper from '../requestHelper';
+import RequestHelper from '../helpers/requestHelper';
 import * as _ from 'lodash';
 
 class ProductPage extends BasePage {
