@@ -14,8 +14,8 @@ export const BrowserFactory = {
     setupDesktopBrowser: async () => {
         const browser = await puppeteer.launch({
             headless: false,
-            //args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
-            args: ['--start-maximized', '--no-sandbox', '--disable-setuid-sandbox']
+            // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
+            args: ['--start-maximized', '--no-sandbox', '--disable-setuid-sandbox',`--disable-infobars`]
         });
         return browser;
     },

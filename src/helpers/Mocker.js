@@ -1,5 +1,4 @@
 const _ = require('lodash');
-const { getCorsHeaders } = require('../config/cors');
 
 class Mocker {
     constructor(page, url, corsUrl) {
@@ -33,7 +32,7 @@ class Mocker {
                     status,
                     // method,
                     contentType: 'application/json; charset=utf-8',
-                    headers: getCorsHeaders(),
+                    //headers: '',
                 },
             ];
         }

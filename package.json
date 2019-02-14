@@ -1,21 +1,14 @@
 {
   "name": "Puppeteer-ui-framework",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand",
-    "posttest": "allure generate",
-    "CI": "jest --maxWorkers=2",
-    "pretest": "npm install"
+    "test": "jest --runInBand"
   },
   "author": "Dipjyoti Metia",
   "license": "ISC",
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-jest": "^23.6.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-eslint": "10.0.1",
     "cross-env": "5.2.0",
     "mkdirp": "0.5.1",
     "lodash": "4.17.11",
@@ -25,7 +18,7 @@
     "mocha": "5.2.0",
     "chai": "4.2.0",
     "yaml": "1.0.1",
-    "puppeteer": "^1.10.0",
+    "puppeteer": "^1.12.2",
     "jest-junit": "^5.1.0",
     "jest-html-reporter": "^2.4.2",
     "rimraf": "^2.6.2",
@@ -35,6 +28,9 @@
     "chalk": "^2.3.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "jest-environment-node": "^24.0.0",
     "puppeteer-har": "^1.0.5",
     "puppeteer-to-istanbul": "^1.2.2"
   }

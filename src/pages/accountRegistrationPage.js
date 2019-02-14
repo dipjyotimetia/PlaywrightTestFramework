@@ -7,11 +7,12 @@ class AccountRegistrationPage extends BasePage {
     constructor(page) {
         super(page);
         this.selectors = {
-            "joinNowBtn": "div.login-flyout-button--join-now",
+            "joinNowBtn": "a[href='/join-now']",
             "fname": "input[name='FirstName']",
             "lname": "input[name='Surname']",
             "dob": "input[name='DOB']",
             "address": "input[name='AutoResidentialAddress1']",
+            "addessAutoComplete":".jn-reg-address--auto .cb-autoc__panel button span",
             "mobile": "input[name='MobileNo']",
             "email": "input[name='Email']",
             "password": "input[name='Password']",
@@ -38,12 +39,13 @@ class AccountRegistrationPage extends BasePage {
     async joinNow() {
         await this.page.waitForSelector(this.selectors.joinNowBtn);
         await this.page.click(this.selectors.joinNowBtn);
-        await this.page.waitForNavigation();
     }
 
     async enterDetails(userData) {
         userData = _.merge(this.defaultUserData, userData);
-        await this.page.waitForSelector(this.selectors.fname);
+        await this.page.waitForSelector(this.selectors.email);
+        await this.page.click(this.selectors.email);
+        await this.page.type(this.selectors.email, userData.email);
         await this.page.click(this.selectors.fname);
         await this.page.type(this.selectors.fname, userData.fname);
         await this.page.click(this.selectors.lname);
@@ -52,10 +54,11 @@ class AccountRegistrationPage extends BasePage {
         await this.page.type(this.selectors.dob, userData.dob);
         await this.page.click(this.selectors.address);
         await this.page.type(this.selectors.address, userData.address);
+        await this.page.waitForSelector(this.selectors.addessAutoComplete);
+        const autoComplete = await this.page.$(this.selectors.addessAutoComplete);
+        await autoComplete.click();
         await this.page.click(this.selectors.mobile);
         await this.page.type(this.selectors.mobile, userData.mobile);
-        await this.page.click(this.selectors.email);
-        await this.page.type(this.selectors.email, userData.email);
         return userData;
     }
 }

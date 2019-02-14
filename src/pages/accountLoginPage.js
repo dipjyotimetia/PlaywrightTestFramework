@@ -8,16 +8,16 @@ class AccountLoginPage extends BasePage {
     constructor(page) {
         super(page);
         this.selectors = {
-            "login": "div.login-flyout-button--login",
-            "joinNowBtn": "div.login-flyout-button--join-now",
-            "loginForm": ".login-form",
-            "userName": "input[name='username']",
-            "password": "input[name='password']",
-            "loginBtn": ".login-form button[type='submit']",
+            "login": "button[class*='TopBarDropDown__login--']",
+            "joinNowBtn": "a[href='/join-now']",
+            "loginForm": "div[class*='oginDropDownContent--']",
+            "userName": "input[class*='Field__fieldInput--']",
+            "password": "input[class*='Field__fieldInput--'][type='password']",
+            "loginBtn": "button[class*='LoginDropDown__login--']",
             "loggedinIdentifier": ".account-btn-text"
         };
         this.defaultUserData = {
-            userName: "testuser",
+            userName: "dipjyotimetia@gmail.com",
             password: "Password1"
         };
     }

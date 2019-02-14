@@ -74,3 +74,45 @@ The environment details are stored in the `config.json` file. To change environm
 # Config file for storing localised data configurations and credentials.
 ./config.json
 ```
+
+
+{
+  "name": "Puppeteer-ui-framework",
+  "version": "3.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "posttest": "allure generate",
+    "CI": "jest --maxWorkers=2",
+    "pretest": "npm install"
+  },
+  "author": "Dipjyoti Metia",
+  "license": "ISC",
+  "dependencies": {
+    "allure-commandline": "2.9.0",
+    "chai": "4.2.0",
+    "chalk": "^2.4.2",
+    "cross-env": "5.2.0",
+    "eslint": "5.13.0",
+    "faker": "^4.1.0",
+    "jest": "^24.1.0",
+    "jest-allure": "0.1.1",
+    "jest-html-reporter": "^2.4.4",
+    "jest-junit": "^6.2.1",
+    "lodash": "4.17.11",
+    "mkdirp": "0.5.1",
+    "mocha": "5.2.0",
+    "prettier": "^1.16.4",
+    "puppeteer": "^1.11.0",
+    "rimraf": "^2.6.3",
+    "yaml": "1.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "jest-environment-node": "^24.0.0",
+    "puppeteer-har": "^1.0.5",
+    "puppeteer-to-istanbul": "^1.2.2"
+  }
+}

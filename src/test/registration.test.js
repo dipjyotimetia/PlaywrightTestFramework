@@ -1,5 +1,3 @@
-import faker from "faker";
-import puppeteer from "puppeteer";
 import BrowserFactory from "../helpers/browserFactory";
 import AccountRegistrationPage from "../pages/accountRegistrationPage";
 

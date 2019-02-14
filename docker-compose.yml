@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  test:
+    build: .
+    working_dir: /app
+    volumes:
+      - ".:/app"
+    environment:
+      - SALESFORCE_URL
+      - KMS_ENCRYPTED_SALESFORCE_HK_USER
+      - KMS_ENCRYPTED_SALESFORCE_HK_PASSWORD
+      - KMS_ENCRYPTED_SALESFORCE_FINANCE_USER
+      - KMS_ENCRYPTED_SALESFORCE_FINANCE_PASSWORD
+      - HEADLESS
+    entrypoint: ["shush", "exec", "--","/bin/sh", "./ci/bin/test.sh"]  
