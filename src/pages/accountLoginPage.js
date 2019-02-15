@@ -1,52 +1,50 @@
 import BasePage from './BasePage';
 import * as _ from 'lodash';
-import faker from 'faker';
-
 
 class AccountLoginPage extends BasePage {
 
-    constructor(page) {
-        super(page);
-        this.selectors = {
-            "login": "button[class*='TopBarDropDown__login--']",
-            "joinNowBtn": "a[href='/join-now']",
-            "loginForm": "div[class*='oginDropDownContent--']",
-            "userName": "input[class*='Field__fieldInput--']",
-            "password": "input[class*='Field__fieldInput--'][type='password']",
-            "loginBtn": "button[class*='LoginDropDown__login--']",
-            "loggedinIdentifier": ".account-btn-text"
-        };
-        this.defaultUserData = {
-            userName: "dipjyotimetia@gmail.com",
-            password: "Password1"
-        };
-    }
+  constructor(page) {
+    super(page);
+    this.selectors = {
+      'login': 'button[class*=\'TopBarDropDown__login--\']',
+      'joinNowBtn': 'a[href=\'/join-now\']',
+      'loginForm': 'div[class*=\'oginDropDownContent--\']',
+      'userName': 'input[class*=\'Field__fieldInput--\']',
+      'password': 'input[class*=\'Field__fieldInput--\'][type=\'password\']',
+      'loginBtn': 'button[class*=\'LoginDropDown__login--\']',
+      'loggedinIdentifier': '.account-btn-text'
+    };
+    this.defaultUserData = {
+      userName: 'betcentuser7',
+      password: 'Password1'
+    };
+  }
 
-    get pageUrl() {
-        return this.url;
-    }
+  get pageUrl() {
+    return this.url;
+  }
 
-    async gotoPage() {
-        await this.page.goto(this.pageUrl, {
-            waitUntil: 'networkidle2'
-        });
-    }
+  async gotoPage() {
+    await this.page.goto(this.pageUrl, {
+      waitUntil: 'networkidle2'
+    });
+  }
 
-    async selectLogin() {
-        await this.page.waitForSelector(this.selectors.login);
-        await this.page.click(this.selectors.login);
-    }
+  async selectLogin() {
+    await this.page.waitForSelector(this.selectors.login);
+    await this.page.click(this.selectors.login);
+  }
 
-    async enterUserDetails(userData) {
-        userData = _.merge(this.defaultUserData, userData);
-        await this.page.focus(this.selectors.loginForm);
-        await this.page.click(this.selectors.userName);
-        await this.page.type(this.selectors.userName, userData.userName);
-        await this.page.click(this.selectors.password);
-        await this.page.type(this.selectors.password, userData.password);
-        await this.page.click(this.selectors.loginBtn);
-        return userData;
-    }
+  async enterUserDetails(userData) {
+    userData = _.merge(this.defaultUserData, userData);
+    await this.page.focus(this.selectors.loginForm);
+    await this.page.click(this.selectors.userName);
+    await this.page.type(this.selectors.userName, userData.userName);
+    await this.page.click(this.selectors.password);
+    await this.page.type(this.selectors.password, userData.password);
+    await this.page.click(this.selectors.loginBtn);
+    return userData;
+  }
 
 }
 
