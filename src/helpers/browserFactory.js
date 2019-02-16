@@ -10,21 +10,12 @@ const mobileResolution = {
   height: 812
 };
 
-const isDebugging = () => {
-  const debugging_mode = {
-    headless: false,
-    slowMo: 50,
-    devtools: true,
-  };
-  return process.env.NODE_ENV === 'debug' ? debugging_mode : {};
-};
-
 export const BrowserFactory = {
 
   setupDesktopBrowser: async() => {
     const browser = await puppeteer.launch({
-      headless: true,
-      // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
+      headless: false,
+      // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox',`--incognito`]
       args: [`--no-sandbox`,'--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
       ignoreHTTPSErrors: true,
       dumpio: false
