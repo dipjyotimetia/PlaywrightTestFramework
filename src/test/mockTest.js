@@ -11,7 +11,7 @@ let mck;
 let browser;
 
 
-describe('Home page', () => {
+describe('Login page mocking', () => {
 
   beforeAll(async() => {
     browser = await BrowserFactory.setupDesktopBrowser();
@@ -31,6 +31,6 @@ describe('Home page', () => {
   }, timeOut);
 
   afterAll(async() => {
-    browser.close();
+    await browser.close();
   });
 });
