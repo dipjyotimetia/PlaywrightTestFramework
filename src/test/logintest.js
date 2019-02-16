@@ -42,6 +42,6 @@ describe('Test Login Scenario', () => {
   }, timeOut);
 
   afterAll(async() => {
-    browser.close();
+    await browser.close();
   });
 });
