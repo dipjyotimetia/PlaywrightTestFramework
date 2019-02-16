@@ -6,7 +6,7 @@ class BasePage {
   }
 
   get url() {
-    return this.config.url.protocol + this.config.url.domain;
+    return this.config.url.protocol + process.env.NODE_ENV;
   }
 }
 
