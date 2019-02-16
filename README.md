@@ -77,9 +77,13 @@ The environment details are stored in the `config.json` file. To change environm
 
 ```NPM Scripts
 "scripts": {
+    "test:env": "cross-env NODE_ENV=beteasy.com.au jest --runInBand"
     "test": "jest --runInBand",
     "posttest": "allure generate",
     "CI": "jest --maxWorkers=2",
-    "pretest": "npm install"
+    "pretest": "npm install",
+    "lint": "npm run tslint \"Client/**/*.ts\"",
+    "precommit": "npm run lint && npm test",
+    "prepush": "npm run lint"
   },
 ```
