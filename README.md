@@ -82,8 +82,8 @@ The environment details are stored in the `config.json` file. To change environm
     "posttest": "allure generate",
     "CI": "jest --maxWorkers=2",
     "pretest": "npm install",
-    "lint": "npm run tslint \"Client/**/*.ts\"",
-    "precommit": "npm run lint && npm test",
+    "lint": "eslint **\\*.js",
+    "precommit": "npm run lint",
     "prepush": "npm run lint"
   },
 ```

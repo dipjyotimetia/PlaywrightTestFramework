@@ -1,10 +1,13 @@
 {
   "name": "Puppeteer-ui-framework",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=uat.betdev.com.au jest --runInBand"
+    "test": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
+    "watch": "cross-env NODE_ENV=beteasy.com.au jest --watch",
+    "coverage": "cross-env NODE_ENV=beteasy.com.au jest --runInBand --coverage",
+    "lint": "npm run jslint \"Client/**/*.js\""
   },
   "author": "Dipjyoti Metia",
   "license": "ISC",
