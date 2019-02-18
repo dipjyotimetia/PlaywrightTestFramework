@@ -15,7 +15,7 @@ class AccountLoginPage extends BasePage {
       'loggedinIdentifier': '.account-btn-text'
     };
     this.defaultUserData = {
-      userName: 'betcentuser7',
+      userName: 'micktest6@be.com',
       password: 'Password1'
     };
   }
