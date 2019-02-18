@@ -15,7 +15,7 @@ class AccountLoginPage extends BasePage {
       'loggedinIdentifier': '.account-btn-text'
     };
     this.defaultUserData = {
-      userName: 'micktest6@be.com',
+      userName: 'betcentuser7',
       password: 'Password1'
     };
   }
@@ -43,6 +43,7 @@ class AccountLoginPage extends BasePage {
     await this.page.click(this.selectors.password);
     await this.page.type(this.selectors.password, userData.password);
     await this.page.click(this.selectors.loginBtn);
+    await this.page.evaluate(() => document.querySelector('a[class*=\'NavBarLink__racing\'] > span').click());
     return userData;
   }
 

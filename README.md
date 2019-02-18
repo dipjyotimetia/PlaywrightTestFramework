@@ -57,10 +57,10 @@ The environment details are stored in the `config.json` file. To change environm
 ./src/helepers/pages/
 
 # Browser factory for setting up standard browser types
-./src/helpers/browserFactory.js
+./src/helpers/BrowserFactory.js
 
 # A helper for creating promises to analyze network requests
-./src/helpers/requestHelper.js
+./src/helpers/RequestHelper.js
 
 # An example of mock response
 ./src/mockResponse

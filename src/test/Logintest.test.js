@@ -1,5 +1,5 @@
-import BrowserFactory from '../helpers/browserFactory';
-import AccountLoginPage from '../pages/accountLoginPage';
+import BrowserFactory from '../helpers/BrowserFactory';
+import AccountLoginPage from '../pages/AccountLoginPage';
 
 const timeOut = 56000;
 let page;

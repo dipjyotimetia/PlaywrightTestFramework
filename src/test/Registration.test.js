@@ -1,5 +1,5 @@
-import BrowserFactory from '../helpers/browserFactory';
-import AccountRegistrationPage from '../pages/accountRegistrationPage';
+import BrowserFactory from '../helpers/BrowserFactory';
+import AccountRegistrationPage from '../pages/AccountRegistrationPage';
 const PuppeteerHar = require('puppeteer-har');
 
 const timeOut = 56000;

@@ -15,8 +15,9 @@ export const BrowserFactory = {
   setupDesktopBrowser: async() => {
     const browser = await puppeteer.launch({
       headless: false,
-      // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox',`--incognito`]
+      // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
       args: [`--no-sandbox`,'--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
+      executablePath: process.env.CHROME_BIN || null,
       ignoreHTTPSErrors: true,
       dumpio: false
     });
@@ -32,7 +33,10 @@ export const BrowserFactory = {
   },
 
   newDesktopPage: async browser => {
-    const page = await browser.newPage();
+    const context = browser.defaultBrowserContext();
+    await context.clearPermissionOverrides();
+    await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
+    const page = await context.newPage();
     await page.setViewport({
       width: desktopResolution.width,
       height: desktopResolution.height

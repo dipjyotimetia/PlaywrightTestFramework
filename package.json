@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=beteasy.com.au jest --runInBand"
+    "test": "cross-env NODE_ENV=uat.betdev.com.au jest --runInBand"
   },
   "author": "Dipjyoti Metia",
   "license": "ISC",

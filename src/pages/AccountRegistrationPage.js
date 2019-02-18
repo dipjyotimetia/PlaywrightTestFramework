@@ -1,4 +1,4 @@
-import BasePage from './basePage';
+import BasePage from './BasePage';
 import * as _ from 'lodash';
 import faker from 'faker';
 
