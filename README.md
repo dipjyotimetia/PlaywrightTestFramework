@@ -4,7 +4,7 @@
 
 ```
 Node:   10.15.0        
-NPM:    6.4.1         
+NPM:    6.8.0         
 ```
 
 __Note:__ No local evironment has been set up, so manual installation is nessasary at the moment.
