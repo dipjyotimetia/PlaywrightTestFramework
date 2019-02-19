@@ -7,5 +7,3 @@ coverage/**/**
 .idea
 log
 log/**
-.vscode
-.vscode/**/**

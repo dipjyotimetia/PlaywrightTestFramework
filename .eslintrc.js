@@ -82,7 +82,7 @@ module.exports = {
         // spacing details
         "space-infix-ops": 2,
         "space-in-parens": [2, "never"],
-        "space-before-function-paren": [2, "never"],
+        //"space-before-function-paren": [2, "never"],
         "no-whitespace-before-property": 2,
         "keyword-spacing": [2, {
             "overrides": {

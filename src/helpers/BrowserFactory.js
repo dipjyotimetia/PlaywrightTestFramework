@@ -3,7 +3,7 @@ import devices from 'puppeteer/DeviceDescriptors';
 const iPhone8plus = devices['iPhone 8 Plus'];
 const iPhoneX = devices['iPhone X'];
 const pixel2xl = devices['Pixel 2 XL'];
-const ipadPro = devices['iPad Pro'];
+const iPadPro = devices['iPad Pro'];
 
 const desktopResolution = {
   width: 1366,
@@ -17,26 +17,38 @@ const mobileResolution = {
 
 export const BrowserFactory = {
 
-  setupDesktopBrowser: async() => {
-    const browser = await puppeteer.launch({
-      headless: false,
-      // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
-      args: [`--no-sandbox`,'--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
-      executablePath: process.env.CHROME_BIN || null,
-      ignoreHTTPSErrors: true,
-      dumpio: false
-    });
+  setupDesktopBrowser: async () => {
+    const browser = await puppeteer.launch(process.env.DEBUG ?
+      {
+        headless: false,
+        args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
+        slowMo: 500,
+        devtools: true
+      } : {
+        headless: false,
+        // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
+        args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
+        executablePath: process.env.CHROME_BIN || null,
+        ignoreHTTPSErrors: true,
+        dumpio: false
+      });
     return browser;
   },
 
-  setupMobileBrowser: async() => {
-    const browser = await puppeteer.launch({
-      headless: false,
-      // args: [`--window-size=${mobileResolution.width},${mobileResolution.height}`],
-      executablePath: process.env.CHROME_BIN || null,
-      ignoreHTTPSErrors: true,
-      dumpio: false
-    });
+  setupMobileBrowser: async () => {
+    const browser = await puppeteer.launch(process.env.DEBUG ?
+      {
+        headless: false,
+        args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
+        slowMo: 500,
+        devtools: true
+      } : {
+        headless: false,
+        // args: [`--window-size=${mobileResolution.width},${mobileResolution.height}`],
+        executablePath: process.env.CHROME_BIN || null,
+        ignoreHTTPSErrors: true,
+        dumpio: false
+      });
     return browser;
   },
 
@@ -98,7 +110,7 @@ export const BrowserFactory = {
     await context.clearPermissionOverrides();
     await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
     const page = await context.newPage();
-    await page.emulate(ipadPro);
+    await page.emulate(iPadPro);
     return page;
   },
 };

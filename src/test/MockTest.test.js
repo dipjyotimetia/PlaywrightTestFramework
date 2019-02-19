@@ -14,22 +14,26 @@ let browser;
 
 describe('Login page mocking', () => {
 
-  beforeAll(async() => {
+  beforeAll(async () => {
     browser = await BrowserFactory.setupDesktopBrowser();
     page = await BrowserFactory.newDesktopPage(browser);
     mck = new Mocker(page, 'https://beteasy.com.au', 'https://api.beteasy.com.au');
     mck.mocker();
   });
 
-  it('login to mocked user', async() => {
+  it('login to mocked user', async () => {
     mck.mock(false, '/api/account/login', loginResponse, 200, 'POST');
     mck.mock(false, '/api/account/detail', validUser);
+
     const login = new AccountLoginPage(page);
     await login.gotoPage();
+
+    await page.pdf({ path: 'log/test.pdf', format: 'A4' }); // Headless
+
     await page.waitFor(5000);
   }, timeOut);
 
-  afterAll(async() => {
+  afterAll(async () => {
     await browser.close();
   });
 });
