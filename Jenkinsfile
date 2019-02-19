@@ -40,7 +40,7 @@ pipeline {
 
     post {
       always {
-          bat 'npm coverage'
+          bat 'npm run coverage'
               script {
                   allure([
                       includeProperties: false,
