@@ -40,7 +40,6 @@ pipeline {
 
     post {
       always {
-          bat 'npm run coverage'
               script {
                   allure([
                       includeProperties: false,
@@ -50,15 +49,6 @@ pipeline {
                       results: [[path: 'allure-results']]
                   ])
               }
-                publishHTML target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: false,
-                    reportDir: 'coverage/lcov-report',
-                    reportFiles: 'index.html',
-                    reportName: 'Coverage Report'
-                ]
-
-      }
+            }
     }
 }
