@@ -87,3 +87,20 @@ The environment details are stored in the `config.json` file. To change environm
     "prepush": "npm run lint"
   },
 ```
+
+
+
+Handling failures
+What if a url you tried to load didn't exist?
+
+The web server will return the 'Not Found' page with HTTP status code 404 in the response.The above script would treat such page as a perfectly valid response.
+
+Most times you want to handle this as an error case.
+
+For example, if you're writing a bot that checks for broken links, you want to distinguish 404 NotFound response from 200 Ok response.
+
+In HTTP protocol status codes 4xx and 5xx indicate errors. 2xx indicate success and 3xx indicate successful redirection.
+
+Puppeteer provides Page.setRequestInterception(true) hook for intercepting HTTP requests before they happen as well as inspecting completed HTTP responses.
+
+Here's a program that prints information about all HTTP requests and responses:
