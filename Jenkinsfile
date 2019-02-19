@@ -37,4 +37,28 @@ pipeline {
             }
         }
     }
+
+    post {
+      always {
+          bat 'npm coverage'
+              script {
+                  allure([
+                      includeProperties: false,
+                      jdk: '',
+                      properties: [],
+                      reportBuildPolicy: 'ALWAYS',
+                      results: [[path: 'allure-results']]
+                  ])
+              }
+                publishHTML target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: false,
+                    reportDir: 'coverage/lcov-report',
+                    reportFiles: 'index.html',
+                    reportName: 'Coverage Report'
+                ]
+
+      }
+    }
 }
