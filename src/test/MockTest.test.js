@@ -1,11 +1,12 @@
-const loginResponse = require('../mockresponse/loginResponse.json');
-const validUser = require('../mockresponse/validUser.json');
+const loginResponse = require('../mock/loginResponse.json');
+const validUser = require('../mock/validUser.json');
 import Mocker from '../helpers/Mocker';
 import BrowserFactory from '../helpers/BrowserFactory';
 import AccountLoginPage from '../pages/AccountLoginPage';
 
 jest.setTimeout(60000);
 const timeOut = 56000;
+
 let page;
 let mck;
 let browser;
@@ -25,9 +26,7 @@ describe('Login page mocking', () => {
     mck.mock(false, '/api/account/detail', validUser);
     const login = new AccountLoginPage(page);
     await login.gotoPage();
-    await login.selectLogin();
-    await login.enterUserDetails();
-    await page.waitFor(3000);
+    await page.waitFor(5000);
   }, timeOut);
 
   afterAll(async() => {

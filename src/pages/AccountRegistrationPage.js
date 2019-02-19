@@ -1,6 +1,7 @@
 import BasePage from './BasePage';
 import * as _ from 'lodash';
 import faker from 'faker';
+const logger = require('../config/logger')(__filename);
 
 class AccountRegistrationPage extends BasePage {
 
@@ -29,16 +30,20 @@ class AccountRegistrationPage extends BasePage {
   }
 
   get pageUrl() {
+    logger.info('Redirected to url');
     return this.url;
   }
 
   async gotoPage() {
-    await this.page.goto(this.pageUrl);
+    await this.page.goto(this.pageUrl, {
+      waitUntil: 'networkidle2'
+    });
   }
 
   async joinNow() {
     await this.page.waitForSelector(this.selectors.joinNowBtn);
     await this.page.click(this.selectors.joinNowBtn);
+    logger.info('Join now completed');
   }
 
   async enterDetails(userData) {
@@ -59,6 +64,7 @@ class AccountRegistrationPage extends BasePage {
     await autoComplete.click();
     await this.page.click(this.selectors.mobile);
     await this.page.type(this.selectors.mobile, userData.mobile);
+    logger.info('User details enterted');
     return userData;
   }
 }

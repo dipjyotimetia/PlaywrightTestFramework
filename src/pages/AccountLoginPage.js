@@ -1,5 +1,6 @@
 import BasePage from './BasePage';
 import * as _ from 'lodash';
+const logger = require('../config/logger')(__filename);
 
 class AccountLoginPage extends BasePage {
 
@@ -21,6 +22,7 @@ class AccountLoginPage extends BasePage {
   }
 
   get pageUrl() {
+    logger.info('Redirected to url');
     return this.url;
   }
 
@@ -33,6 +35,7 @@ class AccountLoginPage extends BasePage {
   async selectLogin() {
     await this.page.waitForSelector(this.selectors.login);
     await this.page.click(this.selectors.login);
+    logger.info('Logged in');
   }
 
   async enterUserDetails(userData) {
@@ -44,6 +47,7 @@ class AccountLoginPage extends BasePage {
     await this.page.type(this.selectors.password, userData.password);
     await this.page.click(this.selectors.loginBtn);
     await this.page.evaluate(() => document.querySelector('a[class*=\'NavBarLink__racing\'] > span').click());
+    logger.info('user details enterted');
     return userData;
   }
 
