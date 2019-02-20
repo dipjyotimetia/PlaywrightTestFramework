@@ -25,7 +25,7 @@ export const BrowserFactory = {
         slowMo: 500,
         devtools: true
       } : {
-        headless: false,
+        headless: true,
         // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
         args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
         executablePath: process.env.CHROME_BIN || null,
