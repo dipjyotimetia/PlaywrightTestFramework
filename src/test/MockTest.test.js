@@ -28,7 +28,7 @@ describe('Login page mocking', () => {
     const login = new AccountLoginPage(page);
     await login.gotoPage();
 
-    await page.pdf({ path: 'log/test.pdf', format: 'A4' }); // Headless
+    // await page.pdf({ path: 'log/test.pdf', format: 'A4' }); // Headless
 
     await page.waitFor(5000);
   }, timeOut);
