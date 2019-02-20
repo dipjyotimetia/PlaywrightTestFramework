@@ -33,9 +33,13 @@ class AccountLoginPage extends BasePage {
   }
 
   async selectLogin() {
-    await this.page.waitForSelector(this.selectors.login);
-    await this.page.click(this.selectors.login);
-    logger.info('Logged in');
+    try {
+      await this.page.waitForSelector(this.selectors.login);
+      await this.page.click(this.selectors.login);
+      logger.info('logged in');
+    } catch (error) {
+      logger.info(error);
+    }
   }
 
   async enterUserDetails(userData) {

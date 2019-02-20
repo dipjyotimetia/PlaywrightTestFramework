@@ -1,10 +1,13 @@
 # Puppeteer | Test | UI Framework
 
+[![express logo](https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png)](https://www.npmjs.com/package/puppeteer)
+
 ## Versions / Dependencies
 
 ```
-Node:   10.15.0        
-NPM:    6.8.0         
+Puppeteer : 1.12.2
+Node:       10.15.0        
+NPM:        6.8.0         
 ```
 
 __Note:__ No local evironment has been set up, so manual installation is nessasary at the moment.
@@ -63,7 +66,7 @@ The environment details are stored in the `config.json` file. To change environm
 ./src/helpers/RequestHelper.js
 
 # An example of mock response
-./src/mockResponse
+./src/mock
 
 # Location of all test files
 ./src/test

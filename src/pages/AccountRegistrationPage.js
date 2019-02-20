@@ -41,9 +41,13 @@ class AccountRegistrationPage extends BasePage {
   }
 
   async joinNow() {
-    await this.page.waitForSelector(this.selectors.joinNowBtn);
-    await this.page.click(this.selectors.joinNowBtn);
-    logger.info('Join now completed');
+    try {
+      await this.page.waitForSelector(this.selectors.joinNowBtn);
+      await this.page.click(this.selectors.joinNowBtn);
+      logger.info('Join now completed');
+    } catch (error) {
+      logger.info(error);
+    }
   }
 
   async enterDetails(userData) {
