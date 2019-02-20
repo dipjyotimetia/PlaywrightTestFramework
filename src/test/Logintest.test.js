@@ -9,12 +9,12 @@ jest.setTimeout(60000);
 
 describe('Test Login Scenario', () => {
 
-  beforeAll(async() => {
+  beforeAll(async () => {
     browser = await BrowserFactory.setupDesktopBrowser();
     page = await BrowserFactory.newDesktopPage(browser);
   });
 
-  it('Should navigate to the login page and login a user', async() => {
+  it('Should navigate to the login page and login a user', async () => {
     reporter
         .description('Login test suite')
         .story('JIRA001')
@@ -41,7 +41,7 @@ describe('Test Login Scenario', () => {
     reporter.endStep();
   }, timeOut);
 
-  afterAll(async() => {
+  afterAll(async () => {
     await browser.close();
   });
 });

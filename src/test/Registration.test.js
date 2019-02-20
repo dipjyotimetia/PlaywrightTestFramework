@@ -10,12 +10,12 @@ jest.setTimeout(60000);
 
 describe('Test Registration Scenario', () => {
 
-  beforeAll(async() => {
+  beforeAll(async () => {
     browser = await BrowserFactory.setupDesktopBrowser();
     page = await BrowserFactory.newDesktopPage(browser);
   });
 
-  it('Should navigate to the join now page and register a user', async() => {
+  it('Should navigate to the join now page and register a user', async () => {
     reporter
         .description('Registration test suite')
         .story('JIRA002')
@@ -35,10 +35,10 @@ describe('Test Registration Scenario', () => {
     reporter.endStep();
 
     await har.stop();
-  },timeOut
+  }, timeOut
   );
 
-  afterAll(async() => {
+  afterAll(async () => {
     await browser.close();
   });
 });

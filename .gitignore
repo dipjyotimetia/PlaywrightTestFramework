@@ -1,9 +1,5 @@
 node_modules/*
 allure-report/*
 allure-results/*
-trace.json
-results.har
 coverage/**/**
 .idea
-log
-log/**

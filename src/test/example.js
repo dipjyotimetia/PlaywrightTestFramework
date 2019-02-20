@@ -24,7 +24,7 @@ const devices = require('puppeteer/DeviceDescriptors');
   });
   const page = await browser.newPage();
   await page.emulate(devices['iPhone6']);
-  await page.goto('https://betaesy.com.au',{
+  await page.goto('https://betaesy.com.au', {
     timeout: 50000
   });
   await page.screenshot({ path: 'iphone6.png' });
@@ -53,7 +53,7 @@ const devices = require('puppeteer/DeviceDescriptors');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://betaesy.com.au');
-  await page.pdf({ path: 'es.pdf',type: ' A4 ' });
+  await page.pdf({ path: 'es.pdf', type: ' A4 ' });
 
   await browser.close();
 })();
@@ -74,7 +74,7 @@ const devices = require('puppeteer/DeviceDescriptors');
   await browser.close();
 })();
 
-(async() => {
+(async () => {
   const browser = await puppeteer.launch({
     headless: false
   });
@@ -85,7 +85,7 @@ const devices = require('puppeteer/DeviceDescriptors');
     page.coverage.startCSSCoverage()
   ]);
 
-  await page.goto('https://google.com.au',{
+  await page.goto('https://google.com.au', {
     timeout: 0,
   });
 
@@ -96,10 +96,10 @@ const devices = require('puppeteer/DeviceDescriptors');
 
   let totalBytes = 0;
   let usedBytes = 0;
-  const coverage = [...jsCoverage,...cssCoverage];
+  const coverage = [...jsCoverage, ...cssCoverage];
   for (const entry of coverage) {
     totalBytes += entry.text.length;
-    for (const range of entry.ranges) {usedBytes += range.end - range.start - 1;}
+    for (const range of entry.ranges) { usedBytes += range.end - range.start - 1; }
   }
   console.log(`Bytes used: ${usedBytes / totalBytes * 100}%`);
 
