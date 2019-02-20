@@ -5,7 +5,6 @@
   "main": "jest",
   "scripts": {
     "test": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
-    "posttest": "allure generate",
     "watch": "cross-env NODE_ENV=beteasy.com.au jest --watch",
     "coverage": "cross-env NODE_ENV=beteasy.com.au jest --runInBand --coverage",
     "lint": "npm run jslint \"test/*.js\""
