@@ -28,7 +28,7 @@ COPY puppeteer_environment.js /app/puppeteer_environment.js
 COPY setup.js /app/setup.js
 COPY teardown.js /app/teardown.js
 COPY allure-results /app/allure-results
-COPY allure-report /app/allure-report
+COPY reports /app/reports
 COPY log/results.log /app/log/results.log
 COPY trace.json /app/trace.json
 COPY results.har /app/results.har
@@ -45,10 +45,10 @@ RUN groupadd -g 1000 jenkins && \
    useradd -u 1000 -g 1000 -m -s /bin/bash jenkins
 
 RUN chown jenkins /app/allure-results
-RUN chown jenkins /app/allure-report
 RUN chown jenkins /app/log
 RUN chown jenkins /app/trace.json
 RUN chown jenkins /app/results.har
+RUN chown jenkins /app/reports/junit.xml
 USER jenkins
 
 ENTRYPOINT ["dumb-init", "--"]

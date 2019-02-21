@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="E2E tests" tests="2" failures="0" time="56.922">
+  <testsuite name="Test Registration Scenario" errors="0" failures="0" skipped="0" timestamp="2019-02-21T05:23:12" time="37.96" tests="1">
+    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="16.79">
+    </testcase>
+  </testsuite>
+  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-02-21T05:23:50" time="18.435" tests="1">
+    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="14.49">
+    </testcase>
+  </testsuite>
+</testsuites>

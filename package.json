@@ -7,7 +7,8 @@
     "test": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
     "watch": "cross-env NODE_ENV=beteasy.com.au jest --watch",
     "coverage": "cross-env NODE_ENV=beteasy.com.au jest --runInBand --coverage",
-    "lint": "npm run jslint \"test/*.js\""
+    "lint": "npm run jslint \"test/*.js\"",
+    "report": "allure generate"
   },
   "author": "Dipjyoti Metia",
   "license": "ISC",
@@ -29,6 +30,8 @@
     "eslint": "5.14.1",
     "faker": "^4.1.0",
     "jest": "^23.6.0",
+    "chai": "4.2.0",
+    "jest-junit": "6.3.0",
     "jest-allure": "0.1.1",
     "lodash": "4.17.11",
     "mkdirp": "0.5.1",
