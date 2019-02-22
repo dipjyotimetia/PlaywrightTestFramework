@@ -17,24 +17,24 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
 ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 /usr/local/bin/dumb-init
 RUN chmod +x /usr/local/bin/dumb-init
 
-COPY src /app/src
-COPY .babelrc /app/.babelrc
-COPY .eslintrc.js /app/..eslintrc.js
-COPY Jenkinsfile /app/Jenkisfile
-COPY jest.config.js /app/jest.config.js
-COPY package.json /app/package.json
-COPY package-lock.json /app/package-lock.json
-COPY puppeteer_environment.js /app/puppeteer_environment.js
-COPY setup.js /app/setup.js
-COPY teardown.js /app/teardown.js
-COPY allure-results /app/allure-results
-COPY reports /app/reports
-COPY log/results.log /app/log/results.log
-COPY trace.json /app/trace.json
-COPY results.har /app/results.har
+# COPY src /app/src
+# COPY .babelrc /app/.babelrc
+# COPY .eslintrc.js /app/..eslintrc.js
+# COPY Jenkinsfile /app/Jenkisfile
+# COPY jest.config.js /app/jest.config.js
+# COPY package.json /app/package.json
+# COPY package-lock.json /app/package-lock.json
+# COPY puppeteer_environment.js /app/puppeteer_environment.js
+# COPY setup.js /app/setup.js
+# COPY teardown.js /app/teardown.js
+# COPY allure-results /app/allure-results
+# COPY reports /app/reports
+# COPY log/results.log /app/log/results.log
+# COPY trace.json /app/trace.json
+# COPY results.har /app/results.har
 WORKDIR /app
 
-RUN npm install
+# RUN npm install
 
 EXPOSE 3000
 
@@ -52,4 +52,5 @@ RUN chown jenkins /app/reports/junit.xml
 USER jenkins
 
 ENTRYPOINT ["dumb-init", "--"]
-CMD npm run test
+# CMD npm run test
+
