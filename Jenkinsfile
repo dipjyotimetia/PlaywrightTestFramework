@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Dependencies') {
             steps {
-                bat 'npm i'
+                sh 'npm i'
             }
         }
         stage('Build') {
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('E2E Tests') {
             steps {
-                bat 'npm test'
+                sh 'npm test'
             }
         }
         stage('PerformanceTest') {
@@ -43,17 +43,17 @@ pipeline {
         }
     }
 
-    post {
-      always {
-              script {
-                  allure([
-                      includeProperties: false,
-                      jdk: '',
-                      properties: [],
-                      reportBuildPolicy: 'ALWAYS',
-                      results: [[path: 'allure-results']]
-                  ])
-              }
-            }
-    }
+    // post {
+    //   always {
+    //           script {
+    //               allure([
+    //                   includeProperties: false,
+    //                   jdk: '',
+    //                   properties: [],
+    //                   reportBuildPolicy: 'ALWAYS',
+    //                   results: [[path: 'allure-results']]
+    //               ])
+    //           }
+    //         }
+    // }
 }
