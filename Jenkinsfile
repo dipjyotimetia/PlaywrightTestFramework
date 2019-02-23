@@ -40,11 +40,9 @@ pipeline {
 
     post {
       always {
-          stage('Publish test results') {
               steps {
                     junit 'reports/*.xml'
                 }
-            }
               script {
                   allure([
                       includeProperties: false,
