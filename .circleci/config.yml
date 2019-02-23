@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:latest-browsers
         environment:
-            CHROME_BIN: "/node_modules/puppeteer/.local-chromium/linux-624492/chrome-linux/chrome"      
+            CHROME_BIN: "/usr/bin/google-chrome"      
 
     working_directory: ~/repo
 
