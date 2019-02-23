@@ -2,7 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest-browsers      
+      - image: circleci/node:latest-browsers
+        environment:
+            CHROME_BIN: "/node_modules/puppeteer/.local-chromium/linux-624492/chrome-linux/chrome"      
 
     working_directory: ~/repo
 
@@ -16,9 +18,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      # - run:
-      #     name: Workaround for GoogleChrome/puppeteer#290
-      #     command: 'sh .circleci/setup_puppeteer.sh'
+      - run:
+          name: Workaround for GoogleChrome/puppeteer#290
+          command: 'sh .circleci/setup_puppeteer.sh'
 
       - run: npm install
 
