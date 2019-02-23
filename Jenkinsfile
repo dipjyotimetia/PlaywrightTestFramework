@@ -1,15 +1,10 @@
 pipeline {
-    // agent { 
-    //     dockerfile {
-    //         filename 'Dockerfile'
-    //         args '--privileged'
-    //     } 
-    // }
+    agent any
 
     stages {
         stage('Dependencies') {
             steps {
-                sh 'npm i'
+                bat 'npm i'
             }
         }
         stage('Build') {
@@ -26,7 +21,7 @@ pipeline {
         }
         stage('E2E Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
         stage('PerformanceTest') {
@@ -43,17 +38,17 @@ pipeline {
         }
     }
 
-    // post {
-    //   always {
-    //           script {
-    //               allure([
-    //                   includeProperties: false,
-    //                   jdk: '',
-    //                   properties: [],
-    //                   reportBuildPolicy: 'ALWAYS',
-    //                   results: [[path: 'allure-results']]
-    //               ])
-    //           }
-    //         }
-    // }
+    post {
+      always {
+              script {
+                  allure([
+                      includeProperties: false,
+                      jdk: '',
+                      properties: [],
+                      reportBuildPolicy: 'ALWAYS',
+                      results: [[path: 'allure-results']]
+                  ])
+              }
+            }
+    }
 }
