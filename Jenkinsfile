@@ -1,10 +1,10 @@
 pipeline {
-    agent { 
-        dockerfile {
-            filename 'Dockerfile'
-            args '--privileged'
-        } 
-    }
+    // agent { 
+    //     dockerfile {
+    //         filename 'Dockerfile'
+    //         args '--privileged'
+    //     } 
+    // }
 
     stages {
         stage('Dependencies') {
