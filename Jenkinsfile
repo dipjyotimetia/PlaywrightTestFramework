@@ -49,6 +49,9 @@ pipeline {
                       results: [[path: 'allure-results']]
                   ])
               }
+              stage('Publish test results') {
+                    junit 'reports/*.xml'
+                } 
             }
     }
 }
