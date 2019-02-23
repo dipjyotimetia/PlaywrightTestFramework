@@ -40,9 +40,7 @@ pipeline {
 
     post {
       always {
-              steps {
-                    junit 'reports/*.xml'
-                }
+              junit 'reports/*.xml'
               script {
                   allure([
                       includeProperties: false,
