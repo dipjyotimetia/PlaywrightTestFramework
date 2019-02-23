@@ -40,6 +40,11 @@ pipeline {
 
     post {
       always {
+          stage('Publish test results') {
+              steps {
+                    junit 'reports/*.xml'
+                }
+            }
               script {
                   allure([
                       includeProperties: false,
@@ -48,10 +53,8 @@ pipeline {
                       reportBuildPolicy: 'ALWAYS',
                       results: [[path: 'allure-results']]
                   ])
-              }
-              stage('Publish test results') {
-                    junit 'reports/*.xml'
-                } 
-            }
+                }
+               
+        }
     }
 }
