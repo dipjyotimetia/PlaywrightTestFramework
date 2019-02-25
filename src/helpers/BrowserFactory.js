@@ -1,13 +1,11 @@
 import puppeteer from 'puppeteer';
 import devices from 'puppeteer/DeviceDescriptors';
-const iPhone8plus = devices['iPhone 8 Plus'];
 const iPhoneX = devices['iPhone X'];
-const pixel2xl = devices['Pixel 2 XL'];
 const iPadPro = devices['iPad Pro'];
 
 const desktopResolution = {
-  width: 1366,
-  height: 768
+  width: 1600,
+  height: 900
 };
 
 const mobileResolution = {
@@ -25,7 +23,7 @@ export const BrowserFactory = {
         slowMo: 500,
         devtools: true
       } : {
-        headless: true,
+        headless: false,
         // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
         args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`,`--disable-dev-shm-usage`],
         executablePath: process.env.CHROME_BIN || null,
@@ -78,30 +76,12 @@ export const BrowserFactory = {
     return page;
   },
 
-  newIphone8Page: async browser => {
-    const context = browser.defaultBrowserContext();
-    await context.clearPermissionOverrides();
-    await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
-    const page = await context.newPage();
-    await page.emulate(iPhone8plus);
-    return page;
-  },
-
   newIphoneXPage: async browser => {
     const context = browser.defaultBrowserContext();
     await context.clearPermissionOverrides();
     await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
     const page = await context.newPage();
     await page.emulate(iPhoneX);
-    return page;
-  },
-
-  newPixel2Page: async browser => {
-    const context = browser.defaultBrowserContext();
-    await context.clearPermissionOverrides();
-    await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
-    const page = await context.newPage();
-    await page.emulate(pixel2xl);
     return page;
   },
 

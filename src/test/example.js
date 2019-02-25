@@ -106,3 +106,13 @@ const devices = require('puppeteer/DeviceDescriptors');
   await page.close();
 })();
 
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.tracing.start({ path: 'trace.json' });
+  await page.goto('https://beteasy.com.au', {
+    waitUntil: 'networkidle'
+  });
+  await page.tracing.stop();
+  browser.close();
+})();
