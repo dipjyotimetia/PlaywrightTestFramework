@@ -73,9 +73,6 @@ The environment details are stored in the `config.json` file. To change environm
 
 # Config file for storing localised data configurations and credentials.
 ./config.json
-
-# Configure ci build pipeline
-./ci/bin/sh
 ```
 
 ```NPM Scripts
@@ -92,18 +89,24 @@ The environment details are stored in the `config.json` file. To change environm
 ```
 
 
+[Jest](https://github.com/facebook/jest/blob/master/README.md)
 
-Handling failures
-What if a url you tried to load didn't exist?
+[Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/README.md)
 
-The web server will return the 'Not Found' page with HTTP status code 404 in the response.The above script would treat such page as a perfectly valid response.
+[Sinon](https://github.com/sinonjs/sinon/blob/master/README.md)
 
-Most times you want to handle this as an error case.
 
-For example, if you're writing a bot that checks for broken links, you want to distinguish 404 NotFound response from 200 Ok response.
 
-In HTTP protocol status codes 4xx and 5xx indicate errors. 2xx indicate success and 3xx indicate successful redirection.
+This patch allows passing 0 to disable timeout for the following methods:
+```
+await page.goto(`http://www.goole.com.au`, {timeout: 0})
+```
+- page.goto
+- page.waitForNavigation
+- page.goForward
+- page.goBack
 
-Puppeteer provides Page.setRequestInterception(true) hook for intercepting HTTP requests before they happen as well as inspecting completed HTTP responses.
-
-Here's a program that prints information about all HTTP requests and responses:
+### Docker container run
+```
+docker run --privileged puppeteertestframework:latest
+```

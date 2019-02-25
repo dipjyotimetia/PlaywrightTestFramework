@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="E2E tests" tests="2" failures="0" time="50.421">
-  <testsuite name="Test Registration Scenario" errors="0" failures="0" skipped="0" timestamp="2019-02-25T05:09:36" time="26.515" tests="1">
-    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="15.695">
+<testsuites name="E2E tests" tests="3" failures="0" time="38.454">
+  <testsuite name="Test Registration Scenario" errors="0" failures="0" skipped="0" timestamp="2019-02-25T13:46:54" time="13.533" tests="1">
+    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="9.975">
     </testcase>
   </testsuite>
-  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-02-25T05:10:02" time="23.377" tests="1">
-    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="14.893">
+  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-02-25T13:47:07" time="13.86" tests="1">
+    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="12.817">
+    </testcase>
+  </testsuite>
+  <testsuite name="Login page mocking" errors="0" failures="0" skipped="0" timestamp="2019-02-25T13:47:21" time="10.859" tests="1">
+    <testcase classname="Login page mocking login to mocked user" name="Login page mocking login to mocked user" time="9.908">
     </testcase>
   </testsuite>
 </testsuites>

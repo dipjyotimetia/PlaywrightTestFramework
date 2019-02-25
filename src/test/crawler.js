@@ -11,8 +11,8 @@ async function run(site) {
   await page.setRequestInterception(true);
 
   page.on('request', request => {
-    // const url = request.url();
-    // console.log(chalk.blue('request url:'), url);
+    const url = request.url();
+    console.log(chalk.blue('request url:'), url);
     request.continue();
   });
 
@@ -26,7 +26,7 @@ async function run(site) {
     const url = request.url();
     const status = response.status();
     if (status.toString() === '200') {
-      // console.log(chalk.yellow('response url:'), url, chalk.bgGreen('status:'), chalk.green(status));
+      console.log(chalk.yellow('response url:'), url, chalk.bgGreen('status:'), chalk.green(status));
     } else {
       console.log(chalk.red('response url:'), url, chalk.bgRed('status:'), chalk.red(status));
     }
