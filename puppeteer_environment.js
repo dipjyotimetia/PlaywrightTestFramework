@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const chalk = require('chalk');
 const NodeEnvironment = require('jest-environment-node');
 const puppeteer = require('puppeteer');
@@ -8,10 +9,6 @@ const path = require('path');
 const DIR = path.join(os.tmpdir(), 'jest_puppeteer_global_setup');
 
 class PuppeteerEnvironment extends NodeEnvironment {
-  constructor(config) {
-    super(config);
-  }
-
   async setup() {
     console.log(chalk.yellow('Setup Test Environment.'));
     await super.setup();

@@ -12,7 +12,9 @@ class Mocker {
   mocker() {
     this.page.setRequestInterception(true);
     this.page.on('request', req => {
-      const mock = _.find(this.mocks, ({ finalUrl }) => req.url().includes(finalUrl));
+      const mock = _.find(this.mocks, ({ finalUrl }) =>
+        req.url().includes(finalUrl)
+      );
       if (mock) {
         req.respond(mock);
       } else {
@@ -35,8 +37,8 @@ class Mocker {
           status,
           // method,
           contentType: 'application/json; charset=utf-8',
-          headers: getCorsHeaders()
-        }
+          headers: getCorsHeaders(),
+        },
       ];
     }
   }

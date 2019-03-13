@@ -1,7 +1,7 @@
 FROM node:10-slim
 
 #Adding chrome installation path to environment need to change when pupeeteer updates
-ENV CHROME_BIN="/app/node_modules/puppeteer/.local-chromium/linux-624492/chrome-linux/chrome"
+ENV CHROME_BIN="/app/node_modules/puppeteer/.local-chromium/linux-637110/chrome-linux/chrome"
 
 RUN apt-get update && apt-get install -yq libgconf-2-4
 

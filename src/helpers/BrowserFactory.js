@@ -1,63 +1,87 @@
 import puppeteer from 'puppeteer';
 import devices from 'puppeteer/DeviceDescriptors';
+
 const iPhoneX = devices['iPhone X'];
 const iPadPro = devices['iPad Pro'];
 
 const desktopResolution = {
   width: 1600,
-  height: 900
+  height: 900,
 };
 
 const mobileResolution = {
   width: 375,
-  height: 812
+  height: 812,
 };
 
 export const BrowserFactory = {
-
   setupDesktopBrowser: async () => {
-    const browser = await puppeteer.launch(process.env.DEBUG ?
-      {
-        headless: false,
-        args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
-        slowMo: 500,
-        devtools: true
-      } : {
-        headless: true,
-        // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
-        args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`, `--disable-dev-shm-usage`],
-        executablePath: process.env.CHROME_BIN || null,
-        ignoreHTTPSErrors: true,
-        dumpio: false
-      });
+    const browser = await puppeteer.launch(
+      process.env.DEBUG
+        ? {
+            headless: false,
+            args: [
+              `--no-sandbox`,
+              '--start-maximized',
+              '--disable-setuid-sandbox',
+              `--disable-infobars`,
+            ],
+            slowMo: 500,
+            devtools: true,
+          }
+        : {
+            headless: true,
+            // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
+            args: [
+              `--no-sandbox`,
+              '--start-maximized',
+              '--disable-setuid-sandbox',
+              `--disable-infobars`,
+              `--disable-dev-shm-usage`,
+            ],
+            executablePath: process.env.CHROME_BIN || null,
+            ignoreHTTPSErrors: true,
+            dumpio: false,
+          }
+    );
     return browser;
   },
 
   setupMobileBrowser: async () => {
-    const browser = await puppeteer.launch(process.env.DEBUG ?
-      {
-        headless: false,
-        args: [`--no-sandbox`, '--start-maximized', '--disable-setuid-sandbox', `--disable-infobars`],
-        slowMo: 500,
-        devtools: true
-      } : {
-        headless: false,
-        // args: [`--window-size=${mobileResolution.width},${mobileResolution.height}`],
-        executablePath: process.env.CHROME_BIN || null,
-        ignoreHTTPSErrors: true,
-        dumpio: false
-      });
+    const browser = await puppeteer.launch(
+      process.env.DEBUG
+        ? {
+            headless: false,
+            args: [
+              `--no-sandbox`,
+              '--start-maximized',
+              '--disable-setuid-sandbox',
+              `--disable-infobars`,
+            ],
+            slowMo: 500,
+            devtools: true,
+          }
+        : {
+            headless: false,
+            // args: [`--window-size=${mobileResolution.width},${mobileResolution.height}`],
+            executablePath: process.env.CHROME_BIN || null,
+            ignoreHTTPSErrors: true,
+            dumpio: false,
+          }
+    );
     return browser;
   },
 
   newDesktopPage: async browser => {
     const context = browser.defaultBrowserContext();
     await context.clearPermissionOverrides();
-    await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
+    await context.overridePermissions(`https://${process.env.NODE_ENV}`, [
+      'geolocation',
+    ]);
     const page = await context.newPage();
     await page.setViewport({
       width: desktopResolution.width,
-      height: desktopResolution.height
+      height: desktopResolution.height,
     });
     return page;
   },
@@ -65,13 +89,15 @@ export const BrowserFactory = {
   newMobilePage: async browser => {
     const context = browser.defaultBrowserContext();
     await context.clearPermissionOverrides();
-    await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
+    await context.overridePermissions(`https://${process.env.NODE_ENV}`, [
+      'geolocation',
+    ]);
     const page = await context.newPage();
     await page.setViewport({
       width: mobileResolution.width,
       height: mobileResolution.height,
       isMobile: true,
-      hasTouch: true
+      hasTouch: true,
     });
     return page;
   },
@@ -79,7 +105,9 @@ export const BrowserFactory = {
   newIphoneXPage: async browser => {
     const context = browser.defaultBrowserContext();
     await context.clearPermissionOverrides();
-    await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
+    await context.overridePermissions(`https://${process.env.NODE_ENV}`, [
+      'geolocation',
+    ]);
     const page = await context.newPage();
     await page.emulate(iPhoneX);
     return page;
@@ -88,7 +116,9 @@ export const BrowserFactory = {
   newIpadPro: async browser => {
     const context = browser.defaultBrowserContext();
     await context.clearPermissionOverrides();
-    await context.overridePermissions('https://' + process.env.NODE_ENV, ['geolocation']);
+    await context.overridePermissions(`https://${process.env.NODE_ENV}`, [
+      'geolocation',
+    ]);
     const page = await context.newPage();
     await page.emulate(iPadPro);
     return page;

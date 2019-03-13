@@ -1,114 +1,142 @@
 module.exports = {
-    "root": true,
-
-    "env": {
-        "node": true,
-        "es6": true,
-        "jest": true
-    },
-
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
+    "parser": "babel-eslint",
     "parserOptions": {
-        "ecmaVersion": 8,
-        "sourceType": "module"
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        // Can I remove these now?
+        "ecmaFeatures": {
+            "impliedStrict": true,
+            "classes": true
+        }
     },
-
-    /**
-     * ESLint rules
-     *
-     * All available rules: http://eslint.org/docs/rules/
-     *
-     * Rules take the following form:
-     *   "rule-name", [severity, { opts }]
-     * Severity: 2 == error, 1 == warning, 0 == off.
-     */
+    "env": {
+        "browser": true,
+        "node": true,
+        "jquery": true,
+        "jest": true,
+        "es6": true
+    },
     "rules": {
-        /**
-         * Enforced rules
-         */
-
-
-        // syntax preferences
-        "quotes": [2, "single", {
-            "avoidEscape": true,
-            "allowTemplateLiterals": true
-        }],
-        "semi": 2,
-        "no-extra-semi": 2,
-        "comma-style": [2, "last"],
-        "wrap-iife": [2, "inside"],
-        "spaced-comment": [2, "always", {
-            "markers": ["*"]
-        }],
-        "eqeqeq": [2],
-        "arrow-body-style": [2, "as-needed"],
-        "accessor-pairs": [2, {
-            "getWithoutSet": false,
-            "setWithoutGet": false
-        }],
-        "brace-style": [2, "1tbs", { "allowSingleLine": true }],
-        "curly": [2, "all"],
-        "new-parens": 2,
-        "func-call-spacing": 2,
-        "arrow-parens": [2, "as-needed"],
-        "prefer-const": 2,
-        "quote-props": [2, "consistent"],
-
-        // anti-patterns
-        "no-var": 2,
-        "no-with": 2,
-        "no-multi-str": 2,
-        "no-caller": 2,
-        "no-implied-eval": 2,
-        "no-labels": 2,
-        "no-new-object": 2,
-        "no-octal-escape": 2,
-        "no-self-compare": 2,
-        "no-shadow-restricted-names": 2,
-        "no-cond-assign": 2,
-        "no-debugger": 2,
-        "no-dupe-keys": 2,
-        "no-duplicate-case": 2,
-        "no-empty-character-class": 2,
-        "no-unreachable": 2,
-        "no-unsafe-negation": 2,
-        "radix": 2,
-        "valid-typeof": 2,
-        "no-unused-vars": [2, { "args": "none", "vars": "local", "varsIgnorePattern": "([fx]?describe|[fx]?it|beforeAll|beforeEach|afterAll|afterEach)" }],
-        "no-implicit-globals": [2],
-
-        // es2015 features
-        "require-yield": 2,
-        "template-curly-spacing": [2, "never"],
-
-        // spacing details
-        "space-infix-ops": 2,
-        "space-in-parens": [2, "never"],
-        //"space-before-function-paren": [2, "never"],
-        "no-whitespace-before-property": 2,
-        "keyword-spacing": [2, {
-            "overrides": {
-                "if": { "after": true },
-                "else": { "after": true },
-                "for": { "after": true },
-                "while": { "after": true },
-                "do": { "after": true },
-                "switch": { "after": true },
-                "return": { "after": true }
+        "no-debugger": 0,
+        "no-alert": 0,
+        "no-await-in-loop": 0,
+        "no-return-assign": [
+            "error",
+            "except-parens"
+        ],
+        "no-restricted-syntax": [
+            2,
+            "ForInStatement",
+            "LabeledStatement",
+            "WithStatement"
+        ],
+        "no-unused-vars": [
+            1,
+            {
+                "ignoreSiblings": true,
+                "argsIgnorePattern": "res|next|^err"
             }
-        }],
-        "arrow-spacing": [2, {
-            "after": true,
-            "before": true
-        }],
-
-        // file whitespace
-        "no-multiple-empty-lines": [2, { "max": 2 }],
-        "no-mixed-spaces-and-tabs": 2,
-        "no-trailing-spaces": 2,
-        "linebreak-style": [process.platform === "win32" ? 0 : 2, "unix"],
-        "indent": [2, 2, { "SwitchCase": 1, "CallExpression": { "arguments": 2 }, "MemberExpression": 2 }],
-        "key-spacing": [2, {
-            "beforeColon": false
-        }]
-    }
+        ],
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "all",
+            }
+        ],
+        "arrow-body-style": [
+            2,
+            "as-needed"
+        ],
+        "no-unused-expressions": [
+            2,
+            {
+                "allowTaggedTemplates": true
+            }
+        ],
+        "no-param-reassign": [
+            2,
+            {
+                "props": false
+            }
+        ],
+        "no-console": 0,
+        "import/prefer-default-export": 0,
+        "import": 0,
+        "func-names": 0,
+        "space-before-function-paren": 0,
+        "comma-dangle": 0,
+        "max-len": 0,
+        "import/extensions": 0,
+        "no-underscore-dangle": 0,
+        "consistent-return": 0,
+        "react/display-name": 1,
+        "react/no-array-index-key": 0,
+        "react/react-in-jsx-scope": 0,
+        "react/prefer-stateless-function": 0,
+        "react/forbid-prop-types": 0,
+        "react/no-unescaped-entities": 0,
+        "jsx-a11y/accessible-emoji": 0,
+        "react/require-default-props": 0,
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "radix": 0,
+        "no-shadow": [
+            2,
+            {
+                "hoist": "all",
+                "allow": [
+                    "resolve",
+                    "reject",
+                    "done",
+                    "next",
+                    "err",
+                    "error"
+                ]
+            }
+        ],
+        "quotes": [
+            2,
+            "single",
+            {
+                "avoidEscape": true,
+                "allowTemplateLiterals": true
+            }
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "es5",
+                "singleQuote": true,
+                "printWidth": 80,
+            }
+        ],
+        "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/anchor-is-valid": [
+            "warn",
+            {
+                "aspects": [
+                    "invalidHref"
+                ]
+            }
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    },
+    "plugins": [
+        "html",
+        "prettier",
+        "react-hooks"
+    ]
 }

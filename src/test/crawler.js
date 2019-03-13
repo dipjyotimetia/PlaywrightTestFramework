@@ -26,9 +26,19 @@ async function run(site) {
     const url = request.url();
     const status = response.status();
     if (status.toString() === '200') {
-      console.log(chalk.yellow('response url:'), url, chalk.bgGreen('status:'), chalk.green(status));
+      console.log(
+        chalk.yellow('response url:'),
+        url,
+        chalk.bgGreen('status:'),
+        chalk.green(status)
+      );
     } else {
-      console.log(chalk.red('response url:'), url, chalk.bgRed('status:'), chalk.red(status));
+      console.log(
+        chalk.red('response url:'),
+        url,
+        chalk.bgRed('status:'),
+        chalk.red(status)
+      );
     }
 
     if (url === mainUrl) {

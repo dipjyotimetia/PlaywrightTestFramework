@@ -1,4 +1,5 @@
 import { createLogger, format, transports } from 'winston';
+
 const fs = require('fs');
 const path = require('path');
 
@@ -11,32 +12,33 @@ if (!fs.existsSync(logDir)) {
 
 const filename = path.join(logDir, 'results.log');
 
-const logger = caller => createLogger({
-  level: env !== 'production' ? 'info' : 'debug',
-  format: format.combine(
+const logger = caller =>
+  createLogger({
+    level: env !== 'production' ? 'info' : 'debug',
+    format: format.combine(
       format.label({ label: path.basename(caller) }),
       format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' })
-  ),
-  transports: [
-    new transports.Console({
-      format: format.combine(
+    ),
+    transports: [
+      new transports.Console({
+        format: format.combine(
           format.colorize(),
           format.printf(
-              info =>
-                `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
+            info =>
+              `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
           )
-      )
-    }),
-    new transports.File({
-      filename,
-      format: format.combine(
+        ),
+      }),
+      new transports.File({
+        filename,
+        format: format.combine(
           format.printf(
-              info =>
-                `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
+            info =>
+              `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
           )
-      )
-    })
-  ]
-});
+        ),
+      }),
+    ],
+  });
 
 module.exports = logger;
