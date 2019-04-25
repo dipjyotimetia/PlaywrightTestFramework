@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="E2E tests" tests="4" failures="0" time="53.073">
-  <testsuite name="Test Registration Scenario" errors="0" failures="0" skipped="0" timestamp="2019-03-13T11:23:02" time="17.385" tests="1">
-    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="12.785">
+<testsuites name="E2E tests" tests="4" failures="1" time="49.873">
+  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-04-25T02:12:42" time="18.585" tests="1">
+    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="15.908">
     </testcase>
   </testsuite>
-  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-03-13T11:23:20" time="13.269" tests="1">
-    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="12.268">
+  <testsuite name="Test Registration Scenario" errors="0" failures="1" skipped="0" timestamp="2019-04-25T02:13:00" time="9.514" tests="1">
+    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="6.892">
+      <failure>Error: Node is either not visible or not an HTMLElement
+    at ElementHandle._clickablePoint (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\JSHandle.js:196:13)
+    at processTicksAndRejections (internal/process/task_queues.js:88:5)
+    at ElementHandle.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\JSHandle.js:248:20)
+    at DOMWorld.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\DOMWorld.js:360:5)
+    at AccountRegistrationPage.enterDetails (C:\ccviews\PuppeteerTestFramework\src\pages\AccountRegistrationPage.js:59:5)
+    at Object.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\src\test\Registration.test.js:34:7)
+  -- ASYNC --
+    at ElementHandle.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\helper.js:110:27)
+    at DOMWorld.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\DOMWorld.js:360:18)
+    at processTicksAndRejections (internal/process/task_queues.js:88:5)
+    at AccountRegistrationPage.enterDetails (C:\ccviews\PuppeteerTestFramework\src\pages\AccountRegistrationPage.js:59:5)
+    at Object.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\src\test\Registration.test.js:34:7)
+  -- ASYNC --
+    at Frame.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\helper.js:110:27)
+    at Page.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\Page.js:1015:29)
+    at AccountRegistrationPage.click [as enterDetails] (C:\ccviews\PuppeteerTestFramework\src\pages\AccountRegistrationPage.js:59:21)
+    at processTicksAndRejections (internal/process/task_queues.js:88:5)
+    at Object.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\src\test\Registration.test.js:34:7)</failure>
     </testcase>
   </testsuite>
-  <testsuite name="Login page mocking" errors="0" failures="0" skipped="0" timestamp="2019-03-13T11:23:33" time="11.257" tests="1">
-    <testcase classname="Login page mocking login to mocked user" name="Login page mocking login to mocked user" time="10.298">
+  <testsuite name="Login page mocking" errors="0" failures="0" skipped="0" timestamp="2019-04-25T02:13:10" time="11.352" tests="1">
+    <testcase classname="Login page mocking login to mocked user" name="Login page mocking login to mocked user" time="10.617">
     </testcase>
   </testsuite>
-  <testsuite name="Test Registration Scenario in Mobile" errors="0" failures="0" skipped="0" timestamp="2019-03-13T11:23:44" time="10.935" tests="1">
-    <testcase classname="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" name="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" time="9.906">
+  <testsuite name="Test Registration Scenario in Mobile" errors="0" failures="0" skipped="0" timestamp="2019-04-25T02:13:21" time="10.195" tests="1">
+    <testcase classname="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" name="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" time="9.468">
     </testcase>
   </testsuite>
 </testsuites>
