@@ -13,7 +13,7 @@ class AccountRegistrationPage extends BasePage {
       lname: "input[name='Surname']",
       dob: "input[name='DOB']",
       address: "input[name='AutoResidentialAddress1']",
-      addressAutoComplete: '.jn-reg-address--auto .cb-autoc__panel button span',
+      addressAutoComplete: '.cb-scroll-trap--at-bottom button',
       mobile: "input[name='MobileNo']",
       email: "input[name='Email']",
       password: "input[name='Password']",
@@ -22,7 +22,7 @@ class AccountRegistrationPage extends BasePage {
       fname: faker.name.firstName(),
       lname: faker.name.lastName(),
       dob: '11/11/1980',
-      address: 'G 120 Collins St Melbourne VIC 3000',
+      address: 'L 26 120 collins street , Melbourne VIC 3000',
       mobile: faker.phone.phoneNumber(),
       email: faker.internet.email(),
       password: 'Password1',
@@ -69,7 +69,7 @@ class AccountRegistrationPage extends BasePage {
     await autoComplete.click();
     await this.page.click(this.selectors.mobile);
     await this.page.type(this.selectors.mobile, data.mobile);
-    logger.info('User details enterted');
+    logger.info('User details entered');
     return data;
   }
 }

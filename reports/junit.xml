@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="E2E tests" tests="4" failures="1" time="62.525">
-  <testsuite name="Test Registration Scenario in Mobile" errors="0" failures="0" skipped="0" timestamp="2019-04-26T13:05:35" time="14.299" tests="1">
-    <testcase classname="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" name="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" time="10.695">
+<testsuites name="E2E tests" tests="4" failures="0" time="47.533">
+  <testsuite name="Test Registration Scenario in Mobile" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:16" time="14.914" tests="1">
+    <testcase classname="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" name="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" time="11.169">
     </testcase>
   </testsuite>
-  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-04-26T13:05:50" time="21.195" tests="1">
-    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="20.156">
+  <testsuite name="Test Registration Scenario" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:31" time="10.64" tests="1">
+    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="9.952">
     </testcase>
   </testsuite>
-  <testsuite name="Test Registration Scenario" errors="0" failures="1" skipped="0" timestamp="2019-04-26T13:06:11" time="15.496" tests="1">
-    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="12.986">
-      <failure>Error: Node is either not visible or not an HTMLElement
-    at ElementHandle._clickablePoint (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\JSHandle.js:199:13)
-    at processTicksAndRejections (internal/process/task_queues.js:88:5)
-    at ElementHandle.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\JSHandle.js:265:20)
-    at DOMWorld.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\DOMWorld.js:367:5)
-    at AccountRegistrationPage.enterDetails (C:\ccviews\PuppeteerTestFramework\src\pages\AccountRegistrationPage.js:59:5)
-    at Object.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\src\test\Registration.test.js:34:7)
-  -- ASYNC --
-    at ElementHandle.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\helper.js:110:27)
-    at DOMWorld.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\DOMWorld.js:367:18)
-    at processTicksAndRejections (internal/process/task_queues.js:88:5)
-    at AccountRegistrationPage.enterDetails (C:\ccviews\PuppeteerTestFramework\src\pages\AccountRegistrationPage.js:59:5)
-    at Object.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\src\test\Registration.test.js:34:7)
-  -- ASYNC --
-    at Frame.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\helper.js:110:27)
-    at Page.click (C:\ccviews\PuppeteerTestFramework\node_modules\puppeteer\lib\Page.js:988:29)
-    at AccountRegistrationPage.click [as enterDetails] (C:\ccviews\PuppeteerTestFramework\src\pages\AccountRegistrationPage.js:59:21)
-    at processTicksAndRejections (internal/process/task_queues.js:88:5)
-    at Object.&lt;anonymous&gt; (C:\ccviews\PuppeteerTestFramework\src\test\Registration.test.js:34:7)</failure>
+  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:41" time="11.326" tests="1">
+    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="10.811">
     </testcase>
   </testsuite>
-  <testsuite name="Login page mocking" errors="0" failures="0" skipped="0" timestamp="2019-04-26T13:06:26" time="11.252" tests="1">
-    <testcase classname="Login page mocking login to mocked user" name="Login page mocking login to mocked user" time="10.314">
+  <testsuite name="Login page mocking" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:53" time="10.466" tests="1">
+    <testcase classname="Login page mocking login to mocked user" name="Login page mocking login to mocked user" time="9.692">
     </testcase>
   </testsuite>
 </testsuites>
