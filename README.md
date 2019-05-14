@@ -88,11 +88,12 @@ The environment details are stored in the `config.json` file. To change environm
 
 [Sinon](https://github.com/sinonjs/sinon/blob/master/README.md)
 
-
+[Axios](https://github.com/axios/axios/blob/master/README.md)
 
 This patch allows passing 0 to disable timeout for the following methods:
 ```
 await page.goto(`http://www.goole.com.au`, {timeout: 0})
+await page.waitForSelector(`a[href='/join-now']`, {visible: true})
 ```
 - page.goto
 - page.waitForNavigation
