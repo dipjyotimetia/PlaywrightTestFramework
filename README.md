@@ -5,17 +5,17 @@
 ## Versions / Dependencies
 
 ```
-Puppeteer : 1.12.2
-Node:       10.15.0        
-NPM:        6.8.0         
+Puppeteer : 1.16
+Node:       12.2.0        
+NPM:        6.9.0         
 ```
 
-__Note:__ No local evironment has been set up, so manual installation is nessasary at the moment.
+__Note:__ No local environment has been set up, so manual installation is necessary at the moment.
 
 ## Getting up and running
 
 ```bash
-# Pre: Ensure dependancies are installed
+# Pre: Ensure dependencies are installed
 
 # 1: Create new folder in desired location and move into it
 
@@ -52,26 +52,19 @@ The environment details are stored in the `config.json` file. To change environm
 ```bash
 # All source code lives in here
 ./src/
-
 # Test helpers used to abstract and DRY up code
 ./src/helpers/
-
 # Page objects. These are used to store functions and behaviour shared by a particular page
 ./src/helepers/pages/
-
 # Browser factory for setting up standard browser types
 ./src/helpers/BrowserFactory.js
-
 # A helper for creating promises to analyze network requests
 ./src/helpers/RequestHelper.js
-
 # An example of mock response
 ./src/mock
-
 # Location of all test files
 ./src/test
-
-# Config file for storing localised data configurations and credentials.
+# Config file for storing localized data configurations and credentials.
 ./config.json
 ```
 
