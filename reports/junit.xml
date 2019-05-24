@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="E2E tests" tests="4" failures="0" time="47.533">
-  <testsuite name="Test Registration Scenario in Mobile" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:16" time="14.914" tests="1">
-    <testcase classname="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" name="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" time="11.169">
+<testsuites name="E2E tests" tests="4" failures="0" time="73.125">
+  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-05-24T11:58:07" time="31.021" tests="1">
+    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="28.347">
     </testcase>
   </testsuite>
-  <testsuite name="Test Registration Scenario" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:31" time="10.64" tests="1">
-    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="9.952">
+  <testsuite name="Test Registration Scenario" errors="0" failures="0" skipped="0" timestamp="2019-05-24T11:58:38" time="15.198" tests="1">
+    <testcase classname="Test Registration Scenario Should navigate to the join now page and register a user" name="Test Registration Scenario Should navigate to the join now page and register a user" time="11.377">
     </testcase>
   </testsuite>
-  <testsuite name="Test Login Scenario" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:41" time="11.326" tests="1">
-    <testcase classname="Test Login Scenario Should navigate to the login page and login a user" name="Test Login Scenario Should navigate to the login page and login a user" time="10.811">
+  <testsuite name="Login page mocking" errors="0" failures="0" skipped="0" timestamp="2019-05-24T11:58:54" time="10.902" tests="1">
+    <testcase classname="Login page mocking login to mocked user" name="Login page mocking login to mocked user" time="10.23">
     </testcase>
   </testsuite>
-  <testsuite name="Login page mocking" errors="0" failures="0" skipped="0" timestamp="2019-05-14T12:21:53" time="10.466" tests="1">
-    <testcase classname="Login page mocking login to mocked user" name="Login page mocking login to mocked user" time="9.692">
+  <testsuite name="Test Registration Scenario in Mobile" errors="0" failures="0" skipped="0" timestamp="2019-05-24T11:59:05" time="15.672" tests="1">
+    <testcase classname="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" name="Test Registration Scenario in Mobile Should navigate to the join now page and register a user" time="14.835">
     </testcase>
   </testsuite>
 </testsuites>
