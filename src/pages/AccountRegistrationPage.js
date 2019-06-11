@@ -9,14 +9,14 @@ class AccountRegistrationPage extends BasePage {
     super(page);
     this.selectors = {
       joinNowBtn: "a[href='/join-now']",
-      fname: "input[name='FirstName']",
-      lname: "input[name='Surname']",
+      fname: "input[name='firstName']",
+      lname: "input[name='surname']",
       dob: "input[name='DOB']",
-      address: "input[name='AutoResidentialAddress1']",
-      addressAutoComplete: '.cb-scroll-trap--at-bottom button',
-      mobile: "input[name='MobileNo']",
-      email: "input[name='Email']",
-      password: "input[name='Password']",
+      address: "input[name='address']",
+      addressAutoComplete: "button[class*='AutoComplete']",
+      mobile: "input[name='mobileNumber']",
+      email: "input[name='email']",
+      password: "input[name='password']",
     };
     this.defaultUserData = {
       fname: faker.name.firstName(),
