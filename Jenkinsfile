@@ -46,6 +46,7 @@ pipeline {
     post {
       always {
               junit 'reports/*.xml'
+	      publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'reports', reportFiles: 'report.html', reportName: 'WebUi Test Report', reportTitles: ''])
               script {
                   allure([
                       includeProperties: false,
