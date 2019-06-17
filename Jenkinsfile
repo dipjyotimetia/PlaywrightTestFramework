@@ -1,6 +1,11 @@
 pipeline {
     agent any
-
+//agent {
+    	//docker {
+			//image 'puppeteer:latest'
+      		//args '--privileged'
+    	//}
+  	//}
     stages {
         stage('Dependencies') {
             steps {
