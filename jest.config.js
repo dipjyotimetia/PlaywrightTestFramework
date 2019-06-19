@@ -1,7 +1,5 @@
 module.exports = {
-  globalSetup: './setup.js',
-  globalTeardown: './teardown.js',
-  testEnvironment: './puppeteer_environment.js',
+  preset: 'jest-puppeteer',
   setupFilesAfterEnv: ['jest-allure/dist/setup'],
   reporters: [
     'default',
