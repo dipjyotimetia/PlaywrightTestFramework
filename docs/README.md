@@ -1,12 +1,12 @@
-# Puppeteer | Test | UI Framework
+# Puppeteer | AutomationTest | UI Framework
 
 [![express logo](https://user-images.githubusercontent.com/10379601/29446482-04f7036a-841f-11e7-9872-91d1fc2ea683.png)](https://www.npmjs.com/package/puppeteer)
 
 ## Versions / Dependencies
 
 ```
-Puppeteer : 1.16
-Node:       12.2.0
+Puppeteer : 1.18
+Node:       12.4.0
 NPM:        6.9.0
 ```
 
@@ -68,7 +68,7 @@ The environment details are stored in the `config.json` file. To change environm
 ./config.json
 ```
 
-```NPM Scripts
+```bash
 "scripts": {
     "test:env": "cross-env NODE_ENV=beteasy.com.au jest --runInBand"
     "test": "jest --runInBand",
@@ -81,17 +81,9 @@ The environment details are stored in the `config.json` file. To change environm
   },
 ```
 
-[Jest](https://github.com/facebook/jest/blob/master/README.md)
-
-[Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/README.md)
-
-[Sinon](https://github.com/sinonjs/sinon/blob/master/README.md)
-
-[Axios](https://github.com/axios/axios/blob/master/README.md)
-
 This patch allows passing 0 to disable timeout for the following methods:
 
-```
+```bash
 await page.goto(`http://www.goole.com.au`, {timeout: 0})
 await page.waitForSelector(`a[href='/join-now']`, {visible: true})
 ```
@@ -103,6 +95,6 @@ await page.waitForSelector(`a[href='/join-now']`, {visible: true})
 
 ### Docker container run
 
-```
-docker run --privileged puppeteertestframework:latest
+```bash
+docker run --privileged puppeteertest:latest
 ```
