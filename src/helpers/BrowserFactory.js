@@ -31,7 +31,6 @@ export const BrowserFactory = {
           }
         : {
             headless: true,
-            // args: [`--start-maximized`, `--window-size=${desktopResolution.width},${desktopResolution.height}`, '--no-sandbox']
             args: [
               `--no-sandbox`,
               '--start-maximized',
@@ -63,7 +62,6 @@ export const BrowserFactory = {
           }
         : {
             headless: false,
-            // args: [`--window-size=${mobileResolution.width},${mobileResolution.height}`],
             executablePath: process.env.CHROME_BIN || null,
             ignoreHTTPSErrors: true,
             dumpio: false,
