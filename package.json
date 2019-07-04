@@ -57,10 +57,10 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "husky": "^2.7.0",
+    "husky": "^3.0.0",
     "jest-environment-node": "^24.8.0",
     "jest-html-reporters": "^1.1.6",
-    "lint-staged": "^8.2.1",
+    "lint-staged": "^9.0.2",
     "prettier": "^1.18.2",
     "puppeteer-har": "^1.1.0"
   }
