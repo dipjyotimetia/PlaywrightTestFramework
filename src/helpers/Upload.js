@@ -3,9 +3,9 @@ const path = require('path');
 const async = require('async');
 const AWS = require('aws-sdk');
 const readdir = require('recursive-readdir');
-const bucketName= 'qavisual';
+const bucketName= '';
 const rootFolder = path.resolve(__dirname, './');
-const uploadFolder = '../backstop_data/prod_reference';
+const uploadFolder = '../';
 const s3 = new AWS.S3({
     signatureVersion: 'v4',
     accessKeyId: '',
