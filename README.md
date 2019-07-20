@@ -6,11 +6,11 @@
 
 ```
 Puppeteer : 1.16
-Node:       12.2.0        
-NPM:        6.9.0         
+Node:       12.2.0
+NPM:        6.9.0
 ```
 
-__Note:__ No local environment has been set up, so manual installation is necessary at the moment.
+**Note:** No local environment has been set up, so manual installation is necessary at the moment.
 
 ## Getting up and running
 
@@ -43,9 +43,9 @@ The environment details are stored in the `config.json` file. To change environm
 
 ## Tech Details
 
-* Jest - Simple lightweight test runner that supports concurrency. https://facebook.github.io/jest/
+- Jest - Simple lightweight test runner that supports concurrency. https://facebook.github.io/jest/
 
-* Puppeteer - A Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome or Chromium.
+- Puppeteer - A Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome or Chromium.
 
 ## Project Structure
 
@@ -81,7 +81,6 @@ The environment details are stored in the `config.json` file. To change environm
   },
 ```
 
-
 [Jest](https://github.com/facebook/jest/blob/master/README.md)
 
 [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/README.md)
@@ -91,16 +90,21 @@ The environment details are stored in the `config.json` file. To change environm
 [Axios](https://github.com/axios/axios/blob/master/README.md)
 
 This patch allows passing 0 to disable timeout for the following methods:
+
 ```
 await page.goto(`http://www.goole.com.au`, {timeout: 0})
 await page.waitForSelector(`a[href='/join-now']`, {visible: true})
 ```
+
 - page.goto
 - page.waitForNavigation
 - page.goForward
 - page.goBack
 
 ### Docker container run
+
 ```
 docker run --privileged puppeteertestframework:latest
 ```
+
+https://github.com/checkly/puppeteer-examples
