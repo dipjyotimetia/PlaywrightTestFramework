@@ -1,3 +1,5 @@
+import expect from 'expect-puppeteer';
+
 class LocatorHelper {
   constructor(page) {
     this.page = page;
@@ -75,6 +77,14 @@ class LocatorHelper {
         request.continue();
       }
     });
+  }
+
+  async expectMatch(value) {
+    await expect(this.page).toMatch(value);
+  }
+
+  async toClick(buttonName) {
+    await expect(this.page).toClick('button', { text: buttonName });
   }
 }
 

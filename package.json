@@ -32,6 +32,7 @@
     "chalk": "^2.4.2",
     "cross-env": "5.2.0",
     "date-fns": "1.30.1",
+    "expect-puppeteer": "^4.3.0",
     "faker": "^4.1.0",
     "fse": "4.0.1",
     "jest": "^24.8.0",
@@ -43,7 +44,10 @@
     "puppeteer": "^1.18.1",
     "rimraf": "^2.6.3",
     "winston": "^3.2.1",
-    "yaml": "1.6.0"
+    "yaml": "1.6.0",
+    "aws-sdk": "2.496.0",
+    "recursive-readdir": "2.2.2",
+    "async": "3.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -63,9 +67,6 @@
     "jest-html-reporters": "^1.1.8",
     "lint-staged": "^9.0.2",
     "prettier": "^1.18.2",
-    "puppeteer-har": "^1.1.0",
-    "aws-sdk": "2.493.0",
-    "recursive-readdir": "2.2.2",
-    "async": "2.6.3"
+    "puppeteer-har": "^1.1.0"
   }
 }
