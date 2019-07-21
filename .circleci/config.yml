@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -19,6 +19,11 @@ jobs:
       - run:
           name: Workaround for GoogleChrome/puppeteer#290
           command: "sh .circleci/setup_puppeteer.sh"
+
+      - run:
+          name: Install puppeteer with chromium
+          command: |
+            npm i puppeteer
 
       - run: yarn install
 
