@@ -1,4 +1,4 @@
-FROM node:12.4-slim
+FROM node:12.6-slim
 
 RUN apt-get update && apt-get install -yq libgconf-2-4
 
