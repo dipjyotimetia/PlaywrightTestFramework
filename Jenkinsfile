@@ -1,11 +1,11 @@
 pipeline {
-    // agent any
-    agent {
-            docker {
-                image 'dipjyotimetia/puppeteertest'
-                args '--privileged'
-            }
-        }
+    agent any
+    // agent {
+    //         docker {
+    //             image 'dipjyotimetia/puppeteertest'
+    //             args '--privileged'
+    //         }
+    //     }
     stages {
         stage('Dependencies') {
             steps {
