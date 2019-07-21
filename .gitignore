@@ -3,3 +3,6 @@ allure-report/*
 allure-results/*
 coverage/**/**
 .idea
+trace.json
+reposrts/*
+log/*
