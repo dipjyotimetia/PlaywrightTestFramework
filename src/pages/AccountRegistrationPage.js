@@ -1,23 +1,13 @@
 import * as _ from 'lodash';
 import faker from 'faker';
 import BasePage from './BasePage';
+import { registrationPage } from '../helpers/Locators';
 
 const logger = require('../config/logger')(__filename);
 
 class AccountRegistrationPage extends BasePage {
   constructor(page) {
     super(page);
-    this.selectors = {
-      joinNowBtn: "a[href='/join-now']",
-      fname: "input[name='firstName']",
-      lname: "input[name='surname']",
-      dob: "input[name='DOB']",
-      address: "input[name='address']",
-      addressAutoComplete: "button[class*='AutoComplete']",
-      mobile: "input[name='mobileNumber']",
-      email: "input[name='email']",
-      password: "input[name='password']",
-    };
     this.defaultUserData = {
       fname: faker.name.firstName(),
       lname: faker.name.lastName(),
@@ -42,8 +32,8 @@ class AccountRegistrationPage extends BasePage {
 
   async joinNow() {
     try {
-      await this.page.waitForSelector(this.selectors.joinNowBtn);
-      await this.page.click(this.selectors.joinNowBtn);
+      await this.page.waitForSelector(registrationPage.joinNowBtn);
+      await this.page.click(registrationPage.joinNowBtn);
       logger.info('Join now completed');
     } catch (error) {
       logger.info(error);
@@ -53,22 +43,24 @@ class AccountRegistrationPage extends BasePage {
   async enterDetails(userData) {
     let data = userData;
     data = _.merge(this.defaultUserData, data);
-    await this.page.waitForSelector(this.selectors.email);
-    await this.page.click(this.selectors.email);
-    await this.page.type(this.selectors.email, data.email);
-    await this.page.click(this.selectors.fname);
-    await this.page.type(this.selectors.fname, data.fname);
-    await this.page.click(this.selectors.lname);
-    await this.page.type(this.selectors.lname, data.lname);
-    await this.page.click(this.selectors.dob);
-    await this.page.type(this.selectors.dob, data.dob);
-    await this.page.click(this.selectors.address);
-    await this.page.type(this.selectors.address, data.address);
-    await this.page.waitForSelector(this.selectors.addressAutoComplete);
-    const autoComplete = await this.page.$(this.selectors.addressAutoComplete);
+    await this.page.waitForSelector(registrationPage.email);
+    await this.page.click(registrationPage.email);
+    await this.page.type(registrationPage.email, data.email);
+    await this.page.click(registrationPage.fname);
+    await this.page.type(registrationPage.fname, data.fname);
+    await this.page.click(registrationPage.lname);
+    await this.page.type(registrationPage.lname, data.lname);
+    await this.page.click(registrationPage.dob);
+    await this.page.type(registrationPage.dob, data.dob);
+    await this.page.click(registrationPage.address);
+    await this.page.type(registrationPage.address, data.address);
+    await this.page.waitForSelector(registrationPage.addressAutoComplete);
+    const autoComplete = await this.page.$(
+      registrationPage.addressAutoComplete
+    );
     await autoComplete.click();
-    await this.page.click(this.selectors.mobile);
-    await this.page.type(this.selectors.mobile, data.mobile);
+    await this.page.click(registrationPage.mobile);
+    await this.page.type(registrationPage.mobile, data.mobile);
     logger.info('User details entered');
     return data;
   }

@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "allure-commandline": "2.9.0",
+    "async": "3.1.0",
+    "aws-sdk": "2.496.0",
     "axios": "0.19.0",
     "chai": "4.2.0",
     "chalk": "^2.4.2",
@@ -41,13 +43,12 @@
     "jest-puppeteer": "^4.3.0",
     "lodash": "4.17.15",
     "mkdirp": "0.5.1",
+    "pptr-mock-server": "^1.0.3",
     "puppeteer": "^1.18.1",
+    "recursive-readdir": "2.2.2",
     "rimraf": "^2.6.3",
     "winston": "^3.2.1",
-    "yaml": "1.6.0",
-    "aws-sdk": "2.496.0",
-    "recursive-readdir": "2.2.2",
-    "async": "3.1.0"
+    "yaml": "1.6.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -1,6 +1,12 @@
 import Mocker from '../helpers/Mocker';
 import BrowserFactory from '../helpers/BrowserFactory';
 import AccountLoginPage from '../pages/AccountLoginPage';
+import {
+  BASE_URL,
+  BASE_API,
+  LOGIN_API,
+  ACCOUNT_DETAIL_API,
+} from '../config/config';
 
 const loginResponse = require('../mock/loginResponse.json');
 const validUser = require('../mock/validUser.json');
@@ -16,19 +22,15 @@ describe('Login page mocking', () => {
   beforeAll(async () => {
     browser = await BrowserFactory.setupDesktopBrowser();
     page = await BrowserFactory.newDesktopPage(browser);
-    mck = new Mocker(
-      page,
-      'https://beteasy.com.au',
-      'https://api.beteasy.com.au'
-    );
+    mck = new Mocker(page, BASE_URL, BASE_API);
     mck.mocker();
   });
 
   it(
     'login to mocked user',
     async () => {
-      mck.mock(false, '/api/account/login', loginResponse, 200, 'POST');
-      mck.mock(false, '/api/account/detail', validUser);
+      mck.mock(false, LOGIN_API, loginResponse, 200, 'POST');
+      mck.mock(false, ACCOUNT_DETAIL_API, validUser);
 
       const login = new AccountLoginPage(page);
       await login.gotoPage();
