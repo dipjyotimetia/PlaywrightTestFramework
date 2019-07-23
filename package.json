@@ -44,7 +44,7 @@
     "lodash": "4.17.15",
     "mkdirp": "0.5.1",
     "pptr-mock-server": "^1.0.3",
-    "puppeteer": "^1.18.1",
+    "puppeteer": "^1.19.0",
     "recursive-readdir": "2.2.2",
     "rimraf": "^2.6.3",
     "winston": "^3.2.1",
