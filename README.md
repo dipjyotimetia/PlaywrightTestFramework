@@ -5,9 +5,9 @@
 ## Versions / Dependencies
 
 ```
-Puppeteer : 1.16
-Node:       12.2.0
-NPM:        6.9.0
+Puppeteer : 1.19
+Node:       12.6.0
+NPM:        6.10.0
 ```
 
 **Note:** No local environment has been set up, so manual installation is necessary at the moment.
