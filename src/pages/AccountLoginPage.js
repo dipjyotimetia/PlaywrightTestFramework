@@ -8,7 +8,7 @@ class AccountLoginPage extends BasePage {
   constructor(page) {
     super(page);
     this.defaultUserData = {
-      userName: 'abcdefxxx@be.com',
+      userName: 'abcdefxxx@gmail.com',
       password: 'Password1',
     };
   }
