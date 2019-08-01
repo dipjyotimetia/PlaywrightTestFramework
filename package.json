@@ -39,7 +39,7 @@
     "fse": "4.0.1",
     "jest": "^24.8.0",
     "jest-allure": "0.1.1",
-    "jest-junit": "6.4.0",
+    "jest-junit": "7.0.0",
     "jest-puppeteer": "^4.3.0",
     "lodash": "4.17.15",
     "mkdirp": "0.5.1",
