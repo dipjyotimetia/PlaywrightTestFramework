@@ -28,7 +28,7 @@
   "dependencies": {
     "allure-commandline": "2.9.0",
     "async": "3.1.0",
-    "aws-sdk": "2.496.0",
+    "aws-sdk": "2.507.0",
     "axios": "0.19.0",
     "chai": "4.2.0",
     "chalk": "^2.4.2",
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
-    "@babel/preset-env": "7.4.5",
+    "@babel/preset-env": "7.5.5",
     "@babel/eslint-plugin-development": "1.0.1",
     "eslint": "6.1.0",
     "eslint-config-airbnb": "^17.1.1",
@@ -62,11 +62,11 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.6.1",
-    "husky": "^3.0.1",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^3.0.3",
     "jest-environment-node": "^24.8.0",
     "jest-html-reporters": "^1.1.8",
-    "lint-staged": "^9.0.2",
+    "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "puppeteer-har": "^1.1.0"
   }
