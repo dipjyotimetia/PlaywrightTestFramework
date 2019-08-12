@@ -168,6 +168,20 @@ class LocatorHelper {
       delay: 200,
     });
   }
+
+  async logBrowser() {
+    this.page.on('console', msg => {
+      console.log('console:log', ...msg.args);
+    });
+  }
+
+  async alertDismiss() {
+    this.page.on('dialog', dialog => {
+      if (dialog.type() === 'alert') {
+        dialog.dismiss();
+      }
+    });
+  }
 }
 
 export default LocatorHelper;
