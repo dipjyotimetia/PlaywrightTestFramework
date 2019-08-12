@@ -1,3 +1,8 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-undef */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable class-methods-use-this */
 import expect from 'expect-puppeteer';
 
 class LocatorHelper {
@@ -85,6 +90,83 @@ class LocatorHelper {
 
   async toClick(buttonName) {
     await expect(this.page).toClick('button', { text: buttonName });
+  }
+
+  async promiseClick(locator) {
+    await Promise.all([
+      this.page.waitForNavigation({}),
+      this.page.click(locator, {
+        button: 'left',
+        delay: 200,
+      }),
+    ]);
+  }
+
+  async frameWrite(frameName) {
+    const frame = await this.page.frames().find(f => f.name() === frameName);
+    await (await frame.$('#registration')).type('test', { delay: 100 });
+  }
+
+  async hover(locator) {
+    await this.page.hover(locator);
+  }
+
+  async switchToPage() {
+    let newPage = null;
+
+    await browser.on('targetcreated', async target => {
+      if (target.type() !== 'page') {
+        return;
+      }
+      newPage = await target.page();
+
+      return newPage;
+    });
+  }
+
+  async acceptPrompt() {
+    this.page.on('dialog', msg => {
+      msg.accept();
+    });
+  }
+
+  async dismissPrompt() {
+    this.page.on('dialog', msg => {
+      msg.dismiss();
+    });
+  }
+
+  async typePrompt(message) {
+    this.page.on('dialog', msg => {
+      msg.type(message);
+    });
+  }
+
+  async getMessage() {
+    this.page.on('dialog', msg => msg.message());
+  }
+
+  async clickPopup() {
+    this.page.on('popup', args => {
+      args.click();
+    });
+  }
+
+  async click(locator, button) {
+    this.page.click(locator, {
+      button, // left,right,middle
+      clickCount: 1,
+      delay: 200, // how long to hold
+    });
+  }
+
+  async mouseClick(locator, button) {
+    const mouse = page.mouse();
+    mouse.click(locator, {
+      button,
+      clickCount: 1,
+      delay: 200,
+    });
   }
 }
 
