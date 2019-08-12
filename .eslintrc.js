@@ -4,14 +4,17 @@ module.exports = {
         "prettier",
         "prettier/react"
     ],
-    "parser": "@babel/eslint-plugin-development",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module",
         // Can I remove these now?
         "ecmaFeatures": {
             "impliedStrict": true,
-            "classes": true
+            "classes": true,
+            "ecmaVersion": 6,
+            "sourceType": "module",
+            "jsx": true
         }
     },
     "env": {
