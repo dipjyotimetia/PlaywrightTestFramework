@@ -47,6 +47,7 @@
     "puppeteer": "^1.19.0",
     "recursive-readdir": "2.2.2",
     "rimraf": "^2.6.3",
+    "sqlite3": "^4.1.0",
     "winston": "^3.2.1",
     "yaml": "1.6.0"
   },
