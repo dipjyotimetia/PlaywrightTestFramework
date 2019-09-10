@@ -39,6 +39,7 @@
     "fse": "4.0.1",
     "jest": "^24.9.0",
     "jest-allure": "0.1.1",
+    "jest-environment-node": "^24.9.0",
     "jest-junit": "8.0.0",
     "jest-puppeteer": "^4.3.0",
     "lodash": "4.17.15",
