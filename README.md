@@ -1,4 +1,4 @@
-# Puppeteer | Test | UI Framework
+# Puppeteer | AutomationTest | UI Framework
 
 [![Build Status](https://github.com/TestautoDev/PuppeteerTestFramework/workflows/PuppeteerCI/badge.svg)](https://github.com/TestautoDev/PuppeteerTestFramework/actions)
 
@@ -8,7 +8,7 @@
 
 ```
 Puppeteer : 1.19
-Node:       12.6.0
+Node:       12.10.0
 NPM:        6.10.0
 ```
 
