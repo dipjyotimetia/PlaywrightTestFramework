@@ -74,7 +74,7 @@ The environment details are stored in the `config.json` file. To change environm
 
 ```json
 "scripts": {
-    "test:env": "cross-env NODE_ENV=beteasy.com.au jest --runInBand"
+    "test:env": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
     "test": "jest --runInBand",
     "posttest": "allure generate",
     "CI": "jest --maxWorkers=2",
