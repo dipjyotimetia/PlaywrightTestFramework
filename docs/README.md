@@ -70,7 +70,9 @@ The environment details are stored in the `config.json` file. To change environm
 ./config.json
 ```
 
-```bash
+## NPM Script
+
+```json
 "scripts": {
     "test:env": "cross-env NODE_ENV=beteasy.com.au jest --runInBand"
     "test": "jest --runInBand",
@@ -85,9 +87,9 @@ The environment details are stored in the `config.json` file. To change environm
 
 This patch allows passing 0 to disable timeout for the following methods:
 
-```bash
-await page.goto(`http://www.goole.com.au`, {timeout: 0})
-await page.waitForSelector(`a[href='/join-now']`, {visible: true})
+```javascript
+await page.goto(`http://www.goole.com.au`, { timeout: 0 });
+await page.waitForSelector(`a[href='/join-now']`, { visible: true });
 ```
 
 - page.goto
