@@ -4,8 +4,8 @@
   "description": "Puppeteer test framework build on top of chrome dev protocol",
   "main": "jest",
   "scripts": {
-    "test": "cross-env NODE_ENV=beteasy.com.au jest src/test/MockTest.test --runInBand",
-    "test:ci": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
+    "test:ci": "cross-env NODE_ENV=beteasy.com.au jest src/test/MockTest.test --runInBand",
+    "test": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
     "test:local": "cross-env NODE_ENV=beteasy.com.au jest Logintest.test.js --runInBand",
     "watch": "cross-env NODE_ENV=beteasy.com.au jest --watch",
     "coverage": "cross-env NODE_ENV=beteasy.com.au jest --runInBand --coverage",
