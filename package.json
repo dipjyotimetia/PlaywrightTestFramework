@@ -27,7 +27,7 @@
     ]
   },
   "dependencies": {
-    "allure-commandline": "2.9.0",
+    "allure-commandline": "2.13.0",
     "async": "3.1.0",
     "aws-sdk": "2.524.0",
     "axios": "0.19.0",
@@ -46,7 +46,7 @@
     "lodash": "4.17.15",
     "mkdirp": "0.5.1",
     "pptr-mock-server": "^1.0.4",
-    "puppeteer": "^1.19.0",
+    "puppeteer": "^1.20.0",
     "recursive-readdir": "2.2.2",
     "rimraf": "^3.0.0",
     "sqlite3": "^4.1.0",
@@ -54,12 +54,12 @@
     "yaml": "1.6.0"
   },
   "devDependencies": {
-    "@babel/core": "7.5.5",
-    "@babel/preset-env": "7.5.5",
+    "@babel/core": "7.6.0",
+    "@babel/preset-env": "7.6.0",
     "babel-eslint": "^10.0.3",
-    "eslint": "6.3.0",
+    "eslint": "6.4.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.2.0",
+    "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
