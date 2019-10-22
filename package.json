@@ -51,7 +51,8 @@
     "rimraf": "^3.0.0",
     "sqlite3": "^4.1.0",
     "winston": "^3.2.1",
-    "yaml": "1.7.0"
+    "yaml": "1.7.0".
+    "localforage":"1.7.3"
   },
   "devDependencies": {
     "@babel/core": "7.6.2",
