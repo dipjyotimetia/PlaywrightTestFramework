@@ -54,7 +54,7 @@ async function run(site) {
 }
 
 const testLinks = async (site) => {
-  const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36';
+  const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (HTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36';
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
@@ -83,14 +83,14 @@ const testLinks = async (site) => {
     console.log(`url:${links[i]}`);
     let resp = await page.goto(links[i]);
     if (resp.status() !== 200 && resp.status() === null) {
-      console.log(`An Error occured URL is ${resp.url()}`);
+      console.log(`An Error occur URL is ${resp.url()}`);
     }
   }
   await page.close();
   await browser.close();
 }
 
-testLinks('https://uat.betdev.com.au');
-run('https://beteasy.com.au');
-run('https://uat.betdev.com.au/racing-betting');
-run('https://uat.betdev.com.au/sports-betting');
+testLinks('https://beteasy.com.au');
+// run('https://beteasy.com.au');
+// run('https://uat.betdev.com.au/racing-betting');
+// run('https://uat.betdev.com.au/sports-betting');
