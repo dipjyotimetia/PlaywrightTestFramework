@@ -4,5 +4,5 @@ allure-results/*
 coverage/**/**
 .idea
 trace.json
-reposrts/*
+reports
 log/**
