@@ -58,6 +58,7 @@
   "devDependencies": {
     "@babel/core": "7.6.4",
     "@babel/preset-env": "7.6.3",
+    "@percy/puppeteer": "^1.0.8",
     "babel-eslint": "^10.0.3",
     "eslint": "6.6.0",
     "eslint-config-airbnb": "^18.0.1",
