@@ -9,14 +9,13 @@ class Mocker {
     this.cors__API_BASE_URL = corsUrl;
   }
 
-  mocker() {
-    this.page.setRequestInterception(true);
-    this.page.on('request', req => {
+  mocker(url) {
+    this.page.route(url, req => {
       const mock = _.find(this.mocks, ({ finalUrl }) =>
         req.url().includes(finalUrl)
       );
       if (mock) {
-        req.respond(mock);
+        req.fulfill(mock);
       } else {
         req.continue();
       }

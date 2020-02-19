@@ -6,7 +6,7 @@
   "scripts": {
     "test:ci": "cross-env NODE_ENV=beteasy.com.au jest src/test/MockTest.test --runInBand",
     "test": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
-    "test:local": "cross-env NODE_ENV=beteasy.com.au jest Logintest.test.js --runInBand",
+    "test:local": "cross-env NODE_ENV=beteasy.com.au BROWSER=chromium jest MockTest.test.js --runInBand",
     "watch": "cross-env NODE_ENV=beteasy.com.au jest --watch",
     "coverage": "cross-env NODE_ENV=beteasy.com.au jest --runInBand --coverage",
     "lint": "eslint .",
@@ -48,6 +48,8 @@
     "mkdirp": "0.5.1",
     "pptr-mock-server": "^1.0.7",
     "puppeteer": "^2.1.1",
+    "playwright": "0.11.1",
+    "jest-playwright-preset": "0.0.9",
     "recursive-readdir": "2.2.2",
     "rimraf": "^3.0.2",
     "sqlite3": "^4.1.1",

@@ -24,16 +24,11 @@ describe('Test Login Scenario', () => {
         .addEnvironment('Test Env', 'PROD');
       reporter.startStep('Test Login');
 
-      await page.tracing.start({
-        path: './trace.json',
-      });
-
       const login = new AccountLoginPage(page);
       await login.gotoPage();
       await login.selectLogin();
       await login.enterUserDetails();
 
-      await page.tracing.stop();
       const performanceTiming = JSON.parse(
         await page.evaluate(() => JSON.stringify(window.performance.timing))
       );

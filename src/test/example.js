@@ -5,177 +5,202 @@
 const puppeteer = require('puppeteer');
 const devices = require('puppeteer/DeviceDescriptors');
 
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  const client = await page.target().createCDPSession();
-  await client.send('Network.enable');
-  await client.send('Network.clearBrowserCache');
-  await page.goto('https://beteasy.com.au', {
-    timeout: 50000,
-  });
-  const performance = JSON.parse(
-    await page.evaluate(() => JSON.stringify(window.performance.timing))
-  );
-  console.log(
-    `Time to interactive${performance.domInteractive}` -
-      performance.navigationStart
-  );
-  await browser.close();
-})();
+const { firefox, chromium } = require('playwright');
 
 (async () => {
-  const browser = await puppeteer.launch({
+  const browser = await chromium.launch({
     headless: false,
   });
-  const page = await browser.newPage();
-  await page.emulate(devices.iPhone6);
-  await page.goto('https://betaesy.com.au', {
-    timeout: 50000,
-  });
-  await page.screenshot({ path: 'iphone6.png' });
-
-  await page.emulate(devices['Nexus 6P']);
-  await page.goto('https://betaesy.com.au', {
-    timeout: 50000,
-  });
-  await page.screenshot({ path: 'nexus.png' });
-
-  await browser.close();
-})();
-
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto('https://betaesy.com.au');
-  await page.screenshot({ path: 'es.png' });
-
-  await browser.close();
-})();
-
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto('https://betaesy.com.au');
-  await page.pdf({ path: 'es.pdf', type: ' A4 ' });
-
-  await browser.close();
-})();
-
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.goto('https://example.com');
-
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto('https://www.beteasy.com.au/');
   const dimensions = await page.evaluate(() => ({
     width: document.documentElement.clientWidth,
     height: document.documentElement.clientHeight,
     deviceScaleFactor: window.devicePixelRatio,
   }));
-
-  console.log('Dimensions:', dimensions);
-
+  console.log(dimensions);
+  await page.route('**/*', request => {
+    request.confulfill({
+      status: 404,
+      contentType: 'text/plain',
+      body: 'Not Found!',
+    });
+  });
   await browser.close();
 })();
 
-(async () => {
-  const browser = await puppeteer.launch({
-    headless: false,
-  });
+// (async () => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+//   const client = await page.target().createCDPSession();
+//   await client.send('Network.enable');
+//   await client.send('Network.clearBrowserCache');
+//   await page.goto('https://beteasy.com.au', {
+//     timeout: 50000,
+//   });
+//   const performance = JSON.parse(
+//     await page.evaluate(() => JSON.stringify(window.performance.timing))
+//   );
+//   console.log(
+//     `Time to interactive${performance.domInteractive}` -
+//       performance.navigationStart
+//   );
+//   await browser.close();
+// })();
 
-  const page = await browser.newPage();
-  await Promise.all([
-    page.coverage.startJSCoverage(),
-    page.coverage.startCSSCoverage(),
-  ]);
+// (async () => {
+//   const browser = await puppeteer.launch({
+//     headless: false,
+//   });
+//   const page = await browser.newPage();
+//   await page.emulate(devices.iPhone6);
+//   await page.goto('https://betaesy.com.au', {
+//     timeout: 50000,
+//   });
+//   await page.screenshot({ path: 'iphone6.png' });
 
-  await page.goto('https://google.com.au', {
-    timeout: 0,
-  });
+//   await page.emulate(devices['Nexus 6P']);
+//   await page.goto('https://betaesy.com.au', {
+//     timeout: 50000,
+//   });
+//   await page.screenshot({ path: 'nexus.png' });
 
-  const [jsCoverage, cssCoverage] = await Promise.all([
-    page.coverage.stopJSCoverage(),
-    page.coverage.stopCSSCoverage(),
-  ]);
+//   await browser.close();
+// })();
 
-  let totalBytes = 0;
-  let usedBytes = 0;
-  const coverage = [...jsCoverage, ...cssCoverage];
-  for (const entry of coverage) {
-    totalBytes += entry.text.length;
-    for (const range of entry.ranges) {
-      usedBytes += range.end - range.start - 1;
-    }
-  }
-  console.log(`Bytes used: ${(usedBytes / totalBytes) * 100}%`);
+// (async () => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+//   await page.goto('https://betaesy.com.au');
+//   await page.screenshot({ path: 'es.png' });
 
-  await page.close();
-})();
+//   await browser.close();
+// })();
 
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.tracing.start({ path: 'trace.json' });
-  await page.goto('https://beteasy.com.au', {
-    waitUntil: 'networkidle',
-  });
-  await page.tracing.stop();
-  browser.close();
-})();
+// (async () => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+//   await page.goto('https://betaesy.com.au');
+//   await page.pdf({ path: 'es.pdf', type: ' A4 ' });
 
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+//   await browser.close();
+// })();
 
-  await page.goto('https://beteasy.com.au', {
-    waitUntil: 'networkidle2',
-  });
+// (async () => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+//   await page.goto('https://example.com');
 
-  const pageLinks = await page.$$eval('a', links => {
-    links = links
-      .filter(a => {
-        if (a.href) {
-          const sameOrigin =
-            new URL(location).origin === new URL(a.href).origin;
-          const samePage = a.href === location.href;
-          return !samePage && sameOrigin;
-        }
-      })
-      .map(a => a.href);
-    return Array.from(new Set(links));
-  });
+//   const dimensions = await page.evaluate(() => ({
+//     width: document.documentElement.clientWidth,
+//     height: document.documentElement.clientHeight,
+//     deviceScaleFactor: window.devicePixelRatio,
+//   }));
 
-  console.log(pageLinks);
-  browser.close();
-})();
+//   console.log('Dimensions:', dimensions);
 
-(async () => {
-  const responses = {
-    get_saved_posts: {
-      status: 200,
-      // Body has to be a string
-      body: JSON.stringify({
-        data: {
-          posts: ['post1', 'post2'],
-        },
-      }),
-    },
-  };
+//   await browser.close();
+// })();
 
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
+// (async () => {
+//   const browser = await puppeteer.launch({
+//     headless: false,
+//   });
 
-  await page.goto('https://beteasy.com.au', {
-    waitUntil: 'networkidle2',
-  });
+//   const page = await browser.newPage();
+//   await Promise.all([
+//     page.coverage.startJSCoverage(),
+//     page.coverage.startCSSCoverage(),
+//   ]);
 
-  page.on('request', interceptedRequest => {
-    const endpoint = interceptedRequest.url.split('/').pop();
-    if (responses[endpoint]) {
-      request.respond(responses[endpoint]);
-    } else {
-      request.continue();
-    }
-  });
-  browser.close();
-})();
+//   await page.goto('https://google.com.au', {
+//     timeout: 0,
+//   });
+
+//   const [jsCoverage, cssCoverage] = await Promise.all([
+//     page.coverage.stopJSCoverage(),
+//     page.coverage.stopCSSCoverage(),
+//   ]);
+
+//   let totalBytes = 0;
+//   let usedBytes = 0;
+//   const coverage = [...jsCoverage, ...cssCoverage];
+//   for (const entry of coverage) {
+//     totalBytes += entry.text.length;
+//     for (const range of entry.ranges) {
+//       usedBytes += range.end - range.start - 1;
+//     }
+//   }
+//   console.log(`Bytes used: ${(usedBytes / totalBytes) * 100}%`);
+
+//   await page.close();
+// })();
+
+// (async () => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+//   await page.tracing.start({ path: 'trace.json' });
+//   await page.goto('https://beteasy.com.au', {
+//     waitUntil: 'networkidle',
+//   });
+//   await page.tracing.stop();
+//   browser.close();
+// })();
+
+// (async () => {
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+
+//   await page.goto('https://beteasy.com.au', {
+//     waitUntil: 'networkidle2',
+//   });
+
+//   const pageLinks = await page.$$eval('a', links => {
+//     links = links
+//       .filter(a => {
+//         if (a.href) {
+//           const sameOrigin =
+//             new URL(location).origin === new URL(a.href).origin;
+//           const samePage = a.href === location.href;
+//           return !samePage && sameOrigin;
+//         }
+//       })
+//       .map(a => a.href);
+//     return Array.from(new Set(links));
+//   });
+
+//   console.log(pageLinks);
+//   browser.close();
+// })();
+
+// (async () => {
+//   const responses = {
+//     get_saved_posts: {
+//       status: 200,
+//       // Body has to be a string
+//       body: JSON.stringify({
+//         data: {
+//           posts: ['post1', 'post2'],
+//         },
+//       }),
+//     },
+//   };
+
+//   const browser = await puppeteer.launch();
+//   const page = await browser.newPage();
+
+//   await page.goto('https://beteasy.com.au', {
+//     waitUntil: 'networkidle2',
+//   });
+
+//   page.on('request', interceptedRequest => {
+//     const endpoint = interceptedRequest.url.split('/').pop();
+//     if (responses[endpoint]) {
+//       request.respond(responses[endpoint]);
+//     } else {
+//       request.continue();
+//     }
+//   });
+//   browser.close();
+// })();

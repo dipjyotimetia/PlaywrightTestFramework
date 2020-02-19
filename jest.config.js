@@ -1,5 +1,6 @@
 module.exports = {
-  preset: 'jest-puppeteer',
+  // preset: ['jest-puppeteer', 'jest-playwright-preset'],
+  preset: 'jest-playwright-preset',
   setupFilesAfterEnv: ['jest-allure/dist/setup', 'expect-puppeteer'],
   reporters: [
     'default',

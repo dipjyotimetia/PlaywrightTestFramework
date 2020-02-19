@@ -22,22 +22,31 @@ describe('Login page mocking', () => {
   beforeAll(async () => {
     browser = await BrowserFactory.setupDesktopBrowser();
     page = await BrowserFactory.newDesktopPage(browser);
-    mck = new Mocker(page, BASE_URL, BASE_API);
-    mck.mocker();
   });
 
   it(
     'login to mocked user',
     async () => {
-      mck.mock(false, LOGIN_API, loginResponse, 200, 'POST');
-      mck.mock(false, ACCOUNT_DETAIL_API, validUser);
+      await page.route('**/api/account/login', request => {
+        request.respond({
+          status: 200,
+          body: loginResponse,
+        });
+      });
+
+      await page.route('**/api/account/detail', request => {
+        request.respond({
+          status: 200,
+          body: validUser,
+        });
+      });
 
       const login = new AccountLoginPage(page);
       await login.gotoPage();
 
       // await page.pdf({ path: 'log/test.pdf', format: 'A4' }); // Headless
 
-      await page.waitFor(5000);
+      await page.waitFor(20000);
     },
     timeOut
   );
