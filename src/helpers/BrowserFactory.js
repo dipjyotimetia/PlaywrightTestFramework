@@ -25,7 +25,7 @@ export const BrowserFactory = {
                 headless: false,
               }
             : {
-                headless: false,
+                headless: true,
               }
         );
         break;
@@ -36,7 +36,7 @@ export const BrowserFactory = {
                 headless: false,
               }
             : {
-                headless: false,
+                headless: true,
               }
         );
         break;
@@ -47,7 +47,7 @@ export const BrowserFactory = {
                 headless: false,
               }
             : {
-                headless: false,
+                headless: true,
               }
         );
         break;
@@ -58,7 +58,7 @@ export const BrowserFactory = {
                 headless: false,
               }
             : {
-                headless: false,
+                headless: true,
               }
         );
         break;
@@ -73,7 +73,7 @@ export const BrowserFactory = {
             headless: false,
           }
         : {
-            headless: false,
+            headless: true,
           }
     );
     return browser;
@@ -102,24 +102,24 @@ export const BrowserFactory = {
   },
 
   newIphoneXPage: async browser => {
-    const context = browser.defaultBrowserContext();
-    await context.clearPermissionOverrides();
-    await context.overridePermissions(`https://${process.env.NODE_ENV}`, [
-      'geolocation',
-    ]);
+    const context = await browser.newContext({
+      viewport: iPhoneX.viewport,
+      userAgent: iPhoneX.userAgent,
+      geolocation: { longitude: 12.492507, latitude: 41.889938 },
+      permissions: { 'https://www.google.com': ['geolocation'] },
+    });
     const page = await context.newPage();
-    await page.emulate(iPhoneX);
     return page;
   },
 
   newIpadPro: async browser => {
-    const context = browser.defaultBrowserContext();
-    await context.clearPermissionOverrides();
-    await context.overridePermissions(`https://${process.env.NODE_ENV}`, [
-      'geolocation',
-    ]);
+    const context = await browser.newContext({
+      viewport: iPadPro.viewport,
+      userAgent: iPadPro.userAgent,
+      geolocation: { longitude: 12.492507, latitude: 41.889938 },
+      permissions: { 'https://www.google.com': ['geolocation'] },
+    });
     const page = await context.newPage();
-    await page.emulate(iPadPro);
     return page;
   },
 };

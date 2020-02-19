@@ -17,20 +17,10 @@ describe('Test Registration Scenario in Mobile', () => {
   it(
     'Should navigate to the join now page and register a user',
     async () => {
-      reporter
-        .description('Registration test suite for mobile')
-        .story('JIRA004')
-        .addEnvironment('Test Env', 'PROD');
-      reporter.startStep('Test Registration in mobile');
-
       const reg = new AccountRegistrationPage(page);
       await reg.gotoPage();
       await reg.joinNow();
       await reg.enterDetails();
-
-      const screen = await page.screenshot();
-      reporter.addAttachment('ScreenShot', screen, 'image/png');
-      reporter.endStep();
     },
     timeOut
   );

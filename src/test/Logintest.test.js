@@ -18,12 +18,6 @@ describe('Test Login Scenario', () => {
   it(
     'Should navigate to the login page and login a user',
     async () => {
-      reporter
-        .description('Login test suite')
-        .story('JIRA001')
-        .addEnvironment('Test Env', 'PROD');
-      reporter.startStep('Test Login');
-
       const login = new AccountLoginPage(page);
       await login.gotoPage();
       await login.selectLogin();
@@ -33,10 +27,6 @@ describe('Test Login Scenario', () => {
         await page.evaluate(() => JSON.stringify(window.performance.timing))
       );
       console.log(performanceTiming);
-
-      const screen = await page.screenshot();
-      reporter.addAttachment('ScreenShot', screen, 'image/png');
-      reporter.endStep();
     },
     timeOut
   );
