@@ -4,7 +4,7 @@
   "description": "Puppeteer test framework build on top of chrome dev protocol",
   "main": "jest",
   "scripts": {
-    "test:ci": "cross-env NODE_ENV=beteasy.com.au BROWSER=chromium jest src/test/Registration.test --runInBand",
+    "test:ci": "cross-env NODE_ENV=beteasy.com.au BROWSER=chromium jest src/test/Logintest.test --runInBand",
     "test": "cross-env NODE_ENV=beteasy.com.au jest --runInBand",
     "test:local": "cross-env NODE_ENV=beteasy.com.au BROWSER=chromium jest Registration.test.js --runInBand",
     "watch": "cross-env NODE_ENV=beteasy.com.au jest --watch",
@@ -43,11 +43,8 @@
     "jest-allure": "0.1.1",
     "jest-environment-node": "^25.1.0",
     "jest-junit": "10.0.0",
-    "jest-puppeteer": "^4.4.0",
     "lodash": "4.17.15",
     "mkdirp": "0.5.1",
-    "pptr-mock-server": "^1.0.7",
-    "puppeteer": "^2.1.1",
     "playwright": "0.11.1",
     "jest-playwright-preset": "0.0.9",
     "recursive-readdir": "2.2.2",
@@ -60,7 +57,6 @@
   "devDependencies": {
     "@babel/core": "7.8.4",
     "@babel/preset-env": "7.8.4",
-    "@percy/puppeteer": "^1.1.0",
     "babel-eslint": "^10.0.3",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "^18.0.1",
@@ -74,7 +70,6 @@
     "husky": "^4.2.2",
     "jest-html-reporters": "^1.2.1",
     "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1",
-    "puppeteer-har": "^1.1.2"
+    "prettier": "^1.19.1"
   }
 }
