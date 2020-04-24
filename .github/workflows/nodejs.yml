@@ -5,8 +5,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: dipjyotimetia/puppeteertest
 
     strategy:
       matrix:
