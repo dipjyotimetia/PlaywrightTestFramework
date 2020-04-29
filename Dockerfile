@@ -1,27 +1,49 @@
-FROM node:12.6-slim
+FROM ubuntu:bionic
 
-RUN apt-get update && apt-get install -yq libgconf-2-4
+# 1. Install node12
+RUN apt-get update && apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install -y nodejs
 
-RUN apt-get update && apt-get install -y wget --no-install-recommends \
-   && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-   && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-   && apt-get update \
-   && apt-get install -y google-chrome-unstable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst ttf-freefont \
-   --no-install-recommends \
-   && rm -rf /var/lib/apt/lists/* \
-   && apt-get purge --auto-remove -y curl \
-   && rm -rf /src/*.deb
+# 2. Install WebKit dependencies
+RUN apt-get install -y libwoff1 \
+                       libopus0 \
+                       libwebp6 \
+                       libwebpdemux2 \
+                       libenchant1c2a \
+                       libgudev-1.0-0 \
+                       libsecret-1-0 \
+                       libhyphen0 \
+                       libgdk-pixbuf2.0-0 \
+                       libegl1 \
+                       libnotify4 \
+                       libxslt1.1 \
+                       libevent-2.1-6 \
+                       libgles2 \
+                       libvpx5
 
-ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 /usr/local/bin/dumb-init
-RUN chmod +x /usr/local/bin/dumb-init
+# 3. Install Chromium dependencies
 
-#Providing all necessary permission to the user jenkins
-RUN groupmod -g 999 node && \
-   usermod -u 999 node
+RUN apt-get install -y libnss3 \
+                       libxss1 \
+                       libasound2
 
-RUN groupadd -g 1000 jenkins && \
-   useradd -u 1000 -g 1000 -m -s /bin/bash jenkins
+# 4. Install Firefox dependencies
 
-USER jenkins
+RUN apt-get install -y libdbus-glib-1-2 \
+                       libxt6
 
-ENTRYPOINT ["dumb-init", "--"]
+# 5. Install ffmpeg to bring in audio and video codecs necessary for playing videos in Firefox.
+
+RUN apt-get install -y ffmpeg
+
+# 6. Add user so we don't need --no-sandbox in Chromium
+RUN groupadd -r pwuser && useradd -r -g pwuser -G audio,video pwuser \
+    && mkdir -p /home/pwuser/Downloads \
+    && chown -R pwuser:pwuser /home/pwuser
+
+# 7. (Optional) Install XVFB if there's a need to run browsers in headful mode
+RUN apt-get install -y xvfb
+
+# Run everything after as non-privileged user.
+USER pwuser
