@@ -13,9 +13,14 @@ const mobileResolution = {
   height: 812,
 };
 
+/** @type {import('playwright').Browser} * */
+let browser;
+
+/** @type {import('playwright').Page} * */
+let page;
+
 export const BrowserFactory = {
   setupDesktopBrowser: async () => {
-    let browser;
     // eslint-disable-next-line default-case
     switch (process.env.BROWSER) {
       case 'chrome':
@@ -67,7 +72,7 @@ export const BrowserFactory = {
   },
 
   setupMobileBrowser: async () => {
-    const browser = await chromium.launch(
+    browser = await chromium.launch(
       process.env.DEBUG
         ? {
             headless: false,
@@ -79,9 +84,9 @@ export const BrowserFactory = {
     return browser;
   },
 
-  newDesktopPage: async browser => {
+  newDesktopPage: async () => {
     const context = await browser.newContext();
-    const page = await context.newPage();
+    page = await context.newPage();
     await page.evaluate(() => ({
       width: document.documentElement.clientWidth,
       height: document.documentElement.clientHeight,
@@ -90,36 +95,36 @@ export const BrowserFactory = {
     return page;
   },
 
-  newMobilePage: async browser => {
+  newMobilePage: async () => {
     const context = await browser.newContext({
       viewport: iPhoneX.viewport,
       userAgent: iPhoneX.userAgent,
       geolocation: { longitude: 12.492507, latitude: 41.889938 },
       permissions: { 'https://www.google.com': ['geolocation'] },
     });
-    const page = await context.newPage();
+    page = await context.newPage();
     return page;
   },
 
-  newIphoneXPage: async browser => {
+  newIphoneXPage: async () => {
     const context = await browser.newContext({
       viewport: iPhoneX.viewport,
       userAgent: iPhoneX.userAgent,
       geolocation: { longitude: 12.492507, latitude: 41.889938 },
       permissions: { 'https://www.google.com': ['geolocation'] },
     });
-    const page = await context.newPage();
+    page = await context.newPage();
     return page;
   },
 
-  newIpadPro: async browser => {
+  newIpadPro: async () => {
     const context = await browser.newContext({
       viewport: iPadPro.viewport,
       userAgent: iPadPro.userAgent,
       geolocation: { longitude: 12.492507, latitude: 41.889938 },
       permissions: { 'https://www.google.com': ['geolocation'] },
     });
-    const page = await context.newPage();
+    page = await context.newPage();
     return page;
   },
 };

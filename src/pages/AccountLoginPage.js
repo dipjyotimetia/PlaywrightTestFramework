@@ -20,7 +20,7 @@ class AccountLoginPage extends BasePage {
 
   async gotoPage() {
     await this.page.goto(this.pageUrl, {
-      waitUntil: 'networkidle2',
+      waitUntil: 'networkidle',
     });
   }
 
