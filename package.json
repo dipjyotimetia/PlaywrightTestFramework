@@ -1,6 +1,6 @@
 {
   "name": "Puppeteer-ui-framework",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "Puppeteer test framework build on top of chrome dev protocol",
   "main": "jest",
   "scripts": {
@@ -48,7 +48,7 @@
     "lodash": "4.17.15",
     "mkdirp": "1.0.4",
     "pptr-mock-server": "^1.0.14",
-    "puppeteer": "^3.0.3",
+    "puppeteer": "^3.0.4",
     "recursive-readdir": "2.2.2",
     "rimraf": "^3.0.2",
     "sqlite3": "^4.2.0",
