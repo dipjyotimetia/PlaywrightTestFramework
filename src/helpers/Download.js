@@ -6,7 +6,7 @@ import { resolve } from 'path';
 const s3 = new S3();
 const bucketName = '';
 
-const dir = resolve(__dirname, '../backstop_data/prod_reference');
+const dir = resolve(__dirname, '../reference');
 if (existsSync(dir)) {
   s3.listObjects({ Bucket: bucketName }, (err, data) => {
     if (err) console.log(err, err.stack);
