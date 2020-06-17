@@ -48,7 +48,7 @@
     "lodash": "4.17.15",
     "mkdirp": "1.0.4",
     "pptr-mock-server": "^1.0.15",
-    "puppeteer": "^3.3.0",
+    "puppeteer": "^4.0.0",
     "recursive-readdir": "2.2.2",
     "rimraf": "^3.0.2",
     "sqlite3": "^4.2.0",
@@ -70,7 +70,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "husky": "^4.2.5",
-    "jest-html-reporters": "^1.2.1",
+    "jest-html-reporters": "^2.0.0",
     "lint-staged": "^10.2.9",
     "prettier": "^2.0.5",
     "puppeteer-har": "^1.1.2"
