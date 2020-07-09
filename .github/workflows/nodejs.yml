@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright
+    container: mcr.microsoft.com/playwright:bionic
 
     strategy:
       matrix:
