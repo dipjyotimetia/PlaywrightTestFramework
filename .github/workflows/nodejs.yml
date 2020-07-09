@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: dipjyotimetia/puppeteertest
+    container: mcr.microsoft.com/playwright
 
     strategy:
       matrix:
