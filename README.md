@@ -15,7 +15,6 @@ NPM:        6.12.0
 **Note:** No local environment has been set up, so manual installation is necessary at the moment.
 
 ## Getting up and running
-
 ```bash
 # Pre: Ensure dependencies are installed
 
