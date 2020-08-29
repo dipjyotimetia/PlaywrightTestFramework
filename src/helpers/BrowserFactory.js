@@ -1,17 +1,7 @@
 import { webkit, chromium, firefox, devices } from 'playwright';
 
-const iPhoneX = devices['iPhone X'];
+const iPhoneX = devices['iPhone 11 Pro'];
 const iPadPro = devices['iPad Pro'];
-
-const desktopResolution = {
-  width: 1600,
-  height: 900,
-};
-
-const mobileResolution = {
-  width: 375,
-  height: 812,
-};
 
 /** @type {import('playwright').Browser} * */
 let browser;
@@ -27,44 +17,44 @@ export const BrowserFactory = {
         browser = await chromium.launch(
           process.env.DEBUG
             ? {
-                headless: false,
-              }
+              headless: false,
+            }
             : {
-                headless: true,
-              }
+              headless: true,
+            }
         );
         break;
       case 'firefox':
         browser = await firefox.launch(
           process.env.DEBUG
             ? {
-                headless: false,
-              }
+              headless: false,
+            }
             : {
-                headless: true,
-              }
+              headless: true,
+            }
         );
         break;
       case 'safari':
         browser = await webkit.launch(
           process.env.DEBUG
             ? {
-                headless: false,
-              }
+              headless: false,
+            }
             : {
-                headless: true,
-              }
+              headless: true,
+            }
         );
         break;
       default:
         browser = await chromium.launch(
           process.env.DEBUG
             ? {
-                headless: false,
-              }
+              headless: false,
+            }
             : {
-                headless: true,
-              }
+              headless: true,
+            }
         );
         break;
     }
@@ -75,11 +65,11 @@ export const BrowserFactory = {
     browser = await chromium.launch(
       process.env.DEBUG
         ? {
-            headless: false,
-          }
+          headless: false,
+        }
         : {
-            headless: true,
-          }
+          headless: true,
+        }
     );
     return browser;
   },
@@ -87,18 +77,20 @@ export const BrowserFactory = {
   newDesktopPage: async () => {
     const context = await browser.newContext();
     page = await context.newPage();
-    await page.evaluate(() => ({
-      width: document.documentElement.clientWidth,
-      height: document.documentElement.clientHeight,
-      deviceScaleFactor: window.devicePixelRatio,
-    }));
+    await page.evaluate(() => {
+      return {
+        width: document.documentElement.clientWidth,
+        height: document.documentElement.clientHeight,
+        deviceScaleFactor: window.devicePixelRatio
+      }
+    });
     return page;
   },
 
   newMobilePage: async () => {
     const context = await browser.newContext({
-      viewport: iPhoneX.viewport,
-      userAgent: iPhoneX.userAgent,
+      ...iPhoneX,
+      locale: 'en-US',
       geolocation: { longitude: 12.492507, latitude: 41.889938 },
       permissions: { 'https://www.google.com': ['geolocation'] },
     });
@@ -108,10 +100,10 @@ export const BrowserFactory = {
 
   newIphoneXPage: async () => {
     const context = await browser.newContext({
-      viewport: iPhoneX.viewport,
-      userAgent: iPhoneX.userAgent,
+      ...iPhoneX,
+      locale: 'en-US',
       geolocation: { longitude: 12.492507, latitude: 41.889938 },
-      permissions: { 'https://www.google.com': ['geolocation'] },
+      permissions: ['geolocation'],
     });
     page = await context.newPage();
     return page;
@@ -119,8 +111,8 @@ export const BrowserFactory = {
 
   newIpadPro: async () => {
     const context = await browser.newContext({
-      viewport: iPadPro.viewport,
-      userAgent: iPadPro.userAgent,
+      ...iPhoneX,
+      locale: 'en-US',
       geolocation: { longitude: 12.492507, latitude: 41.889938 },
       permissions: { 'https://www.google.com': ['geolocation'] },
     });

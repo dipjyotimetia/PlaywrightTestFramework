@@ -25,9 +25,7 @@ class AccountRegistrationPage extends BasePage {
   }
 
   async gotoPage() {
-    await this.page.goto(this.pageUrl, {
-      waitUntil: 'networkidle2',
-    });
+    await this.page.goto(this.pageUrl);
   }
 
   async joinNow() {

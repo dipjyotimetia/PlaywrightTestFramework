@@ -1,30 +1,22 @@
-name: PuppeteerCI
+name: PlaywrightCI
 
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    container: dipjyotimetia/puppeteertest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
+  e2e-tests:
+    runs-on: ubuntu-latest # or macos-latest, windows-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+
+      - uses: microsoft/playwright-github-action@v1
+
+      - name: Install dependencies and run tests
+        run: npm install && npm test
+
+      - uses: actions/upload-artifact@v2
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: install required packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install libwoff1 libopus0 libwebp6 libwebpdemux2 libenchant1c2a libgudev-1.0-0 libsecret-1-0 libhyphen0 libgdk-pixbuf2.0-0 libegl1 libgles2 libevent-2.1-6 libnotify4 libxslt1.1
-          sudo apt-get install xvfb
-      - name: npm install and test
-        run: |
-          npm install
-          npm run test:ci
-        env:
-          CI: true
+          name: test-artifacts
+          path: reports  

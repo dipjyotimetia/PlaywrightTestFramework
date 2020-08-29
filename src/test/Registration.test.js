@@ -1,12 +1,15 @@
 /* eslint-disable no-undef */
+
+/** @type {import('playwright').Browser} * */
+let browser;
+
+/** @type {import('playwright').Page} * */
+let page;
+
 import BrowserFactory from '../helpers/BrowserFactory';
 import AccountRegistrationPage from '../pages/AccountRegistrationPage';
 
-const PuppeteerHar = require('puppeteer-har');
-
 const timeOut = 56000;
-let page;
-let browser;
 
 jest.setTimeout(60000);
 

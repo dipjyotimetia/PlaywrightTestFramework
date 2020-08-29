@@ -1,3 +1,9 @@
+/** @type {import('playwright').Browser} * */
+let browser;
+
+/** @type {import('playwright').Page} * */
+let page;
+
 import Mocker from '../helpers/Mocker';
 import BrowserFactory from '../helpers/BrowserFactory';
 import AccountLoginPage from '../pages/AccountLoginPage';
@@ -13,10 +19,6 @@ const validUser = require('../mock/validUser.json');
 
 jest.setTimeout(60000);
 const timeOut = 56000;
-
-let page;
-let mck;
-let browser;
 
 describe('Login page mocking', () => {
   beforeAll(async () => {
@@ -45,8 +47,6 @@ describe('Login page mocking', () => {
       await login.gotoPage();
 
       // await page.pdf({ path: 'log/test.pdf', format: 'A4' }); // Headless
-
-      await page.waitFor(20000);
     },
     timeOut
   );
