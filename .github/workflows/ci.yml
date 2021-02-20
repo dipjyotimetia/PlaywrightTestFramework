@@ -23,7 +23,7 @@ jobs:
       - name: Run additional dependencies for GAH
         run: yarn add playwright-chromium @babel/plugin-transform-typescript nyc
       - name: Start local service and run tests
-        run: yarn test:e2e
+        run: yarn test
       - name: Push test report to artifacts
         uses: actions/upload-artifact@v2
         if: failure()
