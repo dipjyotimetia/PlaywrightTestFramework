@@ -20,7 +20,7 @@ module.exports = {
     "jest-playwright": {
       browsers: ["chromium", "firefox", "webkit"],
       launchOptions: {
-        headless: false,
+        headless: true,
       },
       serverOptions: {
         command: '',
