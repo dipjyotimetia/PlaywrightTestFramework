@@ -1,8 +1,2 @@
-node_modules/*
-allure-report/*
-allure-results/*
-coverage/**/**
-.idea
-trace.json
-reports
-log/**
+node_modules
+test-results/**

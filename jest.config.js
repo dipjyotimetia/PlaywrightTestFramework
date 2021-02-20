@@ -1,17 +1,34 @@
 module.exports = {
-  // preset: ['jest-puppeteer', 'jest-playwright-preset'],
-  preset: 'jest-playwright-preset',
+  preset: "jest-playwright-preset",
+  testMatch: ["**/__tests__/**/*.+(ts|js)", "**/?(*.)+(spec|test).+(ts|js)"],
+  transform: {
+    "^.+\\.(ts)$": "ts-jest",
+  },
+  testPathIgnorePatterns: ['/node_modules/'],
   reporters: [
     'default',
-    'jest-allure',
-    ['jest-junit', { suiteName: 'E2E tests', outputDirectory: './reports/' }],
     [
       'jest-html-reporters',
       {
-        publicPath: './reports/',
+        publicPath: './test-results/',
         filename: 'report.html',
-        expand: false,
-      },
-    ],
+        expand: true
+      }
+    ]
   ],
+  testEnvironmentOptions: {
+    "jest-playwright": {
+      browsers: ["chromium", "firefox", "webkit"],
+      launchOptions: {
+        headless: false,
+      },
+      serverOptions: {
+        command: '',
+        port: 3000,
+        protocol: 'http',
+        usedPortAction: 'kill',
+        launchTimeout: 60000
+      }
+    },
+  }
 };

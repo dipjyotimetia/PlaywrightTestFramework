@@ -1,0 +1,32 @@
+name: E2E Tests
+
+on:
+  push:
+  pull_request:
+env:
+  NODE_VERSION: 14.15.0
+jobs:
+  e2e:
+    name: e2e
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1.4.4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Setup dependencies for playwright/browsers
+        uses: microsoft/playwright-github-action@v1
+      - name: Install dependencies
+        run: yarn
+      - name: Run additional dependencies for GAH
+        run: yarn add playwright-chromium @babel/plugin-transform-typescript nyc
+      - name: Start local service and run tests
+        run: yarn test:e2e
+      - name: Push test report to artifacts
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: Test Results
+          path: test-results/
