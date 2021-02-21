@@ -18,9 +18,9 @@ module.exports = {
   ],
   testEnvironmentOptions: {
     "jest-playwright": {
-      browsers: ["chromium", "firefox", "webkit"],
+      browsers: ["chromium"], //, "firefox", "webkit"
       launchOptions: {
-        headless: true,
+        headless: false,
       },
       serverOptions: {
         command: '',
