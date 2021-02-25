@@ -1,4 +1,4 @@
-# Playwright | AutomationTest | UI Framework
+# 🎭 Playwright | AutomationTest | UI Framework
 
 ## Tech Details
 
