@@ -1,5 +1,3 @@
-import { addAttach } from 'jest-html-reporters/helper';
-
 export const LoginPge = async () => {
     try {
         await page.goto("https://react-redux.realworld.io/");
@@ -11,8 +9,7 @@ export const LoginPge = async () => {
         await page.waitForNavigation()
         await page.waitForTimeout(8000)
     } catch (error) {
-        const screenshot = await page.screenshot()
-        await addAttach(screenshot, 'Screenshot at time of failure')
+        await page.screenshot()
         throw error
     }
 
