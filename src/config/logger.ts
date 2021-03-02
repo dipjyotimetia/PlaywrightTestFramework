@@ -1,22 +1,22 @@
 import { createLogger, format, transports } from 'winston';
 
-import fs from 'fs';
-import path from 'path';
+import { existsSync, mkdirSync } from 'fs';
+import { join, basename } from 'path';
 
 const env = process.env.NODE_ENV || 'development';
 const logDir = 'log';
 
-if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(logDir);
+if (!existsSync(logDir)) {
+  mkdirSync(logDir);
 }
 
-const filename = path.join(logDir, 'results.log');
+const filename = join(logDir, 'results.log');
 
 export const logger = (caller: string) =>
   createLogger({
     level: env !== 'production' ? 'info' : 'debug',
     format: format.combine(
-      format.label({ label: path.basename(caller) }),
+      format.label({ label: basename(caller) }),
       format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' })
     ),
     transports: [
