@@ -45,6 +45,6 @@
     "playwright": "^1.10.0",
     "playwright-cli": "^0.180.0",
     "ts-jest": "^26.5.4",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   }
 }
