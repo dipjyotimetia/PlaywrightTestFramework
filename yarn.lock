@@ -2587,10 +2587,10 @@ jest-haste-map@^26.6.2:
   optionalDependencies:
     fsevents "^2.1.2"
 
-jest-html-reporters@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.1.3.tgz#7c3144784b6e93b0db30d8ec480df182bf06172d"
-  integrity sha512-46QGqnILYTlkFINsYnQ333VGZqFhi9pUHY7T3G/66U3iQm725pm+HHMsWBIN/XgXEkIP9jsEKlCg6kg4pAAUrA==
+jest-html-reporters@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/jest-html-reporters/-/jest-html-reporters-2.1.4.tgz#78169a268de3002b1bac32c94bddffdb43d18d53"
+  integrity sha512-zgglgZkN7R04P1MKgvYkfbCGGYCaOU2URTTJzPL2bRYFJjyZsKBMXVLwJU4LZf3aEV3AIaInZ2u5Lmh7q/rDjQ==
   dependencies:
     fs-extra "^9.0.1"
     open "^8.0.3"
