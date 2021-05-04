@@ -25,7 +25,7 @@
     "cross-env": "^7.0.3",
     "date-fns": "^2.21.1",
     "faker": "^5.5.3",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.0",
     "fse": "^4.0.1",
     "localforage": "^1.9.0",
     "lodash": "^4.17.21",
