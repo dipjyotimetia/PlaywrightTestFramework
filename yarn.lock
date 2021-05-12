@@ -1620,10 +1620,10 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-plugin-jest-playwright@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-playwright/-/eslint-plugin-jest-playwright-0.3.2.tgz#c04f789e2e7db8a36cff3a73929a211086e6ef81"
-  integrity sha512-JowanMmcf/R8pIS4kxQo/dbIuhTh8f4uDZAnwOCkO3Pv27ElAxVZwG73S4UjoFm1e84Ff839h6MR9ItBjgJkVQ==
+eslint-plugin-jest-playwright@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-playwright/-/eslint-plugin-jest-playwright-0.3.3.tgz#245b406570bb3f3b7aaca899f4f59ebf81e1b754"
+  integrity sha512-YUieCpzlI25iQEzwNh7hMfHvehX+ElGA0KNsVsJH+/ERU/FuDd/bALTVZfP53FSLD1lSaLUI1nvzFXdrw7As8g==
   dependencies:
     eslint-plugin-jest "^24.3.6"
 
