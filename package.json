@@ -28,7 +28,7 @@
     "faker": "^5.5.3",
     "fs-extra": "^10.0.0",
     "fse": "^4.0.1",
-    "localforage": "^1.9.0",
+    "localforage": "^1.10.0",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "recursive-readdir": "^2.2.2",
