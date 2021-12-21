@@ -1995,17 +1995,17 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-plugin-jest-playwright@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-playwright/-/eslint-plugin-jest-playwright-0.6.0.tgz#eaa040151b7d750ad789933c1b0db6b8dd739176"
-  integrity sha512-6NacetmhVLTADIl+JNRu8AEf53dOAuE4Ad3pRczNRgpI7JvDMMqZZ8bG7ueoAgNIJcTSHSxcQf0VXbArgJAs1g==
+eslint-plugin-jest-playwright@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest-playwright/-/eslint-plugin-jest-playwright-0.7.0.tgz#14302db2c78eb49a4dd2581403b454d4772f48cb"
+  integrity sha512-+PjtWJwD/LTqhaVsb1ZEYAqIAZFAMRqKcqT5zIFX4W3r0FWMeHKfaPypB+HTBxJvWXo81N9HkLVtAvD56yCDjg==
   dependencies:
-    eslint-plugin-playwright "^0.6.0"
+    eslint-plugin-playwright "^0.7.0"
 
-eslint-plugin-playwright@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-0.6.0.tgz#9b676c72ed543ae2a265cf4e4d981d6eb168257d"
-  integrity sha512-hccbDZcGcRAkfVa2omeTd/PCPjhjo8roZWVANYB8qBv2EGGjFNIGKkN3jzHjYQytgp5K4FKyBn/dgujPpFynjA==
+eslint-plugin-playwright@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-0.7.0.tgz#5a0f26a23cfe5deb2d8097a9ab0aef1dbff430ef"
+  integrity sha512-uM5GobtGJ9sLUfC+YuKOgYEChw4rnjLsczgbCDb1UP+J7tfbqlcn8KOviD4H/bQapaj1OufMyc9RKouabjulYA==
 
 esprima@^4.0.0, esprima@^4.0.1:
   version "4.0.1"
