@@ -24,7 +24,7 @@ jobs:
       - name: Run tests
         run: yarn test
       - name: Push test report to artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Test Results
           path: test-results/
