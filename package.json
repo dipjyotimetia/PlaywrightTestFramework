@@ -44,7 +44,7 @@
     "jest-html-reporters": "^3.0.10",
     "jest-playwright-preset": "^2.0.0",
     "playwright": "^1.25.0",
-    "@playwright/test":"^1.25.0",
+    "@playwright/test":"^1.25.1",
     "ts-jest": "^28.0.8",
     "typescript": "^4.7.4"
   }
