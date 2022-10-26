@@ -31,7 +31,7 @@
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
-    "recursive-readdir": "^2.2.2",
+    "recursive-readdir": "^2.2.3",
     "rimraf": "^3.0.2",
     "sqlite3": "^5.1.2",
     "winston": "^3.8.2",
