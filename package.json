@@ -22,7 +22,7 @@
   "dependencies": {
     "axios": "^1.2.1",
     "chai": "^4.3.7",
-    "chalk": "^5.1.2",
+    "chalk": "^5.2.0",
     "cross-env": "^7.0.3",
     "date-fns": "^2.29.3",
     "faker": "^6.6.6",
