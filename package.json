@@ -33,7 +33,7 @@
     "mkdirp": "^2.1.4",
     "recursive-readdir": "^2.2.3",
     "rimraf": "^4.4.0",
-    "sqlite3": "^5.1.4",
+    "sqlite3": "^5.1.6",
     "winston": "^3.8.2",
     "yaml": "^2.2.1"
   },
