@@ -32,7 +32,7 @@
     "lodash": "^4.17.21",
     "mkdirp": "^2.1.6",
     "recursive-readdir": "^2.2.3",
-    "rimraf": "^4.4.0",
+    "rimraf": "^4.4.1",
     "sqlite3": "^5.1.6",
     "winston": "^3.8.2",
     "yaml": "^2.2.1"
