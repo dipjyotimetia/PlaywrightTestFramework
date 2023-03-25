@@ -2,20 +2,17 @@
 
 ## Tech Details
 
-- Jest - Simple lightweight test runner that supports concurrency. https://facebook.github.io/jest/
-
 - Playwright - A Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. It can also be configured to use full (non-headless) Chrome or Chromium.
+- Allure - Allure is a flexible lightweight multi-language test report tool that not only shows a very concise representation of what have been tested in a neat web report form, but allows everyone participating in the development process to extract maximum of useful information from everyday execution of tests.
 
 
-[Jest](https://github.com/facebook/jest/blob/master/README.md)
+[Playwright](https://playwright.dev/)
 
-[Playwright](https://github.com/microsoft/playwright/blob/master/README.md)
-
-[Axios](https://github.com/axios/axios/blob/master/README.md)
+[Axios](https://axios-http.com/)
 
 This patch allows passing 0 to disable timeout for the following methods:
 
-```javascript
+```typescript
 await page.goto(`http://www.goole.com.au`, { timeout: 0 });
 await page.waitForSelector(`a[href='/signup']`, { visible: true });
 ```
