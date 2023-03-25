@@ -1,20 +1,17 @@
-const { addAttach } = require("jest-html-reporters/helper");
+import  { Page } from "@playwright/test";
 
-export const LoginPge = async () => {
+export const LoginPge = async (page: Page) => {
     try {
         await page.goto("https://react-redux.realworld.io/");
         console.log("page title", await page.title());
         await page.click('[href="#login"]');
-        await page.fill('input[type="email"]', 'testauto007@gmail.com');
+        await page.fill('input[type="email"]', 'testauto@gmail.com');
         await page.fill('input[type="password"]', 'Password1');
         await page.click('button[type="submit"]')
-        const screens = await page.screenshot()
-        addAttach(screens, "test screen")
-        await page.waitForNavigation()
+        await page.screenshot({ path: 'screenshot.png', fullPage: true });
         await page.waitForTimeout(8000)
     } catch (error) {
-        const screen = await page.screenshot()
-        addAttach(screen, "failed test screen")
+        await page.screenshot({ path: 'screenshot.png', fullPage: true });
         throw error
     }
 

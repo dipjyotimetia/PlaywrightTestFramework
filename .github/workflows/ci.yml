@@ -1,30 +1,27 @@
-name: E2E Tests
-
-on: [push]
-
-env:
-  NODE_VERSION: 14.15.0
+name: Playwright Tests
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
 jobs:
-  e2e:
-    name: e2e
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-      - name: Setup node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - name: Setup dependencies for playwright/browsers
-        uses: microsoft/playwright-github-action@v1
+          node-version: 18
       - name: Install dependencies
-        run: yarn
-      - name: Run additional dependencies for GAH
-        run: yarn add playwright-chromium @babel/plugin-transform-typescript nyc
-      - name: Run tests
-        run: yarn test
-      - name: Push test report to artifacts
-        uses: actions/upload-artifact@v3
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test
+      - uses: actions/upload-artifact@v3
+        if: always()
         with:
-          name: Test Results
-          path: test-results/
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
