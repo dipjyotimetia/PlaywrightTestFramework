@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page, TestInfo } from "@playwright/test";
 
 export const AddComments = async (page: Page) => {
     await page.click('textarea[placeholder="Write a comment..."]');

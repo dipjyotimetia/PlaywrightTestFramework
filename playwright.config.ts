@@ -17,7 +17,11 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   // Reporter to use
-  reporter: 'html',
+  reporter: [['html', 'line'], ['./reportConfig.ts'], ["allure-playwright", {
+    detail: true,
+    outputFolder: "allure-results",
+    suiteTitle: false,
+  },]],
 
   // use: {
   //   // Base URL to use in actions like `await page.goto('/')`.
