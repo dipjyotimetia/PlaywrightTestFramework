@@ -28,7 +28,7 @@
     "lodash": "^4.17.21",
     "mkdirp": "^2.1.6",
     "recursive-readdir": "^2.2.3",
-    "rimraf": "^4.4.1",
+    "rimraf": "^5.0.0",
     "winston": "^3.8.2",
     "yaml": "^2.2.1",
     "pg": "^8.9.0",
