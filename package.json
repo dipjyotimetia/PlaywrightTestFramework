@@ -30,7 +30,7 @@
     "recursive-readdir": "^2.2.3",
     "rimraf": "^5.0.0",
     "winston": "^3.8.2",
-    "yaml": "^2.2.1",
+    "yaml": "^2.2.2",
     "pg": "^8.9.0",
     "allure-playwright": "^2.0.0",
     "csv-parse": "5.3.8"
