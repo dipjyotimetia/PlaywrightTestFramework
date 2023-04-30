@@ -33,7 +33,7 @@
     "yaml": "^2.2.2",
     "pg": "^8.9.0",
     "allure-playwright": "^2.2.1",
-    "csv-parse": "5.3.8"
+    "csv-parse": "5.3.9"
   },
   "devDependencies": {
     "eslint": "^8.39.0",
