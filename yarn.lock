@@ -393,10 +393,10 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-plugin-playwright@0.14.3:
-  version "0.14.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-0.14.3.tgz#d9ef0824eb03df9a65611f3c7e7860cb9a1e16cf"
-  integrity sha512-kTuFzoh/8HuSlxZQCnuGcY02ErUI9BPfxLhiNozpJ5ZZXStmEwBaP+GfYSXqSHoN9pvc0ZqPW2sNLGDxQAVr6w==
+eslint-plugin-playwright@0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-playwright/-/eslint-plugin-playwright-0.15.0.tgz#569396b2b8a87afb5dd3a2e69d40ba27ba59d60d"
+  integrity sha512-dJ/VrDhwKNyaqPqT9SNHu0A/BjVvhpU8Vlbs5QfWEjNITZ/AnDvKDlaUHW45WcOhaA2nmmS30wk0PUQvnomy5g==
 
 eslint-scope@^7.2.0:
   version "7.2.0"
