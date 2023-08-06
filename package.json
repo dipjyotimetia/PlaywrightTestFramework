@@ -32,7 +32,7 @@
     "winston": "^3.10.0",
     "yaml": "^2.3.1",
     "pg": "^8.11.2",
-    "allure-playwright": "^2.4.0",
+    "allure-playwright": "^2.5.0",
     "csv-parse": "5.4.0"
   },
   "devDependencies": {
