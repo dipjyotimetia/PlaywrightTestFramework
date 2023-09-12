@@ -162,19 +162,19 @@ ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-allure-js-commons@2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/allure-js-commons/-/allure-js-commons-2.8.0.tgz#7e57a01f9d6bf92fcaabc007e05e20e0bfd95189"
-  integrity sha512-bB7nSsv3NWweulPtir0lr4mSPpu0y5KgXdOWGgvDYPzkdRoKPgUw7ue5P4ieKoH0SP4gDeaO3x4l1TZxeB4org==
+allure-js-commons@2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/allure-js-commons/-/allure-js-commons-2.8.1.tgz#7cd12d1bdca916a1862c1c1def32168a04e22c15"
+  integrity sha512-Rc6ZQQW3OwX77GrgnQ5vcfDFI6WZteeodfCIgY0fBxUZPQFa14dWbFvLxoMSFV1zUFABtYzkQD7r/2+bfPWb6w==
   dependencies:
     properties "^1.2.1"
 
-allure-playwright@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/allure-playwright/-/allure-playwright-2.8.0.tgz#68a659fd0d14ab4202ea3ab30f6d71acf113601e"
-  integrity sha512-UTu7KMaxVt2YdN91u/Ltubz5E1PYmLHLifTGb/SedMl3/LCiXs8d9wNf+fdZSFwCwF47pOoZr+4olgjwfzOspw==
+allure-playwright@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/allure-playwright/-/allure-playwright-2.8.1.tgz#3ff9423b7c44478a95cf3e13e85d68e4f80853a0"
+  integrity sha512-1/hmeO/WyscuyvrAi9E0BVANNKyLgC93xXdge5lFkePbkNaA5X7nJZUGW7w/ewOVd3vVWYKVPRVhTANQha10Sw==
   dependencies:
-    allure-js-commons "2.8.0"
+    allure-js-commons "2.8.1"
 
 ansi-regex@^5.0.1:
   version "5.0.1"
