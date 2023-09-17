@@ -16,12 +16,16 @@ export default defineConfig({
   // Opt out of parallel tests on CI.
   workers: process.env.CI ? 1 : undefined,
 
-  // Reporter to use
-  reporter: [['html', 'line'], ['./reportConfig.ts'], ["allure-playwright", {
-    detail: true,
-    outputFolder: "allure-results",
-    suiteTitle: false,
-  },]],
+  // Reporter configuration
+  reporter: [
+    ['html', 'line'], // HTML and Line reporters
+    ['./reportConfig.ts'], // Custom reporter configuration file
+    ['allure-playwright', {
+      detail: true,
+      outputFolder: "allure-results",
+      suiteTitle: false,
+    }],
+  ],
 
   // use: {
   //   // Base URL to use in actions like `await page.goto('/')`.
@@ -34,7 +38,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'] }, // Use Desktop Chrome device configuration
     },
   ],
 });

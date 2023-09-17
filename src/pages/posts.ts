@@ -4,7 +4,7 @@ import * as faker from "@faker-js/faker";
 export const AddPost = async (page: Page) => {
   await page.click('text=/.*New Post.*/');
   await page.click('input[placeholder="Article Title"]');
-  await page.fill('input[placeholder="Article Title"]', faker.faker.random.alphaNumeric(10));
+  await page.fill('input[placeholder="Article Title"]', faker.faker.lorem.word());
   await page.click('input[placeholder="What\'s this article about?"]');
   await page.fill('input[placeholder="What\'s this article about?"]', 'Is it working');
   await page.click('textarea[placeholder="Write your article (in markdown)"]');

@@ -9,18 +9,19 @@ if (!existsSync(logDir)) {
     mkdirSync(logDir);
 }
 
-const console = new transports.Console();
+const consoleTransport = new transports.Console();
+const fileTransport = new transports.File({ filename: 'logs/info.log', level: 'info' });
+
 const logger = createLogger({
     level: 'info',
     format: format.json(),
     transports: [
-        // - Write all logs with importance level of `info` or less than it
-        new transports.File({ filename: 'logs/info.log', level: 'info' }),
+        // Write all logs with importance level of `info` or less than it to console
+        consoleTransport,
+        // Write all logs with importance level of `info` to a log file
+        fileTransport,
     ],
 });
-
-// Writes logs to console
-logger.add(console);
 
 export default class MyReporter implements Reporter {
 

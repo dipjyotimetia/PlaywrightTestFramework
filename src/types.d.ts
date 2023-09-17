@@ -1,4 +1,6 @@
-import { Browser, Page } from "playwright";
+// global.d.ts
+
+import { Browser, Page } from "@playwright/test";
 
 declare global {
   const page: Page;

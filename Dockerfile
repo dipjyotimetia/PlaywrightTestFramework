@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package.json .
 COPY yarn.lock .
 COPY playwright.config.ts .
+COPY reportConfig.ts .
 COPY tsconfig.json .
 
 ENV CI=1
