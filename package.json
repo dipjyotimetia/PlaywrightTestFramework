@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/dipjyotimetia/PlaywrightTestFramework#readme",
   "dependencies": {
-    "@faker-js/faker": "^8.1.0",
+    "@faker-js/faker": "^8.2.0",
     "allure-playwright": "^2.9.2",
     "axios": "^1.5.1",
     "config": "^3.3.9",
