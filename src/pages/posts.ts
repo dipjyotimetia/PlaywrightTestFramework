@@ -1,6 +1,10 @@
 import { Page } from "@playwright/test";
 import * as faker from "@faker-js/faker";
 
+/**
+ * Adds a new post on the given page.
+ * @param page - The Playwright Page object representing the web page.
+ */
 export const AddPost = async (page: Page) => {
   await page.click('text=/.*New Post.*/');
   await page.click('input[placeholder="Article Title"]');

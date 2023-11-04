@@ -1,10 +1,19 @@
 import { Page, TestInfo } from "@playwright/test";
 
+/**
+ * Adds comments to a webpage using Playwright's API.
+ * @param page - The Playwright `Page` object representing the webpage.
+ */
 export const AddComments = async (page: Page) => {
-    await page.click('textarea[placeholder="Write a comment..."]');
-    await page.fill('textarea[placeholder="Write a comment..."]', 'yea its working');
-    await page.click('text="Post Comment"');
-    await page.click('text="yea its working"');
-    await page.click('text="yea its working"');
-    await page.click('text="conduit"');
+  const commentTextarea = 'textarea[placeholder="Write a comment..."]';
+  const postCommentButton = 'text="Post Comment"';
+  const commentText = 'text="yea its working"';
+  const conduitLink = 'text="conduit"';
+
+  await page.click(commentTextarea);
+  await page.fill(commentTextarea, 'yea its working');
+  await page.click(postCommentButton);
+  await page.click(commentText);
+  await page.click(commentText);
+  await page.click(conduitLink);
 }

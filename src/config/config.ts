@@ -6,13 +6,18 @@ export interface AppConfig {
   BASE_API: string;
 }
 
+/**
+ * Reads and parses a YAML configuration file.
+ * @param filePath - The path to the configuration file.
+ * @returns The parsed configuration object if the file exists and can be read and parsed successfully, otherwise null.
+ */
 export function readConfigFile(filePath: string): AppConfig | null {
-  if (!fs.existsSync(filePath)) {
-    console.error('Config file does not exist:', filePath);
-    return null;
-  }
-
   try {
+    if (!fs.existsSync(filePath)) {
+      console.error('Config file does not exist:', filePath);
+      return null;
+    }
+
     const fileContents = fs.readFileSync(filePath, 'utf-8');
     const config = yaml.load(fileContents) as AppConfig;
     return config;
