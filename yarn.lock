@@ -65,10 +65,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.53.0.tgz#bea56f2ed2b5baea164348ff4d5a879f6f81f20d"
   integrity sha512-Kn7K8dx/5U6+cT1yEhpX1w4PCSg0M+XyRILPgvwcEBjerFWCwQj5sbr3/VmxqV0JGHCBCzyd6LxypEuehypY1w==
 
-"@faker-js/faker@^8.2.0":
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-8.2.0.tgz#d4656d2cb485fe6ec4e7b340da9f16fac2c36c4a"
-  integrity sha512-VacmzZqVxdWdf9y64lDOMZNDMM/FQdtM9IsaOPKOm2suYwEatb8VkdHqOzXcDnZbk7YDE2BmsJmy/2Hmkn563g==
+"@faker-js/faker@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-8.3.0.tgz#855a90ea2f5d1c8a053fe50a210a30ec222ff2ca"
+  integrity sha512-1Ibx6hdxIvJB6fT56daVJND/8uw5G3hi2Fw2Bjm8EW7jsUNI4wV3D1dvyqHYR2RIRU6mWIroZmoGvl76mlnFrg==
 
 "@humanwhocodes/config-array@^0.11.13":
   version "0.11.13"
