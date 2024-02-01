@@ -169,19 +169,25 @@ ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-allure-js-commons@2.11.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/allure-js-commons/-/allure-js-commons-2.11.1.tgz#cd4d123af49d1b2064d821bc355e221676eb1964"
-  integrity sha512-A7Eiofwj46JBbK2XsM9FKmbhTYrdok+5M2EzI5ueJ/S+T12xvINBrrKdtjkqFvz/oH9qA/iKHawlJc4MSQbxLQ==
+allure-js-commons@2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/allure-js-commons/-/allure-js-commons-2.12.0.tgz#5ff88f9ed0ab19bbe23fcaf21ab29c4d3a16fa5a"
+  integrity sha512-uVMKT2LBRJQ9nPTrfE61zwryF3WhaUGIaj0PrVP7AoUpAexzGx0nOUjsJxUes1BwomcTIH1ORZo6r3kmIs7N9g==
   dependencies:
     properties "^1.2.1"
+    strip-ansi "^5.2.0"
 
-allure-playwright@^2.11.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/allure-playwright/-/allure-playwright-2.11.1.tgz#6f6194791fb9b9178bb45becd1ee769faa4a8158"
-  integrity sha512-xzSFJ5Xrc8AxMM9fkpvvEOwjcuGWUiksx3mQiWFHALpUS1cgsJxm5M30omgqe6/rfbMBsIM2w4ufMts4N37+2w==
+allure-playwright@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/allure-playwright/-/allure-playwright-2.12.0.tgz#775a2cb30c4aadd2db997e0d8ba46d1379da1c28"
+  integrity sha512-H2S7bEGqH/I3kR+6cnUpgRMfUOD1i73Sa8kQtPUGzavAZ6ZuF0vITf8jrlddNo1o4NKm2/HymUp0NnDBphT7uQ==
   dependencies:
-    allure-js-commons "2.11.1"
+    allure-js-commons "2.12.0"
+
+ansi-regex@^4.1.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-4.1.1.tgz#164daac87ab2d6f6db3a29875e2d1766582dabed"
+  integrity sha512-ILlv4k/3f6vfQ4OoP2AGvirOktlQ98ZEL1k9FaQjxa3L1abBgbuTDAdPOpvbGncC0BTVQrl+OM8xZGK6tWXt7g==
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -1181,6 +1187,13 @@ string_decoder@^1.1.1:
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
   dependencies:
     ansi-regex "^5.0.1"
+
+strip-ansi@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
+  dependencies:
+    ansi-regex "^4.1.0"
 
 strip-ansi@^7.0.1:
   version "7.0.1"
