@@ -33,7 +33,7 @@
     "pg": "^8.11.3",
     "recursive-readdir": "^2.2.3",
     "rimraf": "^5.0.5",
-    "winston": "^3.11.0",
+    "winston": "^3.12.0",
     "yaml": "^2.4.0"
   },
   "devDependencies": {
