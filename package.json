@@ -20,7 +20,7 @@
   "homepage": "https://github.com/dipjyotimetia/PlaywrightTestFramework#readme",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
-    "allure-playwright": "^2.14.0",
+    "allure-playwright": "^2.14.1",
     "axios": "^1.6.7",
     "config": "^3.3.11",
     "csv-parse": "5.5.5",
