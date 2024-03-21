@@ -169,20 +169,21 @@ ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-allure-js-commons@2.14.1:
-  version "2.14.1"
-  resolved "https://registry.yarnpkg.com/allure-js-commons/-/allure-js-commons-2.14.1.tgz#38832f28de1b7eafd4758932df403a7b5b99a4a8"
-  integrity sha512-sHfWVPuQQuJ1seDcet3pO39RjdOWMGmMrrVxh0mwCHrQNoYacWHABMbOTL0ENtZFYcv87e2umrxzH1a/JjLGaA==
+allure-js-commons@2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/allure-js-commons/-/allure-js-commons-2.15.0.tgz#18f7a99d93f5d5a1b4d82d5f44cf17f7af737640"
+  integrity sha512-ON9HO2hQ6Fp73WvfR3t7fKaoFraw6hxTVTnUL+ynDrPFn6GnI4DJivYZ9jR+ZLdUdI0O2iJGtAEmnBa/BkIEGQ==
   dependencies:
+    md5 "^2.3.0"
     properties "^1.2.1"
     strip-ansi "^5.2.0"
 
-allure-playwright@^2.14.1:
-  version "2.14.1"
-  resolved "https://registry.yarnpkg.com/allure-playwright/-/allure-playwright-2.14.1.tgz#fb019ef96633dca1265b64d292aac9d8b70e081e"
-  integrity sha512-dteOQlBJnCi/MH1Sy1M3oYIMcnHZMxIrNO5Cq4ksKW6UhchhUA5+2B5pEefpqQ8e0vAvEGWBq+IrkP0E54tJ7g==
+allure-playwright@^2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/allure-playwright/-/allure-playwright-2.15.0.tgz#6f347c7c4962df728e2ca64a1d9cd3ccd9fbbc37"
+  integrity sha512-ij6Jm2EjDzuYRpGDsSyB6Xb1NCf5wVzhILKnXzQcYIkDnE8hwKFENop5ASAX9VoC7iBkUaV237tnXLKebkd86g==
   dependencies:
-    allure-js-commons "2.14.1"
+    allure-js-commons "2.15.0"
 
 ansi-regex@^4.1.0:
   version "4.1.1"
@@ -273,6 +274,11 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+charenc@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
+  integrity sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==
+
 color-convert@^1.9.3:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -348,6 +354,11 @@ cross-spawn@^7.0.0, cross-spawn@^7.0.2:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+crypt@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
+  integrity sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==
 
 csv-parse@5.5.5:
   version "5.5.5"
@@ -699,6 +710,11 @@ is-arrayish@^0.3.1:
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
   integrity sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==
 
+is-buffer@~1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
+  integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
+
 is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
@@ -817,6 +833,15 @@ logform@^2.3.2, logform@^2.4.0:
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.0.1.tgz#0a3be479df549cca0e5d693ac402ff19537a6b7a"
   integrity sha512-IJ4uwUTi2qCccrioU6g9g/5rvvVl13bsdczUUcqbciD9iLr095yj8DQKdObriEvuNSx325N1rV1O0sJFszx75g==
+
+md5@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/md5/-/md5-2.3.0.tgz#c3da9a6aae3a30b46b7b0c349b87b110dc3bda4f"
+  integrity sha512-T1GITYmFaKuO91vxyoQMFETst+O71VUPEU3ze5GNzDm0OWdP8v1ziTaAEPUr/3kLsY3Sftgz242A1SetQiDL7g==
+  dependencies:
+    charenc "0.0.2"
+    crypt "0.0.2"
+    is-buffer "~1.1.6"
 
 mime-db@1.52.0:
   version "1.52.0"
