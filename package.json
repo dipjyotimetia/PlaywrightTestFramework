@@ -41,7 +41,7 @@
     "@types/js-yaml": "4.0.9",
     "@types/node": "^20.12.7",
     "eslint": "^9.0.0",
-    "eslint-plugin-playwright": "1.5.4",
+    "eslint-plugin-playwright": "1.6.0",
     "typescript": "^5.4.5"
   }
 }
