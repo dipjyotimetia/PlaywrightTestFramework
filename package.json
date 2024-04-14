@@ -37,7 +37,7 @@
     "yaml": "^2.4.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.43.0",
+    "@playwright/test": "^1.43.1",
     "@types/js-yaml": "4.0.9",
     "@types/node": "^20.12.7",
     "eslint": "^9.0.0",
