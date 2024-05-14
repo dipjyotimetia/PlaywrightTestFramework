@@ -39,7 +39,7 @@
   "devDependencies": {
     "@playwright/test": "^1.44.0",
     "@types/js-yaml": "4.0.9",
-    "@types/node": "^20.12.11",
+    "@types/node": "^20.12.12",
     "eslint": "^9.2.0",
     "eslint-plugin-playwright": "1.6.1",
     "typescript": "^5.4.5"
