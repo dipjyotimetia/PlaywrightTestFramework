@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dipjyotimetia/PlaywrightTestFramework#readme",
   "dependencies": {
+    "@estruyf/github-actions-reporter": "^1.7.0",
     "@faker-js/faker": "^8.4.1",
     "allure-playwright": "^2.15.1",
     "axios": "^1.7.2",
@@ -39,7 +40,6 @@
   "devDependencies": {
     "@playwright/test": "^1.45.1",
     "@types/js-yaml": "4.0.9",
-    "@types/node": "^20.14.10",
     "eslint": "^9.6.0",
     "eslint-plugin-playwright": "1.6.2",
     "typescript": "^5.5.3"
