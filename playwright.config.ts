@@ -20,6 +20,11 @@ export default defineConfig({
   reporter: [
     ['html', 'line'], // HTML and Line reporters
     ['./reportConfig.ts'], // Custom reporter configuration file
+    ['@estruyf/github-actions-reporter', {
+      title: 'Playwright Tests',
+      useDetails: true,
+      showError: true
+    }], // GitHub Actions reporter
     ['allure-playwright', {
       detail: true,
       outputFolder: "allure-results",
