@@ -78,10 +78,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/object-schema/-/object-schema-2.1.4.tgz#9e69f8bb4031e11df79e03db09f9dbbae1740843"
   integrity sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==
 
-"@estruyf/github-actions-reporter@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@estruyf/github-actions-reporter/-/github-actions-reporter-1.9.0.tgz#7dcf2ee66ab68f220e16d0b618d0769da4a23866"
-  integrity sha512-970BX+9VixLxQ+ogiWM6WZPJYAWxv7ofkSh3XBQ9ryE7pU7KEyCk/32G03vTVaWVBTVD7fn4oQ+Jt7nAua4Nhg==
+"@estruyf/github-actions-reporter@^1.9.1":
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/@estruyf/github-actions-reporter/-/github-actions-reporter-1.9.1.tgz#7cb8bb9672e2fdbddfd256c8d0eddbb2b87e691f"
+  integrity sha512-oLdmlXcieEOWzswd3EypmScKs9b0R6aT5BlNyMzvoprOal7tlCFzH/fWi8gwi9aI4OTCpFpbHLBD+6w9BuHzcQ==
   dependencies:
     "@actions/core" "^1.10.0"
     ansi-to-html "^0.7.2"
