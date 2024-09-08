@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { httpGet, httpPost, httpPatch ,httpDelete} from '../core/apiHelpers';
+import { httpGet, httpPost, httpPatch ,httpDelete} from '../core/apiActions';
 import { getEndpoint,baseUrlApi } from '../config/config';
 
 test.describe('API Tests', () => {

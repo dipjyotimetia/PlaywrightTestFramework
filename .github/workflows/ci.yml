@@ -5,12 +5,15 @@ on:
   pull_request:
     branches: [main, master]
 jobs:
-  test:
+  playwright-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node-version: [18, 20]
+        shardIndex: [1, 2, 3, 4]
+        shardTotal: [4]
     steps:
       - uses: actions/checkout@v4
 
@@ -37,20 +40,43 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
-      - name: Upload Playwright report
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-report-${{ matrix.node-version }}
-          path: playwright-report/
-          retention-days: 30
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
+      - name: Upload blob report to GitHub Actions Artifacts
         if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
         with:
-          name: test-results-${{ matrix.node-version }}
-          path: test-results/
-          retention-days: 30
+          name: blob-report-${{ matrix.shardIndex }}
+          path: blob-report
+          retention-days: 1
+  
+  merge-reports:
+    # Merge reports after playwright-tests, even if some shards have failed
+    if: ${{ !cancelled() }}
+    needs: [playwright-tests]
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Download blob reports from GitHub Actions Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: all-blob-reports
+        pattern: blob-report-*
+        merge-multiple: true
+
+    - name: Merge into HTML Report
+      run: npx playwright merge-reports --reporter html ./all-blob-reports
+
+    - name: Upload HTML report
+      uses: actions/upload-artifact@v4
+      with:
+        name: html-report--attempt-${{ github.run_attempt }}
+        path: playwright-report
+        retention-days: 14

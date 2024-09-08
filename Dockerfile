@@ -1,17 +1,22 @@
-FROM mcr.microsoft.com/playwright:bionic
+FROM node:20-bookworm
+
 WORKDIR /app
 
-# Install pnpm
-RUN npm install -g pnpm
+# Install pnpm and Playwright dependencies in one layer
+RUN npm install -g pnpm && \
+    npx -y playwright@1.47.0 install --with-deps
 
-# Copy all necessary files in one command
-COPY package.json pnpm-lock.yaml playwright.config.ts reportConfig.ts tsconfig.json src/ mocks/ ./
-
-# Set environment variable
-ENV CI=1
+# Copy package.json and pnpm-lock.yaml first to leverage Docker cache
+COPY package.json pnpm-lock.yaml ./
 
 # Install dependencies
 RUN pnpm install
+
+# Copy the rest of the files
+COPY playwright.config.ts reportConfig.ts tsconfig.json src/ mocks/ ./
+
+# Set environment variable
+ENV CI=1
 
 # Run tests
 RUN pnpm run test:playwright
