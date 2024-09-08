@@ -22,7 +22,7 @@ Welcome to the Playwright AutomationTest UI Framework! This repository provides 
 ## Prerequisites
 
 - Node.js (>= 20.x)
-- Yarn (>= 2.x)
+- pnpm (>= 9.x)
 - Docker (for containerized execution)
 
 ## Setup Instructions
@@ -35,7 +35,7 @@ Welcome to the Playwright AutomationTest UI Framework! This repository provides 
 
 2. Install dependencies:
     ```bash
-    yarn install
+    pnpm install
     ```
 
 ## Running Tests
