@@ -30,19 +30,19 @@ docker-compose up
 
 ## API Testing with Playwright
 
-This repository now includes support for testing REST APIs using Playwright. You can use the provided helper functions to perform HTTP GET, POST, and PATCH requests, and write your own API tests.
+This repository now includes support for testing REST APIs using Playwright. You can use the provided helper functions to perform HTTP requests and validate responses.
 
 ### Helper Functions
 
 The following helper functions are available in `src/core/apiHelpers.ts`:
 
-- `HttpGet(url: string, headers?: Record<string, string>)`: Perform an HTTP GET request.
-- `HttpPost(url: string, data: any, headers?: Record<string, string>)`: Perform an HTTP POST request.
-- `HttpPatch(url: string, data: any, headers?: Record<string, string>)`: Perform an HTTP PATCH request.
+- `HttpPost`: Perform an HTTP POST request.
+- `HttpGet`: Perform an HTTP GET request.
+- `HttpPatch`: Perform an HTTP PATCH request.
 
 ### Sample API Tests
 
-Sample API tests are available in `src/tests/api.test.spec.ts`. These tests demonstrate how to use the helper functions to perform API requests and validate the responses.
+Sample API tests are available in `src/tests/api.test.spec.ts`. These tests demonstrate how to use the helper functions to test REST APIs.
 
 ### Running API Tests
 
@@ -52,8 +52,10 @@ To run the API tests, use the following command:
 npx playwright test src/tests/api.test.spec.ts
 ```
 
-Make sure you have the necessary dependencies installed by running:
+## Code Formatting with Prettier
+
+This repository uses Prettier for code formatting. To format the code, use the following command:
 
 ```bash
-yarn install
+npm run format
 ```
