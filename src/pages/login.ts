@@ -25,10 +25,10 @@ export const LoginPage = async (page: Page, testInfo: TestInfo) => {
     });
     await page.waitForTimeout(1000);
   } catch (error) {
-      await testInfo.attach('ErrorScreenshot', {
-        body: await page.screenshot({ fullPage: true }),
-        contentType: 'image/png',
-      });
+    await testInfo.attach('ErrorScreenshot', {
+      body: await page.screenshot({ fullPage: true }),
+      contentType: 'image/png',
+    });
     throw error;
   }
 };

@@ -7,10 +7,10 @@ test.beforeAll(async () => {
     timeout: 30000,
     ignoreHTTPSErrors: true,
     extraHTTPHeaders: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': `token ${process.env.API_TOKEN}`,
-    }
+      Authorization: `token ${process.env.API_TOKEN}`,
+    },
   });
 });
 
@@ -79,9 +79,9 @@ export async function httpPut(
 
 /**
  *  Helper function to perform an HTTP DELETE request using Playwright.
- * @param url 
- * @param headers 
- * @returns 
+ * @param url
+ * @param headers
+ * @returns
  */
 export async function httpDelete(
   url: string,

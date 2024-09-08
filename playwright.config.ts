@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { GitHubActionOptions } from '@estruyf/github-actions-reporter';
-import os from "node:os";
+import os from 'node:os';
 
 const isCI = !!process.env.CI;
 
@@ -19,9 +19,11 @@ export default defineConfig({
   reporter: [
     ['html', 'line'], // HTML and Line reporters
     ['./reportConfig.ts'], // Custom reporter configuration file
+    ['blob', { outputFile: `./blob-report/report-${os.platform()}.zip` }],
+    ['json', { outputFile: 'results.json' }],
     [
-      '@estruyf/github-actions-reporter',<GitHubActionOptions>
-      {
+      '@estruyf/github-actions-reporter',
+      <GitHubActionOptions>{
         title: 'Playwright Tests',
         useDetails: true,
         showError: true,
@@ -36,7 +38,7 @@ export default defineConfig({
         suiteTitle: true,
         environmentInfo: {
           Browser: process.env.BROWSER,
-          framework: "playwright",
+          framework: 'playwright',
           os_platform: os.platform(),
           os_release: os.release(),
           os_version: os.version(),

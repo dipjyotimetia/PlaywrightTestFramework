@@ -8,8 +8,7 @@
     "test:record": "npx playwright codegen https://www.saucedemo.com/",
     "allureReport": "allure serve",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .ts,.js",
-    "build": "tsc"
+    "lint": "eslint . --ext .ts,.js"
   },
   "repository": {
     "type": "git",

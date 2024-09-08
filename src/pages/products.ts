@@ -1,4 +1,4 @@
-import { Page, TestInfo ,expect} from '@playwright/test';
+import { Page, TestInfo, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 
 const selectors = {
@@ -10,7 +10,7 @@ const selectors = {
   postalCode: 'input[data-test="postalCode"]',
   continueButton: 'input[data-test="continue"]',
   finishButton: 'button[data-test="finish"]',
-  backpackText: 'text=Sauce Labs Backpack'
+  backpackText: 'text=Sauce Labs Backpack',
 };
 
 /**
@@ -24,14 +24,13 @@ export const AddToCart = async (page: Page, testInfo: TestInfo) => {
 
   await page.click(addToCartBackpack);
   await page.click(cartLink);
-  const textLocator = page.locator('text=' + "Sauce Labs Backpack");
+  const textLocator = page.locator('text=' + 'Sauce Labs Backpack');
   await expect(textLocator).toBeVisible();
   await testInfo.attach('AddToCartScreenshot', {
     body: await page.screenshot(),
     contentType: 'image/png',
   });
 };
-
 
 /**
  * Checkout using Playwright's API.
@@ -40,8 +39,15 @@ export const AddToCart = async (page: Page, testInfo: TestInfo) => {
  * @returns {Promise<void>}
  */
 export const Checkout = async (page: Page, testInfo: TestInfo) => {
-  const { checkoutButton, firstName, lastName, postalCode, continueButton, finishButton } = selectors;
-  
+  const {
+    checkoutButton,
+    firstName,
+    lastName,
+    postalCode,
+    continueButton,
+    finishButton,
+  } = selectors;
+
   await page.click(checkoutButton);
   await page.fill(firstName, faker.person.firstName());
   await page.fill(lastName, faker.person.lastName());
@@ -53,4 +59,3 @@ export const Checkout = async (page: Page, testInfo: TestInfo) => {
   });
   await page.click(finishButton);
 };
-

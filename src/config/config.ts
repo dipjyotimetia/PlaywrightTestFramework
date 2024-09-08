@@ -1,4 +1,4 @@
-import { existsSync, readFileSync }  from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import { load } from 'js-yaml';
 
 export interface config {
@@ -16,4 +16,5 @@ export const baseUrl: string = config.baseUrl;
 export const baseUrlApi: string = config.baseUrlApi;
 const endpoints = config.endpoints;
 
-export const getEndpoint = (name: string) => endpoints.find((e) => e.name === name);
+export const getEndpoint = (name: string) =>
+  endpoints.find((e) => e.name === name);
