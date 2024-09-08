@@ -1,4 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
+import type { GitHubActionOptions } from '@estruyf/github-actions-reporter';
+import os from "node:os";
 
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
@@ -20,16 +22,31 @@ export default defineConfig({
   reporter: [
     ['html', 'line'], // HTML and Line reporters
     ['./reportConfig.ts'], // Custom reporter configuration file
-    ['@estruyf/github-actions-reporter', {
-      title: 'Playwright Tests',
-      useDetails: true,
-      showError: true
-    }], // GitHub Actions reporter
-    ['allure-playwright', {
-      detail: true,
-      outputFolder: "allure-results",
-      suiteTitle: false,
-    }],
+    [
+      '@estruyf/github-actions-reporter',<GitHubActionOptions>
+      {
+        title: 'Playwright Tests',
+        useDetails: true,
+        showError: true,
+        showAnnotations: true,
+      },
+    ], // GitHub Actions reporter
+    [
+      'allure-playwright',
+      {
+        detail: true,
+        outputFolder: 'allure-results',
+        suiteTitle: true,
+        environmentInfo: {
+          Browser: process.env.BROWSER,
+          framework: "playwright",
+          os_platform: os.platform(),
+          os_release: os.release(),
+          os_version: os.version(),
+          node_version: process.version,
+        },
+      },
+    ],
   ],
 
   // use: {

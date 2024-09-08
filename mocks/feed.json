@@ -1,39 +1,39 @@
 {
-    "articles": [
-        {
-            "title": "NewTest",
-            "slug": "newtest-tewh0c",
-            "body": "I think so",
-            "createdAt": "2021-02-20T15:04:43.601Z",
-            "updatedAt": "2021-02-20T15:04:43.601Z",
-            "tagList": [],
-            "description": "Is it working",
-            "author": {
-                "username": "testauto007",
-                "bio": null,
-                "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
-                "following": false
-            },
-            "favorited": false,
-            "favoritesCount": 0
-        },
-        {
-            "title": "NewTest",
-            "slug": "newtest-r5h68u",
-            "body": "I think so",
-            "createdAt": "2021-02-20T15:04:33.551Z",
-            "updatedAt": "2021-02-20T15:04:33.551Z",
-            "tagList": [],
-            "description": "Is it working",
-            "author": {
-                "username": "testauto007",
-                "bio": null,
-                "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
-                "following": false
-            },
-            "favorited": false,
-            "favoritesCount": 0
-        }
-    ],
-    "articlesCount": 2
+  "articles": [
+    {
+      "title": "NewTest",
+      "slug": "newtest-tewh0c",
+      "body": "I think so",
+      "createdAt": "2021-02-20T15:04:43.601Z",
+      "updatedAt": "2021-02-20T15:04:43.601Z",
+      "tagList": [],
+      "description": "Is it working",
+      "author": {
+        "username": "testauto007",
+        "bio": null,
+        "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+        "following": false
+      },
+      "favorited": false,
+      "favoritesCount": 0
+    },
+    {
+      "title": "NewTest",
+      "slug": "newtest-r5h68u",
+      "body": "I think so",
+      "createdAt": "2021-02-20T15:04:33.551Z",
+      "updatedAt": "2021-02-20T15:04:33.551Z",
+      "tagList": [],
+      "description": "Is it working",
+      "author": {
+        "username": "testauto007",
+        "bio": null,
+        "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+        "following": false
+      },
+      "favorited": false,
+      "favoritesCount": 0
+    }
+  ],
+  "articlesCount": 2
 }

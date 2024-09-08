@@ -17,13 +17,13 @@ categories:
   - title: '📝 Documentation'
     label: 'docs'
   - title: '🔐 Security'
-    label: 'security'          
+    label: 'security'
   - title: '🧰 Maintenance'
     label:
       - 'cicd'
       - 'tech'
   - title: '🤖 Dependencies'
-    label: 'dependencies'    
+    label: 'dependencies'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 version-resolver:

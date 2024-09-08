@@ -1,12 +1,15 @@
 {
   "name": "playwrighttestframework",
   "version": "1.0.0",
-  "description": "",
+  "description": "A test framework using Playwright for end-to-end testing.",
   "scripts": {
     "test:playwright": "playwright test --headed",
     "test.watch": "jest --watchAll",
-    "test:record": "npx playwright codegen https://react-redux.realworld.io/",
-    "allureReport": "allure serve"
+    "test:record": "npx playwright codegen https://www.saucedemo.com/",
+    "allureReport": "allure serve",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .ts,.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -18,10 +21,18 @@
     "url": "https://github.com/dipjyotimetia/PlaywrightTestFramework/issues"
   },
   "homepage": "https://github.com/dipjyotimetia/PlaywrightTestFramework#readme",
+  "keywords": [
+    "playwright",
+    "testing",
+    "e2e",
+    "automation"
+  ],
   "dependencies": {
     "@estruyf/github-actions-reporter": "^1.9.2",
     "@faker-js/faker": "^9.0.0",
-    "allure-playwright": "^2.15.1",
+    "@types/node": "^22.5.4",
+    "allure-playwright": "^3.0.0-beta.12",
+    "axios": "^1.7.7",
     "config": "^3.3.12",
     "csv-parse": "5.5.6",
     "date-fns": "^3.6.0",
@@ -36,6 +47,7 @@
     "@types/node": "^22.5.4",
     "eslint": "^9.10.0",
     "eslint-plugin-playwright": "1.6.2",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.4"
   }
 }
