@@ -1,10 +1,5 @@
 import { Page, ElementHandle } from '@playwright/test';
 
-/**
- * Navigates to a specified URL in a web page using the Playwright library.
- * @param page - An instance of the `Page` class from the Playwright library.
- * @param url - A string representing the URL to navigate to.
- */
 export async function navigateToUrl(page: Page, url: string): Promise<void> {
   await page.goto(url);
 }
@@ -173,4 +168,12 @@ export async function pressEnter(page: Page, selector: string): Promise<void> {
 
 export async function pressTab(page: Page, selector: string): Promise<void> {
   await page.press(selector, 'Tab');
+}
+
+export async function selectDropdownOption(
+  page: Page,
+  selector: string,
+  option: string | { label?: string; value?: string; index?: number }
+): Promise<void> {
+  await page.selectOption(selector, option);
 }

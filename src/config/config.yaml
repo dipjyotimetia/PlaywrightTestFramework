@@ -1,12 +1,12 @@
 baseUrl: 'https://www.saucedemo.com/'
 baseUrlApi: 'https://jsonplaceholder.typicode.com'
 endpoints:
-  - name: "getPosts"
-    method: "GET"
-    path: "/posts"
-  - name: "getPost"
-    method: "GET"
-    path: "/posts/{id}"
-  - name: "createPost"
-    method: "POST"
-    path: "/posts"
+  - name: 'getPosts'
+    method: 'GET'
+    path: '/posts'
+  - name: 'getPost'
+    method: 'GET'
+    path: '/posts/{id}'
+  - name: 'createPost'
+    method: 'POST'
+    path: '/posts'

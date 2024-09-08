@@ -1,96 +1,92 @@
-import { BrowserContext, Page } from '@playwright/test';
+import { APIRequestContext, request, test } from '@playwright/test';
 
-// Function to mock an API call
-/**
- * Mocks an API call by setting up a route in the provided context and fulfilling it with a specified response.
- * @param context - The browser context or page in which the API call should be mocked.
- * @param route - The route that should be intercepted and mocked.
- * @param response - The response object that should be sent back when the route is intercepted.
- */
-export async function mockApiCall(
-  context: BrowserContext | Page,
-  route: string,
-  response: any
-): Promise<void> {
-  await context.route(route, (route) => {
-    route.fulfill({
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(response),
-    });
+let context: APIRequestContext;
+
+test.beforeAll(async () => {
+  context = await request.newContext({
+    timeout: 30000,
+    ignoreHTTPSErrors: true,
+    extraHTTPHeaders: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: `token ${process.env.API_TOKEN}`,
+    },
   });
+});
+
+test.afterAll(async () => {
+  await context.dispose();
+});
+
+/**
+ * Helper function to perform an HTTP GET request using Playwright.
+ * @param url - The URL to send the GET request to.
+ * @param headers - Optional headers to include in the request.
+ * @returns The response from the GET request.
+ */
+export async function httpGet(url: string, headers?: Record<string, string>) {
+  const response = await context.get(url, { headers });
+  return response;
 }
 
-// Function to mock an API response with a delay
 /**
- * Mocks an API call with a specified delay before fulfilling the request.
- * @param context - The browser context or page in which the API call should be mocked.
- * @param route - The route that should be intercepted and mocked.
- * @param response - The response object that should be sent back when the route is intercepted.
- * @param delay - The delay in milliseconds before fulfilling the request.
+ * Helper function to perform an HTTP POST request using Playwright.
+ * @param url - The URL to send the POST request to.
+ * @param data - The data to include in the POST request body.
+ * @param headers - Optional headers to include in the request.
+ * @returns The response from the POST request.
  */
-export async function mockApiCallWithDelay(
-  context: BrowserContext | Page,
-  route: string,
-  response: any,
-  delay: number
-): Promise<void> {
-  await context.route(route, async (route) => {
-    await new Promise((resolve) => setTimeout(resolve, delay));
-    route.fulfill({
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(response),
-    });
-  });
+export async function httpPost(
+  url: string,
+  data: any,
+  headers?: Record<string, string>
+) {
+  const response = await context.post(url, { data, headers });
+  return response;
 }
 
-// Function to mock an API response not found
 /**
- * Mocks an API call that returns a 404 status code (not found) in the provided browser context or page.
- * @param context - The browser context or page in which the API call should be mocked.
- * @param route - The route that should be intercepted and mocked.
+ * Helper function to perform an HTTP PATCH request using Playwright.
+ * @param url - The URL to send the PATCH request to.
+ * @param data - The data to include in the PATCH request body.
+ * @param headers - Optional headers to include in the request.
+ * @returns The response from the PATCH request.
  */
-export async function mockApiCallNotFound(
-  context: BrowserContext | Page,
-  route: string
-): Promise<void> {
-  await context.route(route, (route) => {
-    route.fulfill({
-      status: 404,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: '{}',
-    });
-  });
+export async function httpPatch(
+  url: string,
+  data: any,
+  headers?: Record<string, string>
+) {
+  const response = await context.patch(url, { data, headers });
+  return response;
 }
 
-// Function to mock an API response with a header
 /**
- * Mocks an API call by setting up a route in the provided browser context or page and fulfilling it with a specified response that includes a custom header.
- * @param context - The browser context or page in which the API call should be mocked.
- * @param route - The route that should be intercepted and mocked.
- * @param headerName - The name of the custom header to be included in the response.
- * @param headerValue - The value of the custom header to be included in the response.
+ * Helper function to perform an HTTP PUT request using Playwright.
+ * @param url - The URL to send the PUT request to.
+ * @param data - The data to include in the PUT request body.
+ * @param headers - Optional headers to include in the request.
+ * @returns The response from the PUT request.
  */
-export async function mockApiCallWithHeader(
-  context: BrowserContext | Page,
-  route: string,
-  headerName: string,
-  headerValue: string
-): Promise<void> {
-  await context.route(route, (route) => {
-    route.fulfill({
-      status: 200,
-      headers: {
-        [headerName]: headerValue,
-      },
-      body: '{}',
-    });
-  });
+export async function httpPut(
+  url: string,
+  data: any,
+  headers?: Record<string, string>
+) {
+  const response = await context.put(url, { data, headers });
+  return response;
+}
+
+/**
+ *  Helper function to perform an HTTP DELETE request using Playwright.
+ * @param url
+ * @param headers
+ * @returns
+ */
+export async function httpDelete(
+  url: string,
+  headers?: Record<string, string>
+) {
+  const response = await context.delete(url, { headers });
+  return response;
 }

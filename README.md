@@ -1,6 +1,7 @@
 # 🎭 Playwright | AutomationTest | UI Framework
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Tech Details](#tech-details)
 3. [Prerequisites](#prerequisites)
@@ -28,19 +29,21 @@ Welcome to the Playwright AutomationTest UI Framework! This repository provides 
 ## Setup Instructions
 
 1. Clone the repository:
-    ```bash
-    git clone git@github.com:dipjyotimetia/PlaywrightTestFramework.git
-    cd automation-test-framework
-    ```
+
+   ```bash
+   git clone git@github.com:dipjyotimetia/PlaywrightTestFramework.git
+   cd automation-test-framework
+   ```
 
 2. Install dependencies:
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
 ## Running Tests
 
 To run the tests, use the following command:
+
 ```bash
 npm run test:playwright
 ```
