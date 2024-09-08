@@ -22,20 +22,13 @@
     "@estruyf/github-actions-reporter": "^1.9.2",
     "@faker-js/faker": "^9.0.0",
     "allure-playwright": "^2.15.1",
-    "axios": "^1.7.7",
     "config": "^3.3.12",
     "csv-parse": "5.5.6",
     "date-fns": "^3.6.0",
-    "fs-extra": "^11.2.0",
-    "fse": "^4.0.1",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "mkdirp": "^3.0.1",
-    "pg": "^8.12.0",
-    "recursive-readdir": "^2.2.3",
-    "rimraf": "^6.0.1",
-    "winston": "^3.14.2",
-    "yaml": "^2.5.1"
+    "winston": "^3.14.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.47.0",
