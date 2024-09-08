@@ -1,30 +1,48 @@
 # 🎭 Playwright | AutomationTest | UI Framework
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Tech Details](#tech-details)
+3. [Prerequisites](#prerequisites)
+4. [Setup Instructions](#setup-instructions)
+5. [Running Tests](#running-tests)
+6. [API Testing with Playwright](#api-testing-with-playwright)
+
+## Introduction
+
+Welcome to the Playwright AutomationTest UI Framework! This repository provides a robust framework for automating end-to-end tests for web applications using Playwright. It also includes support for API testing, making it a comprehensive solution for your testing needs.
+
 ## Tech Details
 
-- Playwright - Playwright is a cross-browser automation library for Node.js. It enables you to write reliable end-to-end tests for web applications and websites. With Playwright, you can automate scenarios across multiple browsers (Chromium, Firefox, WebKit) and platforms (Windows, Linux, macOS).
-- Allure - Allure is a flexible lightweight multi-language test report tool that not only shows a very concise representation of what have been tested in a neat web report form, but allows everyone participating in the development process to extract maximum of useful information from everyday execution of tests.
+- **Playwright**: A cross-browser automation library for Node.js. It enables you to write reliable end-to-end tests for web applications and websites. With Playwright, you can automate scenarios across multiple browsers (Chromium, Firefox, WebKit) and platforms (Windows, Linux, macOS).
+- **Allure**: A flexible, lightweight multi-language test report tool that provides a concise representation of test results in a neat web report form. It allows everyone participating in the development process to extract maximum useful information from everyday execution of tests.
 
-[Playwright](https://playwright.dev/)
+[Playwright Documentation](https://playwright.dev/)
 
-[Axios](https://axios-http.com/)
+## Prerequisites
 
-This patch allows passing 0 to disable timeout for the following methods:
+- Node.js (>= 20.x)
+- Yarn (>= 2.x)
+- Docker (for containerized execution)
 
-```typescript
-await page.goto(`http://www.goole.com.au`, { timeout: 0 });
-await page.waitForSelector(`a[href='/signup']`, { visible: true });
-```
+## Setup Instructions
 
-- page.goto
-- page.waitForNavigation
-- page.goForward
-- page.goBack
+1. Clone the repository:
+    ```bash
+    git clone git@github.com:dipjyotimetia/PlaywrightTestFramework.git
+    cd automation-test-framework
+    ```
 
-### Docker container run
+2. Install dependencies:
+    ```bash
+    yarn install
+    ```
 
+## Running Tests
+
+To run the tests, use the following command:
 ```bash
-docker-compose up
+npm run test:playwright
 ```
 
 ## API Testing with Playwright
@@ -42,17 +60,3 @@ The following helper functions are available in `src/core/apiHelpers.ts`:
 ### Sample API Tests
 
 Sample API tests are available in `src/tests/api.test.spec.ts`. These tests demonstrate how to use the helper functions to perform API requests and validate the responses.
-
-### Running API Tests
-
-To run the API tests, use the following command:
-
-```bash
-npx playwright test src/tests/api.test.spec.ts
-```
-
-Make sure you have the necessary dependencies installed by running:
-
-```bash
-yarn install
-```
