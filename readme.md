@@ -27,3 +27,33 @@ await page.waitForSelector(`a[href='/signup']`, { visible: true });
 ```bash
 docker-compose up
 ```
+
+## API Testing with Playwright
+
+This repository now includes support for testing REST APIs using Playwright. You can use the provided helper functions to perform HTTP GET, POST, and PATCH requests, and write your own API tests.
+
+### Helper Functions
+
+The following helper functions are available in `src/core/apiHelpers.ts`:
+
+- `HttpGet(url: string, headers?: Record<string, string>)`: Perform an HTTP GET request.
+- `HttpPost(url: string, data: any, headers?: Record<string, string>)`: Perform an HTTP POST request.
+- `HttpPatch(url: string, data: any, headers?: Record<string, string>)`: Perform an HTTP PATCH request.
+
+### Sample API Tests
+
+Sample API tests are available in `src/tests/api.test.spec.ts`. These tests demonstrate how to use the helper functions to perform API requests and validate the responses.
+
+### Running API Tests
+
+To run the API tests, use the following command:
+
+```bash
+npx playwright test src/tests/api.test.spec.ts
+```
+
+Make sure you have the necessary dependencies installed by running:
+
+```bash
+yarn install
+```
