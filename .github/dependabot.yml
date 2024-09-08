@@ -1,19 +1,19 @@
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
       # Check for updates to GitHub Actions every weekday
-      interval: "weekly"
+      interval: 'weekly'
 
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
     schedule:
-      interval: "daily"
-      time: "07:00"
+      interval: 'daily'
+      time: '07:00'
       timezone: Australia/Melbourne
-    rebase-strategy: "auto"
+    rebase-strategy: 'auto'
     labels:
-      - "security"
-      - "dependencies"
+      - 'security'
+      - 'dependencies'
     open-pull-requests-limit: 10

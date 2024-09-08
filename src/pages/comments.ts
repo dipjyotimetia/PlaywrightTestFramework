@@ -1,4 +1,4 @@
-import { Page, TestInfo } from "@playwright/test";
+import { Page, TestInfo } from '@playwright/test';
 
 /**
  * Adds comments to a webpage using Playwright's API.
@@ -11,11 +11,11 @@ export const AddComments = async (page: Page, testInfo: TestInfo) => {
   const conduitLink = '//a[text()="conduit"]';
 
   await page.click(commentTextarea);
-  await page.fill(commentTextarea, "yea its working");
+  await page.fill(commentTextarea, 'yea its working');
   await page.click(postCommentButton);
   await page.click(conduitLink);
-  await testInfo.attach("AddCommentsScreenshot", {
+  await testInfo.attach('AddCommentsScreenshot', {
     body: await page.screenshot(),
-    contentType: "image/png",
+    contentType: 'image/png',
   });
 };

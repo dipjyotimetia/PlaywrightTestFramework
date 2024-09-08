@@ -1,13 +1,15 @@
 {
   "name": "playwrighttestframework",
   "version": "1.0.0",
-  "description": "",
+  "description": "A test framework using Playwright for end-to-end testing.",
   "scripts": {
     "test:playwright": "playwright test --headed",
     "test.watch": "jest --watchAll",
     "test:record": "npx playwright codegen https://react-redux.realworld.io/",
     "allureReport": "allure serve",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .ts,.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,12 @@
     "url": "https://github.com/dipjyotimetia/PlaywrightTestFramework/issues"
   },
   "homepage": "https://github.com/dipjyotimetia/PlaywrightTestFramework#readme",
+  "keywords": [
+    "playwright",
+    "testing",
+    "e2e",
+    "automation"
+  ],
   "dependencies": {
     "@estruyf/github-actions-reporter": "^1.9.2",
     "@faker-js/faker": "^9.0.0",

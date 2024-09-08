@@ -6,23 +6,23 @@ import {
   TestError,
   TestResult,
   TestStep,
-} from "@playwright/test/reporter";
-import { createLogger, format, transports } from "winston";
+} from '@playwright/test/reporter';
+import { createLogger, format, transports } from 'winston';
 
-import { existsSync, mkdirSync } from "fs";
+import { existsSync, mkdirSync } from 'fs';
 
-const logDir = "logs";
+const logDir = 'logs';
 
 if (!existsSync(logDir)) {
   mkdirSync(logDir);
 }
 
 const logger = createLogger({
-  level: "info",
+  level: 'info',
   format: format.json(),
   transports: [
     new transports.Console(),
-    new transports.File({ filename: "logs/info.log" }),
+    new transports.File({ filename: 'logs/info.log' }),
   ],
 });
 
@@ -60,7 +60,7 @@ export default class MyReporter implements Reporter {
    * @param step - The test step.
    */
   onStepBegin(test: TestCase, result: TestResult, step: TestStep): void {
-    if (step.category === "test.step") {
+    if (step.category === 'test.step') {
       logger.info(`Executing Step: ${step.title}`);
     }
   }

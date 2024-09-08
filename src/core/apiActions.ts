@@ -1,4 +1,4 @@
-import { BrowserContext, Page } from "@playwright/test";
+import { BrowserContext, Page } from '@playwright/test';
 
 // Function to mock an API call
 /**
@@ -10,13 +10,13 @@ import { BrowserContext, Page } from "@playwright/test";
 export async function mockApiCall(
   context: BrowserContext | Page,
   route: string,
-  response: any,
+  response: any
 ): Promise<void> {
   await context.route(route, (route) => {
     route.fulfill({
       status: 200,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(response),
     });
@@ -35,14 +35,14 @@ export async function mockApiCallWithDelay(
   context: BrowserContext | Page,
   route: string,
   response: any,
-  delay: number,
+  delay: number
 ): Promise<void> {
   await context.route(route, async (route) => {
     await new Promise((resolve) => setTimeout(resolve, delay));
     route.fulfill({
       status: 200,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(response),
     });
@@ -57,15 +57,15 @@ export async function mockApiCallWithDelay(
  */
 export async function mockApiCallNotFound(
   context: BrowserContext | Page,
-  route: string,
+  route: string
 ): Promise<void> {
   await context.route(route, (route) => {
     route.fulfill({
       status: 404,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: "{}",
+      body: '{}',
     });
   });
 }
@@ -82,7 +82,7 @@ export async function mockApiCallWithHeader(
   context: BrowserContext | Page,
   route: string,
   headerName: string,
-  headerValue: string,
+  headerValue: string
 ): Promise<void> {
   await context.route(route, (route) => {
     route.fulfill({
@@ -90,7 +90,7 @@ export async function mockApiCallWithHeader(
       headers: {
         [headerName]: headerValue,
       },
-      body: "{}",
+      body: '{}',
     });
   });
 }
