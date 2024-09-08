@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 import { httpGet, httpPost, httpPatch ,httpDelete} from '../core/apiHelpers';
 import { getEndpoint,baseUrlApi } from '../config/config';
 
-
 test.describe('API Tests', () => {
+
   test('should get all posts', async () => {
     const endpoint = getEndpoint('getPosts');
     const response = await httpGet(`${baseUrlApi}${endpoint?.path}`);

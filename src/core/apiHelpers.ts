@@ -1,4 +1,22 @@
-import { APIRequestContext, request } from '@playwright/test';
+import { APIRequestContext, request, test } from '@playwright/test';
+
+let context: APIRequestContext;
+
+test.beforeAll(async () => {
+  context = await request.newContext({
+    timeout: 30000,
+    ignoreHTTPSErrors: true,
+    extraHTTPHeaders: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `token ${process.env.API_TOKEN}`,
+    }
+  });
+});
+
+test.afterAll(async () => {
+  await context.dispose();
+});
 
 /**
  * Helper function to perform an HTTP GET request using Playwright.
@@ -7,7 +25,6 @@ import { APIRequestContext, request } from '@playwright/test';
  * @returns The response from the GET request.
  */
 export async function httpGet(url: string, headers?: Record<string, string>) {
-  const context: APIRequestContext = await request.newContext();
   const response = await context.get(url, { headers });
   return response;
 }
@@ -24,7 +41,6 @@ export async function httpPost(
   data: any,
   headers?: Record<string, string>
 ) {
-  const context: APIRequestContext = await request.newContext();
   const response = await context.post(url, { data, headers });
   return response;
 }
@@ -41,7 +57,6 @@ export async function httpPatch(
   data: any,
   headers?: Record<string, string>
 ) {
-  const context: APIRequestContext = await request.newContext();
   const response = await context.patch(url, { data, headers });
   return response;
 }
@@ -58,7 +73,6 @@ export async function httpPut(
   data: any,
   headers?: Record<string, string>
 ) {
-  const context: APIRequestContext = await request.newContext();
   const response = await context.put(url, { data, headers });
   return response;
 }
@@ -73,7 +87,6 @@ export async function httpDelete(
   url: string,
   headers?: Record<string, string>
 ) {
-  const context: APIRequestContext = await request.newContext();
   const response = await context.delete(url, { headers });
   return response;
 }
