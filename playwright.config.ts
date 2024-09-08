@@ -1,8 +1,8 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
-  testDir: 'src/tests',
+  testDir: "src/tests",
 
   // Run all tests in parallel.
   fullyParallel: true,
@@ -18,18 +18,24 @@ export default defineConfig({
 
   // Reporter configuration
   reporter: [
-    ['html', 'line'], // HTML and Line reporters
-    ['./reportConfig.ts'], // Custom reporter configuration file
-    ['@estruyf/github-actions-reporter', {
-      title: 'Playwright Tests',
-      useDetails: true,
-      showError: true
-    }], // GitHub Actions reporter
-    ['allure-playwright', {
-      detail: true,
-      outputFolder: "allure-results",
-      suiteTitle: false,
-    }],
+    ["html", "line"], // HTML and Line reporters
+    ["./reportConfig.ts"], // Custom reporter configuration file
+    [
+      "@estruyf/github-actions-reporter",
+      {
+        title: "Playwright Tests",
+        useDetails: true,
+        showError: true,
+      },
+    ], // GitHub Actions reporter
+    [
+      "allure-playwright",
+      {
+        detail: true,
+        outputFolder: "allure-results",
+        suiteTitle: false,
+      },
+    ],
   ],
 
   // use: {
@@ -42,8 +48,8 @@ export default defineConfig({
   // Configure projects for major browsers.
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] }, // Use Desktop Chrome device configuration
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] }, // Use Desktop Chrome device configuration
     },
   ],
 });

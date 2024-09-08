@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as yaml from 'js-yaml';
+import * as fs from "fs";
+import * as yaml from "js-yaml";
 
 export interface AppConfig {
   BASE_URL: string;
@@ -14,15 +14,15 @@ export interface AppConfig {
 export function readConfigFile(filePath: string): AppConfig | null {
   try {
     if (!fs.existsSync(filePath)) {
-      console.error('Config file does not exist:', filePath);
+      console.error("Config file does not exist:", filePath);
       return null;
     }
 
-    const fileContents = fs.readFileSync(filePath, 'utf-8');
+    const fileContents = fs.readFileSync(filePath, "utf-8");
     const config = yaml.load(fileContents) as AppConfig;
     return config;
   } catch (error) {
-    console.error('Error reading or parsing config file:', error);
+    console.error("Error reading or parsing config file:", error);
     return null;
   }
 }

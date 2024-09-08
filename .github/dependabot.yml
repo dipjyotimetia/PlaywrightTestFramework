@@ -5,7 +5,7 @@ updates:
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: "weekly"
-      
+
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
@@ -15,5 +15,5 @@ updates:
     rebase-strategy: "auto"
     labels:
       - "security"
-      - "dependencies"  
-    open-pull-requests-limit: 10 
+      - "dependencies"
+    open-pull-requests-limit: 10

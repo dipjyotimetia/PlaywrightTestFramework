@@ -1,4 +1,4 @@
-import { APIRequestContext, request } from '@playwright/test';
+import { APIRequestContext, request } from "@playwright/test";
 
 /**
  * Helper function to perform an HTTP GET request using Playwright.
@@ -19,7 +19,11 @@ export async function HttpGet(url: string, headers?: Record<string, string>) {
  * @param headers - Optional headers to include in the request.
  * @returns The response from the POST request.
  */
-export async function HttpPost(url: string, data: any, headers?: Record<string, string>) {
+export async function HttpPost(
+  url: string,
+  data: any,
+  headers?: Record<string, string>,
+) {
   const context: APIRequestContext = await request.newContext();
   const response = await context.post(url, { data, headers });
   return response;
@@ -32,7 +36,11 @@ export async function HttpPost(url: string, data: any, headers?: Record<string, 
  * @param headers - Optional headers to include in the request.
  * @returns The response from the PATCH request.
  */
-export async function HttpPatch(url: string, data: any, headers?: Record<string, string>) {
+export async function HttpPatch(
+  url: string,
+  data: any,
+  headers?: Record<string, string>,
+) {
   const context: APIRequestContext = await request.newContext();
   const response = await context.patch(url, { data, headers });
   return response;

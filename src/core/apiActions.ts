@@ -1,4 +1,4 @@
-import { BrowserContext, Page } from '@playwright/test';
+import { BrowserContext, Page } from "@playwright/test";
 
 // Function to mock an API call
 /**
@@ -7,14 +7,18 @@ import { BrowserContext, Page } from '@playwright/test';
  * @param route - The route that should be intercepted and mocked.
  * @param response - The response object that should be sent back when the route is intercepted.
  */
-export async function mockApiCall(context: BrowserContext | Page, route: string, response: any): Promise<void> {
+export async function mockApiCall(
+  context: BrowserContext | Page,
+  route: string,
+  response: any,
+): Promise<void> {
   await context.route(route, (route) => {
     route.fulfill({
       status: 200,
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(response)
+      body: JSON.stringify(response),
     });
   });
 }
@@ -28,21 +32,21 @@ export async function mockApiCall(context: BrowserContext | Page, route: string,
  * @param delay - The delay in milliseconds before fulfilling the request.
  */
 export async function mockApiCallWithDelay(
-    context: BrowserContext | Page,
-    route: string,
-    response: any,
-    delay: number
+  context: BrowserContext | Page,
+  route: string,
+  response: any,
+  delay: number,
 ): Promise<void> {
-    await context.route(route, async (route) => {
-        await new Promise((resolve) => setTimeout(resolve, delay));
-        route.fulfill({
-            status: 200,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(response)
-        });
+  await context.route(route, async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, delay));
+    route.fulfill({
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(response),
     });
+  });
 }
 
 // Function to mock an API response not found
@@ -53,19 +57,18 @@ export async function mockApiCallWithDelay(
  */
 export async function mockApiCallNotFound(
   context: BrowserContext | Page,
-  route: string
+  route: string,
 ): Promise<void> {
   await context.route(route, (route) => {
     route.fulfill({
       status: 404,
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: '{}'
+      body: "{}",
     });
   });
 }
-
 
 // Function to mock an API response with a header
 /**
@@ -76,18 +79,18 @@ export async function mockApiCallNotFound(
  * @param headerValue - The value of the custom header to be included in the response.
  */
 export async function mockApiCallWithHeader(
-    context: BrowserContext | Page,
-    route: string,
-    headerName: string,
-    headerValue: string
+  context: BrowserContext | Page,
+  route: string,
+  headerName: string,
+  headerValue: string,
 ): Promise<void> {
-    await context.route(route, (route) => {
-        route.fulfill({
-            status: 200,
-            headers: {
-                [headerName]: headerValue
-            },
-            body: '{}'
-        });
+  await context.route(route, (route) => {
+    route.fulfill({
+      status: 200,
+      headers: {
+        [headerName]: headerValue,
+      },
+      body: "{}",
     });
+  });
 }
