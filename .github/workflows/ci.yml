@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [18, 20]
+        node-version: [20]
         shardIndex: [1, 2, 3, 4]
         shardTotal: [4]
     steps:
@@ -61,8 +61,23 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 20
+
+    - name: Install pnpm
+        run: npm install -g pnpm
+
+    - name: Cache node_modules
+      uses: actions/cache@v4
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-node-${{ matrix.node-version }}-
+
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install
+
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps    
 
     - name: Download blob reports from GitHub Actions Artifacts
       uses: actions/download-artifact@v4
