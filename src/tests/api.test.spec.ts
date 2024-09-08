@@ -11,6 +11,12 @@ test.describe('API Tests', () => {
     expect(response.status()).toBe(200);
     const responseBody = await response.json();
     expect(responseBody.length).toBeGreaterThan(0);
+    responseBody.forEach((post: any) => {
+      expect(post).toHaveProperty('id');
+      expect(post).toHaveProperty('title');
+      expect(post).toHaveProperty('body');
+      expect(post).toHaveProperty('userId');
+    });
   });
 
   test('should get a single post', async () => {
@@ -22,6 +28,9 @@ test.describe('API Tests', () => {
     expect(response.status()).toBe(200);
     const responseBody = await response.json();
     expect(responseBody).toHaveProperty('id', 1);
+    expect(responseBody).toHaveProperty('title');
+    expect(responseBody).toHaveProperty('body');
+    expect(responseBody).toHaveProperty('userId');
   });
 
   test('should create a new post', async () => {
@@ -39,6 +48,8 @@ test.describe('API Tests', () => {
     expect(responseBody).toHaveProperty('title', 'foo');
     expect(responseBody).toHaveProperty('body', 'bar');
     expect(responseBody).toHaveProperty('userId', 1);
+    expect(responseBody).toHaveProperty('id');
+    expect(responseBody.id).toBeGreaterThan(0);
   });
 
   test('should update a post', async () => {
@@ -53,13 +64,16 @@ test.describe('API Tests', () => {
     expect(response.status()).toBe(200);
     const responseBody = await response.json();
     expect(responseBody).toHaveProperty('title', 'updated title');
+    expect(responseBody).toHaveProperty('id', postId);
+    expect(responseBody).toHaveProperty('body');
+    expect(responseBody).toHaveProperty('userId');
   });
 
   test('should delete a post', async () => {
-    const endpoint = getEndpoint('getPost'); 
+    const endpoint = getEndpoint('getPost');
     const postId = 1;
-
     const response = await httpDelete(`${baseUrlApi}${endpoint?.path.replace('{id}', postId.toString())}`);
+
     expect(response.status()).toBe(200);
   });
 
