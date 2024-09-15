@@ -12,8 +12,8 @@ importers:
         specifier: ^1.9.2
         version: 1.9.2(@playwright/test@1.47.0)
       '@faker-js/faker':
-        specifier: ^9.0.0
-        version: 9.0.0
+        specifier: ^9.0.1
+        version: 9.0.1
       '@types/node':
         specifier: ^22.5.4
         version: 22.5.4
@@ -114,8 +114,8 @@ packages:
     peerDependencies:
       '@playwright/test': ^1.42.1
 
-  '@faker-js/faker@9.0.0':
-    resolution: {integrity: sha512-dTDHJSmz6c1OJ6HO7jiUiIb4sB20Dlkb3pxYsKm0qTXm2Bmj97rlXIhlvaFsW2rvCi+OLlwKLVSS6ZxFUVZvjQ==}
+  '@faker-js/faker@9.0.1':
+    resolution: {integrity: sha512-4mDeYIgM3By7X6t5E6eYwLAa+2h4DeZDF7thhzIg6XB76jeEvMwadYAMCFJL/R4AnEBcAUO9+gL0vhy3s+qvZA==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
   '@fastify/busboy@2.1.1':
@@ -767,7 +767,7 @@ snapshots:
       ansi-to-html: 0.7.2
       marked: 12.0.2
 
-  '@faker-js/faker@9.0.0': {}
+  '@faker-js/faker@9.0.1': {}
 
   '@fastify/busboy@2.1.1': {}
 
