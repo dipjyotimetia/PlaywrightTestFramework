@@ -29,7 +29,7 @@
   "dependencies": {
     "@estruyf/github-actions-reporter": "^1.9.2",
     "@faker-js/faker": "^9.0.1",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.5.5",
     "allure-playwright": "^3.0.0-beta.12",
     "axios": "^1.7.7",
     "config": "^3.3.12",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "@playwright/test": "^1.47.1",
     "@types/js-yaml": "4.0.9",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.5.5",
     "eslint": "^9.10.0",
     "eslint-plugin-playwright": "1.6.2",
     "prettier": "^3.3.3",
