@@ -8,15 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@estruyf/github-actions-reporter':
-        specifier: ^1.9.2
-        version: 1.9.2(@playwright/test@1.47.1)
-      '@faker-js/faker':
-        specifier: ^9.0.1
-        version: 9.0.1
-      '@types/node':
-        specifier: ^22.5.5
-        version: 22.5.5
       allure-playwright:
         specifier: ^3.0.0
         version: 3.0.0(@playwright/test@1.47.1)
@@ -45,12 +36,21 @@ importers:
         specifier: ^3.14.2
         version: 3.14.2
     devDependencies:
+      '@estruyf/github-actions-reporter':
+        specifier: ^1.9.2
+        version: 1.9.2(@playwright/test@1.47.1)
+      '@faker-js/faker':
+        specifier: ^9.0.1
+        version: 9.0.1
       '@playwright/test':
         specifier: ^1.47.1
         version: 1.47.1
       '@types/js-yaml':
         specifier: 4.0.9
         version: 4.0.9
+      '@types/node':
+        specifier: ^22.5.5
+        version: 22.5.5
       eslint:
         specifier: ^9.10.0
         version: 9.10.0

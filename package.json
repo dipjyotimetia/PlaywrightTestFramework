@@ -27,9 +27,6 @@
     "automation"
   ],
   "dependencies": {
-    "@estruyf/github-actions-reporter": "^1.9.2",
-    "@faker-js/faker": "^9.0.1",
-    "@types/node": "^22.5.5",
     "allure-playwright": "^3.0.0",
     "axios": "^1.7.7",
     "config": "^3.3.12",
@@ -47,6 +44,8 @@
     "eslint": "^9.10.0",
     "eslint-plugin-playwright": "1.6.2",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.2",
+    "@estruyf/github-actions-reporter": "^1.9.2",
+    "@faker-js/faker": "^9.0.1"
   }
 }
