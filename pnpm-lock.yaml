@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       allure-playwright:
-        specifier: ^3.0.2
-        version: 3.0.2(@playwright/test@1.47.2)
+        specifier: ^3.0.3
+        version: 3.0.3(@playwright/test@1.47.2)
       axios:
         specifier: ^1.7.7
         version: 1.7.7
@@ -179,16 +179,16 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  allure-js-commons@3.0.2:
-    resolution: {integrity: sha512-dVhuPi5rem4QIDcRpEtnaaClwL0cisoO3PZPEgUXIMML2WlVQ0+OZg17vrjiikJ/NF3Z/C461tyHpibNrBYD/g==}
+  allure-js-commons@3.0.3:
+    resolution: {integrity: sha512-UKfMh+5hYM9mQHMcQoqwh5WZuCA8qDTbD8Fl69maYiC7vKMuBHh+GOyE3pChoqxjF2zGVcI7p3bOmkE7Sk8GVQ==}
     peerDependencies:
-      allure-playwright: 3.0.2
+      allure-playwright: 3.0.3
     peerDependenciesMeta:
       allure-playwright:
         optional: true
 
-  allure-playwright@3.0.2:
-    resolution: {integrity: sha512-dijifwziaUlRM/aX7Jgb7gGfOk6l/o7+QITtOA1nQXl1buE9fKgWtpLpRvd0j/YjY81YWqN2U45fJHZyIcyp9Q==}
+  allure-playwright@3.0.3:
+    resolution: {integrity: sha512-c9ZDHPLx3P7d6PCQzMihT7DXDD2HcRFRwnH6/mtgP//7CW+caIBfpvyzY0o0lCSHl9qiCbAsAQgYKWlMG2PgTQ==}
     peerDependencies:
       '@playwright/test': '>=1.36.0'
 
@@ -828,17 +828,17 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  allure-js-commons@3.0.2(allure-playwright@3.0.2(@playwright/test@1.47.2)):
+  allure-js-commons@3.0.3(allure-playwright@3.0.3(@playwright/test@1.47.2)):
     dependencies:
       md5: 2.3.0
       properties: 1.2.1
     optionalDependencies:
-      allure-playwright: 3.0.2(@playwright/test@1.47.2)
+      allure-playwright: 3.0.3(@playwright/test@1.47.2)
 
-  allure-playwright@3.0.2(@playwright/test@1.47.2):
+  allure-playwright@3.0.3(@playwright/test@1.47.2):
     dependencies:
       '@playwright/test': 1.47.2
-      allure-js-commons: 3.0.2(allure-playwright@3.0.2(@playwright/test@1.47.2))
+      allure-js-commons: 3.0.3(allure-playwright@3.0.3(@playwright/test@1.47.2))
 
   ansi-regex@5.0.1: {}
 
