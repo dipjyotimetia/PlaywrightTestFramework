@@ -27,7 +27,7 @@
     "automation"
   ],
   "dependencies": {
-    "allure-playwright": "^3.0.2",
+    "allure-playwright": "^3.0.3",
     "axios": "^1.7.7",
     "config": "^3.3.12",
     "csv-parse": "5.5.6",
