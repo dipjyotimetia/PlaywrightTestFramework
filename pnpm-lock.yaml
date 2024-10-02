@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       allure-playwright:
-        specifier: ^3.0.3
-        version: 3.0.3(@playwright/test@1.47.2)
+        specifier: ^3.0.4
+        version: 3.0.4(@playwright/test@1.47.2)
       axios:
         specifier: ^1.7.7
         version: 1.7.7
@@ -179,16 +179,16 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  allure-js-commons@3.0.3:
-    resolution: {integrity: sha512-UKfMh+5hYM9mQHMcQoqwh5WZuCA8qDTbD8Fl69maYiC7vKMuBHh+GOyE3pChoqxjF2zGVcI7p3bOmkE7Sk8GVQ==}
+  allure-js-commons@3.0.4:
+    resolution: {integrity: sha512-/UgTzpd7a16t8WpkA/25acmkk8xwwYUK3YDeVcZb1+3+7HHZRE943ZlKxUF/LCeLrZEFgYmOtma9xmaHagSddw==}
     peerDependencies:
-      allure-playwright: 3.0.3
+      allure-playwright: 3.0.4
     peerDependenciesMeta:
       allure-playwright:
         optional: true
 
-  allure-playwright@3.0.3:
-    resolution: {integrity: sha512-c9ZDHPLx3P7d6PCQzMihT7DXDD2HcRFRwnH6/mtgP//7CW+caIBfpvyzY0o0lCSHl9qiCbAsAQgYKWlMG2PgTQ==}
+  allure-playwright@3.0.4:
+    resolution: {integrity: sha512-P2QBUZfEtqof3PLonVXcO2BdaYmWKGRDy4Ehl4dcAGsXdfS5QdrNat+DmR5BMxBNQgvf1805fGBeZh2Zn0gagQ==}
     peerDependencies:
       '@playwright/test': '>=1.36.0'
 
@@ -583,10 +583,6 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  properties@1.2.1:
-    resolution: {integrity: sha512-qYNxyMj1JeW54i/EWEFsM1cVwxJbtgPp8+0Wg9XjNaK6VE/c4oRi6PNu5p7w1mNXEIQIjV5Wwn8v8Gz82/QzdQ==}
-    engines: {node: '>=0.10'}
-
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
@@ -828,17 +824,16 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  allure-js-commons@3.0.3(allure-playwright@3.0.3(@playwright/test@1.47.2)):
+  allure-js-commons@3.0.4(allure-playwright@3.0.4(@playwright/test@1.47.2)):
     dependencies:
       md5: 2.3.0
-      properties: 1.2.1
     optionalDependencies:
-      allure-playwright: 3.0.3(@playwright/test@1.47.2)
+      allure-playwright: 3.0.4(@playwright/test@1.47.2)
 
-  allure-playwright@3.0.3(@playwright/test@1.47.2):
+  allure-playwright@3.0.4(@playwright/test@1.47.2):
     dependencies:
       '@playwright/test': 1.47.2
-      allure-js-commons: 3.0.3(allure-playwright@3.0.3(@playwright/test@1.47.2))
+      allure-js-commons: 3.0.4(allure-playwright@3.0.4(@playwright/test@1.47.2))
 
   ansi-regex@5.0.1: {}
 
@@ -1201,8 +1196,6 @@ snapshots:
   prelude-ls@1.2.1: {}
 
   prettier@3.3.3: {}
-
-  properties@1.2.1: {}
 
   proxy-from-env@1.1.0: {}
 
