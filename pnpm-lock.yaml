@@ -40,8 +40,8 @@ importers:
         specifier: ^1.9.2
         version: 1.9.2(@playwright/test@1.48.1)
       '@faker-js/faker':
-        specifier: ^9.0.3
-        version: 9.0.3
+        specifier: ^9.1.0
+        version: 9.1.0
       '@playwright/test':
         specifier: ^1.48.1
         version: 1.48.1
@@ -118,8 +118,8 @@ packages:
     peerDependencies:
       '@playwright/test': ^1.42.1
 
-  '@faker-js/faker@9.0.3':
-    resolution: {integrity: sha512-lWrrK4QNlFSU+13PL9jMbMKLJYXDFu3tQfayBsMXX7KL/GiQeqfB1CzHkqD5UHBUtPAuPo6XwGbMFNdVMZObRA==}
+  '@faker-js/faker@9.1.0':
+    resolution: {integrity: sha512-GJvX9iM9PBtKScJVlXQ0tWpihK3i0pha/XAhzQa1hPK/ILLa1Wq3I63Ij7lRtqTwmdTxRCyrUhLC5Sly9SLbug==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
   '@fastify/busboy@2.1.1':
@@ -742,7 +742,7 @@ snapshots:
       ansi-to-html: 0.7.2
       marked: 12.0.2
 
-  '@faker-js/faker@9.0.3': {}
+  '@faker-js/faker@9.1.0': {}
 
   '@fastify/busboy@2.1.1': {}
 
