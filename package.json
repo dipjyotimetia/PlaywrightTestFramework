@@ -38,14 +38,18 @@
     "winston": "^3.17.0"
   },
   "devDependencies": {
+    "@estruyf/github-actions-reporter": "^1.9.2",
+    "@faker-js/faker": "^9.4.0",
     "@playwright/test": "^1.49.1",
     "@types/js-yaml": "4.0.9",
     "@types/node": "^22.10.7",
     "eslint": "^9.18.0",
+    "csv-writer": "^1.6.0",
+    "openai": "^4.79.1",
+    "ts-node":"10.9.2",
+    "dotenv": "^16.4.7",
     "eslint-plugin-playwright": "2.1.0",
     "prettier": "^3.4.2",
-    "typescript": "^5.7.3",
-    "@estruyf/github-actions-reporter": "^1.9.2",
-    "@faker-js/faker": "^9.4.0"
+    "typescript": "^5.7.3"
   }
 }
