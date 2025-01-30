@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       allure-playwright:
-        specifier: ^3.0.9
-        version: 3.0.9(@playwright/test@1.50.0)
+        specifier: ^3.1.0
+        version: 3.1.0(@playwright/test@1.50.0)
       axios:
         specifier: ^1.7.9
         version: 1.7.9
@@ -241,16 +241,16 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  allure-js-commons@3.0.9:
-    resolution: {integrity: sha512-ll7h66zkBAwKSuMv2ZIqa9vXztz/I1Q+oUzxMgg7EErwd6ooO04E4nquXE+rS9mJErYs9K1qTVo3KgnPUzCsQQ==}
+  allure-js-commons@3.1.0:
+    resolution: {integrity: sha512-J4ijOvlbdw6nNRUWLgrNlybQ8v3FulgKAcIqiupeDI9bXy8D0yh2ukPtUdvWS+fltAwaQT72pFR2hEq4I21rrQ==}
     peerDependencies:
-      allure-playwright: 3.0.9
+      allure-playwright: 3.1.0
     peerDependenciesMeta:
       allure-playwright:
         optional: true
 
-  allure-playwright@3.0.9:
-    resolution: {integrity: sha512-5NBVJ50b9iYbzhkLJF0iSWefV4/eWSv+OioRv4kpLKXbnhrQk+wUH/wVt7oxWnZPSrQAuxilckWxZW5BIP3sNQ==}
+  allure-playwright@3.1.0:
+    resolution: {integrity: sha512-Xfl39cWPMvIAIAwcAhcwHusaU6x/rFChZUyvatd+WuMueM1N/+ckwXgqafdq8OX7yefwUHR9wla1GqAYoEwplQ==}
     peerDependencies:
       '@playwright/test': '>=1.36.0'
 
@@ -998,16 +998,16 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  allure-js-commons@3.0.9(allure-playwright@3.0.9(@playwright/test@1.50.0)):
+  allure-js-commons@3.1.0(allure-playwright@3.1.0(@playwright/test@1.50.0)):
     dependencies:
       md5: 2.3.0
     optionalDependencies:
-      allure-playwright: 3.0.9(@playwright/test@1.50.0)
+      allure-playwright: 3.1.0(@playwright/test@1.50.0)
 
-  allure-playwright@3.0.9(@playwright/test@1.50.0):
+  allure-playwright@3.1.0(@playwright/test@1.50.0):
     dependencies:
       '@playwright/test': 1.50.0
-      allure-js-commons: 3.0.9(allure-playwright@3.0.9(@playwright/test@1.50.0))
+      allure-js-commons: 3.1.0(allure-playwright@3.1.0(@playwright/test@1.50.0))
 
   ansi-styles@4.3.0:
     dependencies:
