@@ -45,7 +45,7 @@
     "@types/node": "^22.13.1",
     "eslint": "^9.20.1",
     "csv-writer": "^1.6.0",
-    "openai": "^4.83.0",
+    "openai": "^4.84.0",
     "ts-node":"10.9.2",
     "dotenv": "^16.4.7",
     "eslint-plugin-playwright": "2.2.0",
