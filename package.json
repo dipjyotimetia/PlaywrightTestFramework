@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "allure-playwright": "^3.2.0",
-    "axios": "^1.7.9",
+    "axios": "^1.8.1",
     "config": "^3.3.12",
     "csv-parse": "5.6.0",
     "date-fns": "^4.1.0",
