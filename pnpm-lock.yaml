@@ -64,8 +64,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(eslint@9.21.0)
       openai:
-        specifier: ^4.86.1
-        version: 4.86.1
+        specifier: ^4.86.2
+        version: 4.86.2
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -689,8 +689,8 @@ packages:
   one-time@1.0.0:
     resolution: {integrity: sha512-5DXOiRKwuSEcQ/l0kGCF6Q3jcADFv5tSmRaJck/OqkVFcOzutB134KRSfF0xDrL39MNnqxbHBbUUcjZIhTgb2g==}
 
-  openai@4.86.1:
-    resolution: {integrity: sha512-x3iCLyaC3yegFVZaxOmrYJjitKxZ9hpVbLi+ZlT5UHuHTMlEQEbKXkGOM78z9qm2T5GF+XRUZCP2/aV4UPFPJQ==}
+  openai@4.86.2:
+    resolution: {integrity: sha512-nvYeFjmjdSu6/msld+22JoUlCICNk/lUFpSMmc6KNhpeNLpqL70TqbD/8Vura/tFmYqHKW0trcjgPwUpKSPwaA==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -1466,7 +1466,7 @@ snapshots:
     dependencies:
       fn.name: 1.1.0
 
-  openai@4.86.1:
+  openai@4.86.2:
     dependencies:
       '@types/node': 18.19.79
       '@types/node-fetch': 2.6.12
