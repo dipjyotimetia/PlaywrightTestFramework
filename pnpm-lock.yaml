@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       allure-playwright:
-        specifier: ^3.2.0
-        version: 3.2.0(@playwright/test@1.51.1)
+        specifier: ^3.2.1
+        version: 3.2.1(@playwright/test@1.51.1)
       axios:
         specifier: ^1.8.4
         version: 1.8.4
@@ -251,16 +251,16 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  allure-js-commons@3.2.0:
-    resolution: {integrity: sha512-UXRo3D6/XEIMosro+OldWj8phJ65eSOYaAUlThOpl6nJJ0sGngMpJYog+Z9FmZDo1BZn4edwLs4aAUaTgkz4Cg==}
+  allure-js-commons@3.2.1:
+    resolution: {integrity: sha512-VGLv6u3I9NIm649dYmGpG3X5sOnI0tt7K1WYTVZPiEpnsxBbFEfDr6yAI7q509WWw/5g0VBCEtGEspd6AoYOqA==}
     peerDependencies:
-      allure-playwright: 3.2.0
+      allure-playwright: 3.2.1
     peerDependenciesMeta:
       allure-playwright:
         optional: true
 
-  allure-playwright@3.2.0:
-    resolution: {integrity: sha512-E9YNqFBXrycMaOs4x5/Tsdl4xN8Ss0yw8XnwcVUzezR3cjlPb5gUdR81G/zQsi+I3mb+UQMS21yORHKTI9W2fw==}
+  allure-playwright@3.2.1:
+    resolution: {integrity: sha512-IO0lDDz007hlaHH8hZzrvyaw0NR6ZOGBEPI/ANUGbBizFOXcDf9J/nHDCdsNrt/Qa13H4AGGU7sDjtng1evYgA==}
     peerDependencies:
       '@playwright/test': '>=1.36.0'
 
@@ -1063,16 +1063,16 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  allure-js-commons@3.2.0(allure-playwright@3.2.0(@playwright/test@1.51.1)):
+  allure-js-commons@3.2.1(allure-playwright@3.2.1(@playwright/test@1.51.1)):
     dependencies:
       md5: 2.3.0
     optionalDependencies:
-      allure-playwright: 3.2.0(@playwright/test@1.51.1)
+      allure-playwright: 3.2.1(@playwright/test@1.51.1)
 
-  allure-playwright@3.2.0(@playwright/test@1.51.1):
+  allure-playwright@3.2.1(@playwright/test@1.51.1):
     dependencies:
       '@playwright/test': 1.51.1
-      allure-js-commons: 3.2.0(allure-playwright@3.2.0(@playwright/test@1.51.1))
+      allure-js-commons: 3.2.1(allure-playwright@3.2.1(@playwright/test@1.51.1))
 
   ansi-styles@4.3.0:
     dependencies:
