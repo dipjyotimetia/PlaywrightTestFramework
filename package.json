@@ -47,7 +47,7 @@
     "csv-writer": "^1.6.0",
     "openai": "^4.93.0",
     "ts-node":"10.9.2",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.5.0",
     "eslint-plugin-playwright": "2.2.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3"
