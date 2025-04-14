@@ -42,7 +42,7 @@
     "@faker-js/faker": "^9.7.0",
     "@playwright/test": "^1.51.1",
     "@types/js-yaml": "4.0.9",
-    "@types/node": "^22.14.0",
+    "@types/node": "^22.14.1",
     "eslint": "^9.24.0",
     "csv-writer": "^1.6.0",
     "openai": "^4.94.0",
