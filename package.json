@@ -40,7 +40,7 @@
   "devDependencies": {
     "@estruyf/github-actions-reporter": "^1.10.0",
     "@faker-js/faker": "^9.7.0",
-    "@playwright/test": "^1.51.1",
+    "@playwright/test": "^1.52.0",
     "@types/js-yaml": "4.0.9",
     "@types/node": "^22.14.1",
     "eslint": "^9.24.0",
