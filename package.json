@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@estruyf/github-actions-reporter": "^1.10.0",
-    "@faker-js/faker": "^9.7.0",
+    "@faker-js/faker": "^9.8.0",
     "@playwright/test": "^1.52.0",
     "@types/js-yaml": "4.0.9",
     "@types/node": "^22.15.3",
