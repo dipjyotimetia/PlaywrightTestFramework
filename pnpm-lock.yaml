@@ -10,7 +10,7 @@ importers:
     dependencies:
       allure-playwright:
         specifier: ^3.2.2
-        version: 3.2.2(@playwright/test@1.52.0)
+        version: 3.2.2(@playwright/test@1.53.2)
       axios:
         specifier: ^1.10.0
         version: 1.10.0
@@ -38,13 +38,13 @@ importers:
     devDependencies:
       '@estruyf/github-actions-reporter':
         specifier: ^1.10.0
-        version: 1.10.0(@playwright/test@1.52.0)
+        version: 1.10.0(@playwright/test@1.53.2)
       '@faker-js/faker':
         specifier: ^9.8.0
         version: 9.8.0
       '@playwright/test':
-        specifier: ^1.52.0
-        version: 1.52.0
+        specifier: ^1.53.2
+        version: 1.53.2
       '@types/js-yaml':
         specifier: 4.0.9
         version: 4.0.9
@@ -186,8 +186,8 @@ packages:
     resolution: {integrity: sha512-H9vwztj5OAqHg9GockCQC06k1natgcxWQSRpQcPJf6i5+MWBzfKkRtxGbjQf0X2ihii0ffLZCRGbYV2f2bjNCQ==}
     engines: {node: '>=18'}
 
-  '@playwright/test@1.52.0':
-    resolution: {integrity: sha512-uh6W7sb55hl7D6vsAeA+V2p5JnlAqzhqFyF0VcJkKZXkgnFcVG9PziERRHQfPLfNGx1C292a4JqbWzhR8L4R1g==}
+  '@playwright/test@1.53.2':
+    resolution: {integrity: sha512-tEB2U5z74ebBeyfGNZ3Jfg29AnW+5HlWhvHtb/Mqco9pFdZU1ZLNdVb2UtB5CvmiilNr2ZfVH/qMmAROG/XTzw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -843,13 +843,13 @@ packages:
     resolution: {integrity: sha512-ueGLflrrnvwB3xuo/uGob5pd5FN7l0MsLf0Z87o/UQmRtwjvfylfc9MurIxRAWywCYTgrvpXBcqjV4OfCYGCIQ==}
     engines: {node: '>=16.20.0'}
 
-  playwright-core@1.52.0:
-    resolution: {integrity: sha512-l2osTgLXSMeuLZOML9qYODUQoPPnUsKsb5/P6LJ2e6uPKXUdPK5WYhN4z03G+YNbWmGDY4YENauNu4ZKczreHg==}
+  playwright-core@1.53.2:
+    resolution: {integrity: sha512-ox/OytMy+2w1jcYEYlOo1Hhp8hZkLCximMTUTMBXjGUA1KoFfiSZ+DU+3a739jsPY0yoKH2TFy9S2fsJas8yAw==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.52.0:
-    resolution: {integrity: sha512-JAwMNMBlxJ2oD1kce4KPtMkDeKGHQstdpFPcPH3maElAXon/QZeTvtsfXmTMRyO9TslfoYOXkSsvao2nE1ilTw==}
+  playwright@1.53.2:
+    resolution: {integrity: sha512-6K/qQxVFuVQhRQhFsVZ9fGeatxirtrpPgxzBYWyZLEXJzqYwuL4fuNmfOfD5et1tJE4GScKyPNeLhZeRwuTU3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1143,10 +1143,10 @@ snapshots:
       '@eslint/core': 0.13.0
       levn: 0.4.1
 
-  '@estruyf/github-actions-reporter@1.10.0(@playwright/test@1.52.0)':
+  '@estruyf/github-actions-reporter@1.10.0(@playwright/test@1.53.2)':
     dependencies:
       '@actions/core': 1.11.1
-      '@playwright/test': 1.52.0
+      '@playwright/test': 1.53.2
       ansi-to-html: 0.7.2
       marked: 12.0.2
 
@@ -1191,9 +1191,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@playwright/test@1.52.0':
+  '@playwright/test@1.53.2':
     dependencies:
-      playwright: 1.52.0
+      playwright: 1.53.2
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -1239,16 +1239,16 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  allure-js-commons@3.2.2(allure-playwright@3.2.2(@playwright/test@1.52.0)):
+  allure-js-commons@3.2.2(allure-playwright@3.2.2(@playwright/test@1.53.2)):
     dependencies:
       md5: 2.3.0
     optionalDependencies:
-      allure-playwright: 3.2.2(@playwright/test@1.52.0)
+      allure-playwright: 3.2.2(@playwright/test@1.53.2)
 
-  allure-playwright@3.2.2(@playwright/test@1.52.0):
+  allure-playwright@3.2.2(@playwright/test@1.53.2):
     dependencies:
-      '@playwright/test': 1.52.0
-      allure-js-commons: 3.2.2(allure-playwright@3.2.2(@playwright/test@1.52.0))
+      '@playwright/test': 1.53.2
+      allure-js-commons: 3.2.2(allure-playwright@3.2.2(@playwright/test@1.53.2))
 
   ansi-styles@4.3.0:
     dependencies:
@@ -1819,11 +1819,11 @@ snapshots:
 
   pkce-challenge@5.0.0: {}
 
-  playwright-core@1.52.0: {}
+  playwright-core@1.53.2: {}
 
-  playwright@1.52.0:
+  playwright@1.53.2:
     dependencies:
-      playwright-core: 1.52.0
+      playwright-core: 1.53.2
     optionalDependencies:
       fsevents: 2.3.2
 
