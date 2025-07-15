@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       allure-playwright:
-        specifier: ^3.3.0
-        version: 3.3.0(@playwright/test@1.52.0)
+        specifier: ^3.3.1
+        version: 3.3.1(@playwright/test@1.52.0)
       axios:
         specifier: ^1.10.0
         version: 1.10.0
@@ -244,16 +244,16 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  allure-js-commons@3.3.0:
-    resolution: {integrity: sha512-EAIfpBFk6m7Q4KfyuAL3cAqVGv0dLWCT9359BmVGhO5ANKCwuU6U+DJBs3dLYo+MDUF7vlmwWPpvv4lAvdcVtA==}
+  allure-js-commons@3.3.1:
+    resolution: {integrity: sha512-7czRvcYQ3YNDsctvlqkUfh+0BbdlThUzzErojqngXRhd8wbOhiS5YfFrOPB2ab/PcJhjPjGmalcCmWFQS+zw5g==}
     peerDependencies:
-      allure-playwright: 3.3.0
+      allure-playwright: 3.3.1
     peerDependenciesMeta:
       allure-playwright:
         optional: true
 
-  allure-playwright@3.3.0:
-    resolution: {integrity: sha512-zzucWHfY63+oUS7peH9iLmZAHBwojg4mJl1W0rMCnUkCQNWMDMze24priEtaqGYwH5BITQp8Egv38I/UjMBR/A==}
+  allure-playwright@3.3.1:
+    resolution: {integrity: sha512-Pr6oc1xbTy1t0iG4CO9AQcKSos6QZB7rESbY73PykQQx5IGVt3DlAIo8y02+DSXL87KygbYFXHgvnVUrLm3yWQ==}
     peerDependencies:
       '@playwright/test': '>=1.36.0'
 
@@ -1239,16 +1239,16 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  allure-js-commons@3.3.0(allure-playwright@3.3.0(@playwright/test@1.52.0)):
+  allure-js-commons@3.3.1(allure-playwright@3.3.1(@playwright/test@1.52.0)):
     dependencies:
       md5: 2.3.0
     optionalDependencies:
-      allure-playwright: 3.3.0(@playwright/test@1.52.0)
+      allure-playwright: 3.3.1(@playwright/test@1.52.0)
 
-  allure-playwright@3.3.0(@playwright/test@1.52.0):
+  allure-playwright@3.3.1(@playwright/test@1.52.0):
     dependencies:
       '@playwright/test': 1.52.0
-      allure-js-commons: 3.3.0(allure-playwright@3.3.0(@playwright/test@1.52.0))
+      allure-js-commons: 3.3.1(allure-playwright@3.3.1(@playwright/test@1.52.0))
 
   ansi-styles@4.3.0:
     dependencies:
