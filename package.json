@@ -43,7 +43,7 @@
     "@playwright/test": "^1.54.1",
     "@types/js-yaml": "4.0.9",
     "@types/node": "^24.0.13",
-    "eslint": "^9.26.0",
+    "eslint": "^9.33.0",
     "csv-writer": "^1.6.0",
     "openai": "^5.10.2",
     "ts-node":"10.9.2",
