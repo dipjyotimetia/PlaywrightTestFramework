@@ -15,8 +15,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       config:
-        specifier: ^4.0.0
-        version: 4.0.0
+        specifier: ^4.1.1
+        version: 4.1.1
       csv-parse:
         specifier: 6.1.0
         version: 6.1.0
@@ -343,8 +343,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  config@4.0.0:
-    resolution: {integrity: sha512-zOzfDfcpaBUMRvTH+pbj111Gfb+1BMvCy9EcE5ckuugfAcks3FIQMyt8TRA30dhuGnZNBxfbPBUKtuM03ih/nA==}
+  config@4.1.1:
+    resolution: {integrity: sha512-jljfwqNZ7QHwAW9Z9NDZdJARFiu5pjLqQO0K4ooY22iY/bIY78n0afI4ANEawfgQOxri0K/3oTayX8XIauWcLA==}
     engines: {node: '>= 20.0.0'}
 
   content-disposition@1.0.0:
@@ -1349,7 +1349,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  config@4.0.0:
+  config@4.1.1:
     dependencies:
       json5: 2.2.3
 
