@@ -1,8 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { GitHubActionOptions } from '@estruyf/github-actions-reporter';
 import * as os from 'node:os';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 const isCI = !!process.env.CI;
+const storageStatePath = path.join(process.cwd(), 'state.json');
+const storageStateExists = fs.existsSync(storageStatePath);
 
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to the project root.
@@ -19,7 +23,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   // Reporter configuration
   reporter: [
-    ['html', 'line'], // HTML and Line reporters
+    ['html'],
+    ['line'], // HTML and Line reporters
     ['./reporter.config.ts'], // Custom reporter configuration file
     ['blob', { outputFile: `./blob-report/report-${os.platform()}.zip` }],
     ['json', { outputFile: 'results.json' }],
@@ -54,7 +59,6 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        channel: 'chromium', // Use real Chrome for better authenticity (Playwright v1.49+)
         launchOptions: {
           headless: isCI,
           slowMo: 50,
@@ -113,7 +117,7 @@ export default defineConfig({
     actionTimeout: 0,
     navigationTimeout: 30000,
     trace: 'on-first-retry',
-    storageState: 'state.json',
+    ...(storageStateExists && { storageState: 'state.json' }),
     // TLS Client Certificates (Playwright v1.50+)
     // Uncomment and configure for mTLS testing:
     // clientCertificates: [
