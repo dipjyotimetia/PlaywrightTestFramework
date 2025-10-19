@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { httpGet, httpPost, httpPatch, httpDelete } from '../core/apiActions';
-import { getEndpoint, baseUrlApi } from '../config/config';
+import { httpGet, httpPost, httpPatch, httpDelete } from '../../core/actions/api/apiActions';
+import { getEndpoint, baseUrlApi } from '../../config/config';
 
 test.describe('API Tests', () => {
   test('should get all posts', async () => {

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": true,
+    "module": "commonjs",
+    "noEmit": true,
+    "baseUrl": "..",
+    "paths": {
+      "@/*": ["src/*"],
+      "@core/*": ["src/core/*"],
+      "@tests/*": ["src/tests/*"],
+      "@pages/*": ["src/pages/*"]
+    }
+  },
+  "include": ["../src/**/*", "../config/**/*", "../scripts/**/*"],
+  "exclude": ["../node_modules", "../test-results", "../playwright-report", "../allure-results"]
+}

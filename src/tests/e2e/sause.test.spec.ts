@@ -1,8 +1,8 @@
 import { test } from '@playwright/test';
 import { Severity, severity, epic, feature, story } from 'allure-js-commons';
 
-import { LoginPage } from '../pages/login';
-import { AddToCart, Checkout } from '../pages/products';
+import { LoginPage } from '../../pages/login';
+import { AddToCart, Checkout } from '../../pages/products';
 
 test.describe('Test saucedemo', () => {
   // All tests in this describe group will get 2 retry attempts.

@@ -1,24 +1,31 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { GitHubActionOptions } from '@estruyf/github-actions-reporter';
-import os from 'node:os';
+import * as os from 'node:os';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 const isCI = !!process.env.CI;
+const storageStatePath = path.join(process.cwd(), 'state.json');
+const storageStateExists = fs.existsSync(storageStatePath);
 
 export default defineConfig({
-  // Look for test files in the "tests" directory, relative to this configuration file.
-  testDir: 'src/tests',
+  // Look for test files in the "tests" directory, relative to the project root.
+  testDir: '../src/tests',
   // Run all tests in parallel.
   fullyParallel: true,
   // Fail the build on CI if you accidentally left test.only in the source code.
   forbidOnly: !!process.env.CI,
+  // Fail the build on CI if flaky tests are detected (Playwright v1.52+)
+  failOnFlakyTests: !!process.env.CI,
   // Retry on CI only.
   retries: process.env.CI ? 2 : 0,
   // Opt out of parallel tests on CI.
   workers: process.env.CI ? 1 : undefined,
   // Reporter configuration
   reporter: [
-    ['html', 'line'], // HTML and Line reporters
-    ['./reportConfig.ts'], // Custom reporter configuration file
+    ['html'],
+    ['line'], // HTML and Line reporters
+    ['./reporter.config.ts'], // Custom reporter configuration file
     ['blob', { outputFile: `./blob-report/report-${os.platform()}.zip` }],
     ['json', { outputFile: 'results.json' }],
     [
@@ -110,5 +117,22 @@ export default defineConfig({
     actionTimeout: 0,
     navigationTimeout: 30000,
     trace: 'on-first-retry',
+    ...(storageStateExists && { storageState: 'state.json' }),
+    // TLS Client Certificates (Playwright v1.50+)
+    // Uncomment and configure for mTLS testing:
+    // clientCertificates: [
+    //   {
+    //     origin: 'https://secure-api.example.com',
+    //     certPath: './certs/client-cert.pem',
+    //     keyPath: './certs/client-key.pem',
+    //     passphrase: process.env.CERT_PASSPHRASE,
+    //   },
+    //   // Or pass certificates from memory (v1.47+):
+    //   // {
+    //   //   origin: 'https://another-api.example.com',
+    //   //   cert: Buffer.from(process.env.CLIENT_CERT_BASE64 || '', 'base64'),
+    //   //   key: Buffer.from(process.env.CLIENT_KEY_BASE64 || '', 'base64'),
+    //   // },
+    // ],
   },
 });

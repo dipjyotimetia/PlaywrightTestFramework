@@ -5,3 +5,7 @@ allure-results/**
 playwright-report/**
 blob-report/**
 results.json
+.auth/**
+*.env
+.env.local
+.env.*.local
