@@ -55,13 +55,17 @@ export default class MyReporter implements Reporter {
 
   /**
    * Logs the execution of each test step if it belongs to the "test.step" category.
+   * Enhanced with titlePath for full hierarchy (Playwright v1.55+).
    * @param test - The test case.
    * @param result - The test result.
    * @param step - The test step.
    */
   onStepBegin(test: TestCase, result: TestResult, step: TestStep): void {
     if (step.category === 'test.step') {
+      // Use titlePath for full step hierarchy (v1.55+)
+      const stepPath = step.titlePath ? step.titlePath.join(' > ') : step.title;
       logger.info(`Executing Step: ${step.title}`);
+      logger.info(`Step Hierarchy: ${stepPath}`);
     }
   }
 

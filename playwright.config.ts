@@ -11,6 +11,8 @@ export default defineConfig({
   fullyParallel: true,
   // Fail the build on CI if you accidentally left test.only in the source code.
   forbidOnly: !!process.env.CI,
+  // Fail the build on CI if flaky tests are detected (Playwright v1.52+)
+  failOnFlakyTests: !!process.env.CI,
   // Retry on CI only.
   retries: process.env.CI ? 2 : 0,
   // Opt out of parallel tests on CI.
@@ -52,6 +54,7 @@ export default defineConfig({
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
+        channel: 'chromium', // Use real Chrome for better authenticity (Playwright v1.49+)
         launchOptions: {
           headless: isCI,
           slowMo: 50,
@@ -110,5 +113,22 @@ export default defineConfig({
     actionTimeout: 0,
     navigationTimeout: 30000,
     trace: 'on-first-retry',
+    storageState: 'state.json',
+    // TLS Client Certificates (Playwright v1.50+)
+    // Uncomment and configure for mTLS testing:
+    // clientCertificates: [
+    //   {
+    //     origin: 'https://secure-api.example.com',
+    //     certPath: './certs/client-cert.pem',
+    //     keyPath: './certs/client-key.pem',
+    //     passphrase: process.env.CERT_PASSPHRASE,
+    //   },
+    //   // Or pass certificates from memory (v1.47+):
+    //   // {
+    //   //   origin: 'https://another-api.example.com',
+    //   //   cert: Buffer.from(process.env.CLIENT_CERT_BASE64 || '', 'base64'),
+    //   //   key: Buffer.from(process.env.CLIENT_KEY_BASE64 || '', 'base64'),
+    //   // },
+    // ],
   },
 });

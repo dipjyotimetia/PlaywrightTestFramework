@@ -1,4 +1,18 @@
 
+export type LLMProvider = 'openai' | 'deepseek' | 'anthropic' | 'cohere' | 'azure';
+
+export interface Configs {
+  loginUrl: string;
+  username: string;
+  password: string;
+  targetUrl: string;
+  openaiApiKey: string;
+  openaiBaseURL?: string;
+  llmProvider?: LLMProvider;
+  azureEndpoint?: string;
+  azureModelName?: string;
+}
+
 export interface Configs {
   loginUrl: string;
   username: string;
