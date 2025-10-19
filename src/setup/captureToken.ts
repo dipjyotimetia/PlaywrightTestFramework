@@ -7,7 +7,7 @@
  * Or configure and run directly with custom settings
  */
 
-import { AuthSetup, AuthConfig } from '../core/authSetup';
+import { AuthSetup, AuthConfig } from '../core/auth/authSetup';
 
 async function main() {
   const authSetup = new AuthSetup();

@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "description": "A test framework using Playwright for end-to-end testing.",
   "scripts": {
-    "test:playwright": "playwright test --headed",
+    "test": "playwright test --config=config/playwright.config.ts",
+    "test:headed": "playwright test --config=config/playwright.config.ts --headed",
+    "test:playwright": "playwright test --config=config/playwright.config.ts --headed",
+    "test:dev": "ENV=dev playwright test --config=config/playwright.config.ts",
+    "test:staging": "ENV=staging playwright test --config=config/playwright.config.ts",
+    "test:prod": "ENV=prod playwright test --config=config/playwright.config.ts",
+    "test:ui": "playwright test --config=config/playwright.config.ts --ui",
+    "test:debug": "PWDEBUG=1 playwright test --config=config/playwright.config.ts",
     "test.watch": "jest --watchAll",
     "test:record": "npx playwright codegen https://www.saucedemo.com/",
     "allureReport": "allure serve",
+    "report": "playwright show-report",
     "format": "prettier --write .",
-    "lint": "eslint . --ext .ts,.js"
+    "lint": "eslint . --ext .ts,.js",
+    "typecheck": "tsc --project config/tsconfig.json --noEmit"
   },
   "repository": {
     "type": "git",

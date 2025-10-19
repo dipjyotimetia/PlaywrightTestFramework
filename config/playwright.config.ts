@@ -1,12 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { GitHubActionOptions } from '@estruyf/github-actions-reporter';
-import os from 'node:os';
+import * as os from 'node:os';
 
 const isCI = !!process.env.CI;
 
 export default defineConfig({
-  // Look for test files in the "tests" directory, relative to this configuration file.
-  testDir: 'src/tests',
+  // Look for test files in the "tests" directory, relative to the project root.
+  testDir: '../src/tests',
   // Run all tests in parallel.
   fullyParallel: true,
   // Fail the build on CI if you accidentally left test.only in the source code.
@@ -20,7 +20,7 @@ export default defineConfig({
   // Reporter configuration
   reporter: [
     ['html', 'line'], // HTML and Line reporters
-    ['./reportConfig.ts'], // Custom reporter configuration file
+    ['./reporter.config.ts'], // Custom reporter configuration file
     ['blob', { outputFile: `./blob-report/report-${os.platform()}.zip` }],
     ['json', { outputFile: 'results.json' }],
     [

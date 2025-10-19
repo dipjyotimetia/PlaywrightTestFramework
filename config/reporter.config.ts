@@ -63,7 +63,12 @@ export default class MyReporter implements Reporter {
   onStepBegin(test: TestCase, result: TestResult, step: TestStep): void {
     if (step.category === 'test.step') {
       // Use titlePath for full step hierarchy (v1.55+)
-      const stepPath = step.titlePath ? step.titlePath.join(' > ') : step.title;
+      let stepPath = step.title;
+      if (step.titlePath) {
+        const titlePath: any = step.titlePath;
+        const pathArray = typeof titlePath === 'function' ? titlePath() : titlePath;
+        stepPath = Array.isArray(pathArray) ? pathArray.join(' > ') : step.title;
+      }
       logger.info(`Executing Step: ${step.title}`);
       logger.info(`Step Hierarchy: ${stepPath}`);
     }

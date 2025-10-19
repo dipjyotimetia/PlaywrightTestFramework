@@ -20,7 +20,7 @@ import {
   retryRequest,
   createCustomContext,
   getCurrentToken,
-} from '../core/apiActions';
+} from '../../../core/actions/api/apiActions';
 
 test.describe('API Testing - Basic HTTP Methods', () => {
   test.skip('GET request example', async () => {

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { A11yActions } from '../core/a11yActions';
+import { A11yActions } from '../../core/actions/web/a11yActions';
 
 test.describe('Accessibility Tests', () => {
   let a11y: A11yActions;

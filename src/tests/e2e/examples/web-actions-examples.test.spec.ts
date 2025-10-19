@@ -36,7 +36,7 @@ import {
   handleDialog,
   mockApiResponse,
   waitForResponse,
-} from '../core/webActions';
+} from '../../../core/actions/web/webActions';
 
 test.describe('Web Actions - Basic Interactions', () => {
   test.skip('Navigate and verify page title', async ({ page }) => {

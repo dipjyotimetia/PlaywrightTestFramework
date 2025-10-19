@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { httpGet, httpPost, getCurrentToken } from '../core/apiActions';
-import { authHelper } from '../core/authHelper';
-import { AuthConfig } from '../core/authSetup';
+import { httpGet, httpPost, getCurrentToken } from '../../../core/actions/api/apiActions';
+import { authHelper } from '../../../core/auth/authHelper';
+import { AuthConfig } from '../../../core/auth/authSetup';
 
 test.describe('API Tests with JWT Authentication', () => {
   test.beforeAll(async () => {

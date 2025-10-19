@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { AuthSetup, AuthConfig } from '../core/authSetup';
-import { TokenManager } from '../core/tokenManager';
+import { AuthSetup, AuthConfig } from '../../../core/auth/authSetup';
+import { TokenManager } from '../../../core/auth/tokenManager';
 
 test.describe('JWT Token Capture', () => {
   test.skip('should capture JWT token from localStorage after login', async () => {

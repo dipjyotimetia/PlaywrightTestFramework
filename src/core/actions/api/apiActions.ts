@@ -1,5 +1,5 @@
 import { APIRequestContext, request, test } from '@playwright/test';
-import { TokenManager } from './tokenManager';
+import { TokenManager } from '../../auth/tokenManager';
 
 let context: APIRequestContext;
 const tokenManager = new TokenManager();

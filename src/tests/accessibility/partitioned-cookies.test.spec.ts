@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { CookieActions } from '../core/cookieActions';
+import { CookieActions } from '../../core/actions/web/cookieActions';
 import * as path from 'path';
 
 /**
